@@ -89,7 +89,7 @@ function extractCity(name: string): string {
         'Fribourg', 'Schaffhausen', 'Chur', 'Neuchâtel', 'Payerne', 'Martigny', 'Locarno',
         'Riehen', 'Davos', 'Aarau', 'Wil', 'Inzling', 'Graechen', 'St. Moritz', 'Baden',
         'Zug', 'Sion', 'Uster', 'Montreux', 'Thalwil', 'Stäfa', 'Ascona', 'Payerne', 'Lyss',
-        'Prangins', 'Echallens', 'Vevey', 'Nyon', 'Morges', 'Gland', 'Bulle', 'Muri', 'Rapperswil'
+        'Prangins', 'Echallens', 'Vevey', 'Nyon', 'Morges', 'Gland', 'Bulle', 'Muri', 'Rapperswil', 'Ascona'
     ];
 
     for (const city of majorCities) {
