@@ -364,6 +364,14 @@ function createTournamentObject(
         eloBracket = '-1600';
     }
 
+    // Improved Internal Tournament detection
+    const isInternalName = lowerName.includes('interne') ||
+        lowerName.includes('réservé aux membres') ||
+        lowerName.includes('tournoi du club') ||
+        lowerName.includes('membres du club') ||
+        lowerName.includes('membres de r2c2') || // Specific club examples observed
+        lowerName.includes('championnat du club');
+
     return {
         id: id,
         name: name,
@@ -381,7 +389,7 @@ function createTournamentObject(
         topPlayerElo: topPlayerElo,
         homologationLink: link,
         date: parseFFEDate(dateStr),
-        isInternal: handicapX
+        isInternal: isInternalName
     };
 }
 

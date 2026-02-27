@@ -71,6 +71,13 @@ export function TournamentCard({ tournament, isHovered, onHover, isShortlisted, 
                 <div className="flex justify-between items-start gap-2 pr-12">
                     <h3 className="font-bold text-base leading-tight">{tournament.name}</h3>
                 </div>
+                {tournament.isInternal && (
+                    <div className="mt-1">
+                        <Badge variant="destructive" className="bg-rose-500 hover:bg-rose-600 text-[9px] font-black uppercase tracking-tighter px-1.5 py-0 shadow-sm border-none">
+                            Interne
+                        </Badge>
+                    </div>
+                )}
                 {!tournament.sections ? (
                     <div className="flex gap-1 mt-1">
                         <Badge variant="secondary" className="text-[10px] px-1.5 py-0">{tournament.format}</Badge>
