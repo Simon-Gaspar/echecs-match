@@ -318,6 +318,18 @@ export async function fetchLiveTournaments(): Promise<Tournament[]> {
     return groupedTournaments;
 }
 
+export function isInternalTournament(name: string): boolean {
+    const lowerName = name.toLowerCase();
+    return lowerName.includes('interne') ||
+        lowerName.includes('réservé aux membres') ||
+        lowerName.includes('tournoi du club') ||
+        lowerName.includes('membres du club') ||
+        lowerName.includes('membres de r2c2') ||
+        lowerName.includes('championnat du club') ||
+        lowerName.includes('réservé membres') ||
+        lowerName.includes('uniquement membres');
+}
+
 function createTournamentObject(
     id: string,
     name: string,
@@ -364,16 +376,6 @@ function createTournamentObject(
         eloBracket = '-1600';
     }
 
-    // Improved Internal Tournament detection
-    const isInternalName = lowerName.includes('interne') ||
-        lowerName.includes('réservé aux membres') ||
-        lowerName.includes('tournoi du club') ||
-        lowerName.includes('membres du club') ||
-        lowerName.includes('membres de r2c2') || // Specific club examples observed
-        lowerName.includes('championnat du club') ||
-        lowerName.includes('réservé membres') ||
-        lowerName.includes('uniquement membres');
-
     return {
         id: id,
         name: name,
@@ -391,7 +393,7 @@ function createTournamentObject(
         topPlayerElo: topPlayerElo,
         homologationLink: link,
         date: parseFFEDate(dateStr),
-        isInternal: isInternalName
+        isInternal: isInternalTournament(name)
     };
 }
 

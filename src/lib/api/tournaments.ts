@@ -1,6 +1,6 @@
 import { Tournament } from '@/lib/types/tournament';
 import { parseLocalPapiFile } from './papiParser';
-import { fetchLiveTournaments } from './ffeScraper';
+import { fetchLiveTournaments, isInternalTournament } from './ffeScraper';
 import { fetchSwissTournaments } from './swissScraper';
 import path from 'path';
 import fs from 'fs';
@@ -99,7 +99,10 @@ export async function getTournaments(): Promise<Tournament[]> {
         // 2. Fetch Swiss data (always live for now as it's fast)
         const swissData = await fetchSwissTournaments();
 
-        const combined = [...ffeData, ...swissData];
+        const combined = [...ffeData, ...swissData].map(t => ({
+            ...t,
+            isInternal: t.isInternal || isInternalTournament(t.name)
+        }));
         if (combined.length > 0) {
             return combined;
         }
