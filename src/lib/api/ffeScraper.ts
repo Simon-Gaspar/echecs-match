@@ -370,7 +370,9 @@ function createTournamentObject(
         lowerName.includes('tournoi du club') ||
         lowerName.includes('membres du club') ||
         lowerName.includes('membres de r2c2') || // Specific club examples observed
-        lowerName.includes('championnat du club');
+        lowerName.includes('championnat du club') ||
+        lowerName.includes('réservé membres') ||
+        lowerName.includes('uniquement membres');
 
     return {
         id: id,
