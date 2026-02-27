@@ -1,0 +1,662 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="ctl00_MasterHeader"><meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" /><meta name="keywords" /><meta name="description" /><title>
+	F&eacute;d&eacute;ration Fran&ccedil;aise des &Eacute;checs
+</title><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" /><link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css" /><link type="text/css" rel="stylesheet" href="ffe.css?version=6" /><link type="text/css" rel="stylesheet" href="old.css?version=1" /><link rel="shortcut icon" type="image/x-icon" href="images/FFE-favicon.png" />
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71022811-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+<script type="text/javascript">
+window.$crisp=[];window.CRISP_WEBSITE_ID="47d40bfc-b081-40e5-87cd-d652c585f3c8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>
+</head>
+<body>
+<div id="menu-haut">
+  <a href="Plan.aspx">Plan du site</a> &nbsp;|&nbsp;
+  <a href="Default.aspx?Cat=50">Contact</a> &nbsp;|&nbsp;
+  <a href="Revues.aspx">Publications</a> &nbsp;|&nbsp;
+  <a href="Connect.aspx">Mon Compte</a> &nbsp;|&nbsp;
+  <a href="http://clubs.echecs.asso.fr">Gérer son Club</a> &nbsp;|&nbsp;
+  <a href="http://admin.echecs.asso.fr">Directeurs de Groupes</a> &nbsp;|&nbsp;
+  <a href="Print.aspx" id="ctl00_LinkPrint">Imprimer</a>
+</div>  
+<div id="ctl00_divheader">
+  <div id="header-search">
+    <form class="form-search" method=post name=FormJoueur action="ListeJoueurs.aspx?Action=FFE">
+      <label class="label-search">Rechercher un joueur</label>
+      <input class=input-search type="text" size="12" name="JoueurNom" value="" />
+      <input class=input-search type="submit" value="OK" />
+    </form>
+    <form class="form-search" method=post name=FormClub action="ListeClubs.aspx?Action=CLUB">
+      <label class=label-search>Rechercher un club</label>
+      <input class=input-search type="text" name="ClubNom" size="12" value="" />
+      <input class=input-search type="submit" value="OK" />&nbsp;&nbsp;
+    </form>
+    <form class="form-search" method=post name=FormActu action="Default.aspx">
+      <label class=label-search>Rechercher dans le site</label>
+      <input class=input-search type="text" name="ActuFiltre" size="12" value="" />
+      <input class=input-search type="submit" value="OK" />&nbsp;&nbsp;
+    </form>
+      <a href="https://www.facebook.com/ffechecs?fref=ts" target=_blank><img src=images/facebook.png /></a>&nbsp;&nbsp;
+      <a href="https://twitter.com/ffechecs" target=_blank><img src=images/twitter.png /></a>
+  </div>
+  <div id="bandeau">
+    <img src="images/bandeau-ffe.png" alt="ffe" title="ffe" />
+  </div>
+<!-- end #bandeau -->
+  <ul id="nav"><li class="current"><a href="Default.aspx">Accueil</a></li><li><a href="#">Découvrir</a><ul><li><a target=_blank href="http://echecs.asso.fr/Actu.aspx?Ref=13926">Règles du Jeu</a></li><li><a target=_blank href="http://echecs.asso.fr/Actu.aspx?Ref=13927">Progresser aux échecs</a></li><li><a href="Revues.aspx">Publications</a></li><li><a href="Default.aspx?Cat=41">Art, Culture et Histoire</a></li><li><a target=_blank href="https://www.flickr.com/photos/196251999@N08/albums/with/72177720301409158">Albums photos</a></li><li><a target=_blank href="https://www.youtube.com/channel/UCn6wdVs-gSmZBJXSAWPzf7Q/videos">Vidéos</a></li></ul></li><li><a href="#">FFE</a><ul><li><a href="Default.aspx?Cat=12">FFE - Présentation</a></li><li><a href="Ligues.aspx">Ligues</a></li><li><a href="Comites.aspx">Comités</a></li><li><a href="Clubs.aspx">Clubs</a></li><li><a href="Default.aspx?Cat=14">Licences</a></li><li><a href="Joueurs.aspx">Membres</a></li><li><a href="Default.aspx?Cat=55">Les effectifs de la F.F.E.</a></li><li><a href="Default.aspx?Cat=13">Siège fédéral</a></li><li><a href="Default.aspx?Cat=35">Commissions-Directions</a></li><li><a href="Default.aspx?Cat=42">Infos fédérales</a></li><li><a href="Default.aspx?Cat=50">Contacts</a></li></ul></li><li><a href="#">Compétitions</a><ul><li><a href="Calendrier.aspx">Calendrier</a></li><li><a href="Equipes.aspx">Par équipes</a></li><li><a href="Tournois.aspx">Tournois homologués</a></li><li><a href="Default.aspx?Cat=21">Vos opens</a></li><li><a href="Default.aspx?Cat=16">Ch. France Jeunes</a></li><li><a href="Default.aspx?Cat=15">Ch. France</a></li><li><a href="Default.aspx?Cat=75">Ch France Rapide des Clubs</a></li><li><a href="Default.aspx?Cat=58">Elo Rapide FFE </a></li></ul></li><li><a href="#">Secteurs</a><ul><li><a href="Default.aspx?Cat=8">Haut niveau et titrés</a></li><li><a href="Default.aspx?Cat=7">Mixité</a></li><li><a href="Default.aspx?Cat=66">Scolaires</a></li><li><a target=_blank href="https://ssh.ffechecs.fr/">Santé Social Handicap</a></li><li><a href=" Default.aspx?Cat=68">International</a></li><li><a target=_blank href="https://dna.ffechecs.fr/">Arbitrage</a></li><li><a href="Default.aspx?Cat=9">Discipline</a></li><li><a target=_blank href="http://echecs.asso.fr/Default.aspx?Cat=72">Prévention des violences</a></li><li><a href="Default.aspx?Cat=23">Vos Stages</a></li><li><a target=_blank href="https://classechecs.ffechecs.fr/">Class’Échecs</a></li><li><a href="Default.aspx?Cat=74">Fair-Play</a></li></ul></li><li><a href="#">Documents</a><ul><li><a href="Default.aspx?Cat=17">Règlements</a></li><li><a href="Default.aspx?Cat=20">Comptes rendus</a></li><li><a href="Default.aspx?Cat=26">Documents Clubs</a></li><li><a href="Default.aspx?Cat=46">Ressources pédagogiques</a></li><li><a target=_blank href="http://echecs.asso.fr/Actu.aspx?Ref=12999">Abonnement Echec & Mat Junior</a></li><li><a target=_blank href="http://www.echecs.asso.fr/Default.aspx?Cat=61">Masterclasses en replay</a></li></ul></li><li><a href="#">Développement</a><ul><li><a href="Default.aspx?Cat=6">Formation</a></li><li><a href="Default.aspx?Cat=39">Nouveaux Publics</a></li><li><a href="Default.aspx?Cat=2">Annonces Emploi</a></li><li><a href="Default.aspx?Cat=24">Annonces Clubs</a></li><li><a target=_blank href="http://www.echecs.asso.fr/Default.aspx?Cat=57">Protection judiciaire de la Jeunesse</a></li></ul></li><li><a href="Default.aspx?Cat=36">Partenaires</a><ul><li><a target=_blank href="https://www.creditmutuel.fr/home/index.html">Crédit Mutuel</a></li><li><a target=_blank href="https://www.echecs.asso.fr/Actu.aspx?Ref=15429">Crédit Mutuel Enseignant</a></li><li><a target=_blank href="http://www.profession-sport-loisirs.fr">Profession Sports & Loisirs</a></li><li><a target=_blank href="http://www.echiquierdelareussite.org">L'échiquier de la réussite</a></li><li><a target=_blank href="http://www.olibris.fr">Olibris</a></li><li><a target=_blank href="http://www.ucpa-vacances.com">U.C.P.A.</a></li><li><a target=_blank href="http://www.chateauvillandry.fr">Le Château de Villandry</a></li><li><a target=_blank href="https://www.apf-francehandicap.org/">A.P.F.</a></li><li><a target=_blank href="http://www.echecs.asso.fr/Default.aspx?Cat=57">D.P.J.J.</a></li><li><a target=_blank href="https://unss.org/">U.N.S.S.</a></li><li><a target=_blank href="https://usep.org/">U.S.E.P.</a></li><li><a target=_blank href="http://www.aefe.fr/">A.E.F.E.</a></li><li><a target=_blank href="http://www.ffse.fr/">F.F.S.E.</a></li><li><a target=_blank href="http://www.femixsports.fr/">Femix'Sports</a></li><li><a target=_blank href="http://www.echecs.asso.fr/Actu.aspx?Ref=13000">VARIANTES</a></li><li><a target=_blank href="https://www.amf.asso.fr/">A.M.F.</a></li><li><a target=_blank href="http://echecs.asso.fr/Actu.aspx?Ref=13938">Apprendre les échecs en 24 heures</a></li><li><a target=_blank href="https://www.pro-evolution-echecs.com/">Pro Evolution Échecs</a></li><li><a target=_blank href="https://www.robindubien.org/">Robin du Bien</a></li></ul></li><li><a href="http://echecs.asso.fr/Actu.aspx?Ref=10771">Boutique</a></li></ul>
+<!-- end #menu -->
+  
+<!-- end #pub -->
+</div>
+<!-- end #header -->
+<div id="page">
+  <div id="page-bgtop">
+    <div id="page-bgbtm">
+      
+<form name="aspnetForm" method="post" action="Tournois.aspx" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTM0NDUyOTQ3Nw9kFgJmD2QWCAIDDxYCHglpbm5lcmh0bWwFCEltcHJpbWVyZAIFD2QWBAIBDxYCHgRUZXh0BZ8oPHVsIGlkPSJuYXYiPjxsaSBjbGFzcz0iY3VycmVudCI+PGEgaHJlZj0iRGVmYXVsdC5hc3B4Ij5BY2N1ZWlsPC9hPjwvbGk+PGxpPjxhIGhyZWY9IiMiPkTDqWNvdXZyaXI8L2E+PHVsPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHA6Ly9lY2hlY3MuYXNzby5mci9BY3R1LmFzcHg/UmVmPTEzOTI2Ij5Sw6hnbGVzIGR1IEpldTwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHA6Ly9lY2hlY3MuYXNzby5mci9BY3R1LmFzcHg/UmVmPTEzOTI3Ij5Qcm9ncmVzc2VyIGF1eCDDqWNoZWNzPC9hPjwvbGk+PGxpPjxhIGhyZWY9IlJldnVlcy5hc3B4Ij5QdWJsaWNhdGlvbnM8L2E+PC9saT48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD00MSI+QXJ0LCBDdWx0dXJlIGV0IEhpc3RvaXJlPC9hPjwvbGk+PGxpPjxhIHRhcmdldD1fYmxhbmsgaHJlZj0iaHR0cHM6Ly93d3cuZmxpY2tyLmNvbS9waG90b3MvMTk2MjUxOTk5QE4wOC9hbGJ1bXMvd2l0aC83MjE3NzcyMDMwMTQwOTE1OCI+QWxidW1zIHBob3RvczwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL2NoYW5uZWwvVUNuNndkVnMtZ1NtWkJKWFNBV1B6ZjdRL3ZpZGVvcyI+Vmlkw6lvczwvYT48L2xpPjwvdWw+PC9saT48bGk+PGEgaHJlZj0iIyI+RkZFPC9hPjx1bD48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD0xMiI+RkZFIC0gUHLDqXNlbnRhdGlvbjwvYT48L2xpPjxsaT48YSBocmVmPSJMaWd1ZXMuYXNweCI+TGlndWVzPC9hPjwvbGk+PGxpPjxhIGhyZWY9IkNvbWl0ZXMuYXNweCI+Q29taXTDqXM8L2E+PC9saT48bGk+PGEgaHJlZj0iQ2x1YnMuYXNweCI+Q2x1YnM8L2E+PC9saT48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD0xNCI+TGljZW5jZXM8L2E+PC9saT48bGk+PGEgaHJlZj0iSm91ZXVycy5hc3B4Ij5NZW1icmVzPC9hPjwvbGk+PGxpPjxhIGhyZWY9IkRlZmF1bHQuYXNweD9DYXQ9NTUiPkxlcyBlZmZlY3RpZnMgZGUgbGEgRi5GLkUuPC9hPjwvbGk+PGxpPjxhIGhyZWY9IkRlZmF1bHQuYXNweD9DYXQ9MTMiPlNpw6hnZSBmw6lkw6lyYWw8L2E+PC9saT48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD0zNSI+Q29tbWlzc2lvbnMtRGlyZWN0aW9uczwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTQyIj5JbmZvcyBmw6lkw6lyYWxlczwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTUwIj5Db250YWN0czwvYT48L2xpPjwvdWw+PC9saT48bGk+PGEgaHJlZj0iIyI+Q29tcMOpdGl0aW9uczwvYT48dWw+PGxpPjxhIGhyZWY9IkNhbGVuZHJpZXIuYXNweCI+Q2FsZW5kcmllcjwvYT48L2xpPjxsaT48YSBocmVmPSJFcXVpcGVzLmFzcHgiPlBhciDDqXF1aXBlczwvYT48L2xpPjxsaT48YSBocmVmPSJUb3Vybm9pcy5hc3B4Ij5Ub3Vybm9pcyBob21vbG9ndcOpczwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTIxIj5Wb3Mgb3BlbnM8L2E+PC9saT48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD0xNiI+Q2guIEZyYW5jZSBKZXVuZXM8L2E+PC9saT48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD0xNSI+Q2guIEZyYW5jZTwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTc1Ij5DaCBGcmFuY2UgUmFwaWRlIGRlcyBDbHViczwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTU4Ij5FbG8gUmFwaWRlIEZGRSA8L2E+PC9saT48L3VsPjwvbGk+PGxpPjxhIGhyZWY9IiMiPlNlY3RldXJzPC9hPjx1bD48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD04Ij5IYXV0IG5pdmVhdSBldCB0aXRyw6lzPC9hPjwvbGk+PGxpPjxhIGhyZWY9IkRlZmF1bHQuYXNweD9DYXQ9NyI+TWl4aXTDqTwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTY2Ij5TY29sYWlyZXM8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwczovL3NzaC5mZmVjaGVjcy5mci8iPlNhbnTDqSBTb2NpYWwgSGFuZGljYXA8L2E+PC9saT48bGk+PGEgaHJlZj0iIERlZmF1bHQuYXNweD9DYXQ9NjgiPkludGVybmF0aW9uYWw8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwczovL2RuYS5mZmVjaGVjcy5mci8iPkFyYml0cmFnZTwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTkiPkRpc2NpcGxpbmU8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vZWNoZWNzLmFzc28uZnIvRGVmYXVsdC5hc3B4P0NhdD03MiI+UHLDqXZlbnRpb24gZGVzIHZpb2xlbmNlczwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTIzIj5Wb3MgU3RhZ2VzPC9hPjwvbGk+PGxpPjxhIHRhcmdldD1fYmxhbmsgaHJlZj0iaHR0cHM6Ly9jbGFzc2VjaGVjcy5mZmVjaGVjcy5mci8iPkNsYXNz4oCZw4ljaGVjczwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTc0Ij5GYWlyLVBsYXk8L2E+PC9saT48L3VsPjwvbGk+PGxpPjxhIGhyZWY9IiMiPkRvY3VtZW50czwvYT48dWw+PGxpPjxhIGhyZWY9IkRlZmF1bHQuYXNweD9DYXQ9MTciPlLDqGdsZW1lbnRzPC9hPjwvbGk+PGxpPjxhIGhyZWY9IkRlZmF1bHQuYXNweD9DYXQ9MjAiPkNvbXB0ZXMgcmVuZHVzPC9hPjwvbGk+PGxpPjxhIGhyZWY9IkRlZmF1bHQuYXNweD9DYXQ9MjYiPkRvY3VtZW50cyBDbHViczwvYT48L2xpPjxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHg/Q2F0PTQ2Ij5SZXNzb3VyY2VzIHDDqWRhZ29naXF1ZXM8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vZWNoZWNzLmFzc28uZnIvQWN0dS5hc3B4P1JlZj0xMjk5OSI+QWJvbm5lbWVudCBFY2hlYyAmIE1hdCBKdW5pb3I8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vd3d3LmVjaGVjcy5hc3NvLmZyL0RlZmF1bHQuYXNweD9DYXQ9NjEiPk1hc3RlcmNsYXNzZXMgZW4gcmVwbGF5PC9hPjwvbGk+PC91bD48L2xpPjxsaT48YSBocmVmPSIjIj5Ew6l2ZWxvcHBlbWVudDwvYT48dWw+PGxpPjxhIGhyZWY9IkRlZmF1bHQuYXNweD9DYXQ9NiI+Rm9ybWF0aW9uPC9hPjwvbGk+PGxpPjxhIGhyZWY9IkRlZmF1bHQuYXNweD9DYXQ9MzkiPk5vdXZlYXV4IFB1YmxpY3M8L2E+PC9saT48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD0yIj5Bbm5vbmNlcyBFbXBsb2k8L2E+PC9saT48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD0yNCI+QW5ub25jZXMgQ2x1YnM8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vd3d3LmVjaGVjcy5hc3NvLmZyL0RlZmF1bHQuYXNweD9DYXQ9NTciPlByb3RlY3Rpb24ganVkaWNpYWlyZSBkZSBsYSBKZXVuZXNzZTwvYT48L2xpPjwvdWw+PC9saT48bGk+PGEgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD0zNiI+UGFydGVuYWlyZXM8L2E+PHVsPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHBzOi8vd3d3LmNyZWRpdG11dHVlbC5mci9ob21lL2luZGV4Lmh0bWwiPkNyw6lkaXQgTXV0dWVsPC9hPjwvbGk+PGxpPjxhIHRhcmdldD1fYmxhbmsgaHJlZj0iaHR0cHM6Ly93d3cuZWNoZWNzLmFzc28uZnIvQWN0dS5hc3B4P1JlZj0xNTQyOSI+Q3LDqWRpdCBNdXR1ZWwgRW5zZWlnbmFudDwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHA6Ly93d3cucHJvZmVzc2lvbi1zcG9ydC1sb2lzaXJzLmZyIj5Qcm9mZXNzaW9uIFNwb3J0cyAmIExvaXNpcnM8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vd3d3LmVjaGlxdWllcmRlbGFyZXVzc2l0ZS5vcmciPkwnw6ljaGlxdWllciBkZSBsYSByw6l1c3NpdGU8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vd3d3Lm9saWJyaXMuZnIiPk9saWJyaXM8L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vd3d3LnVjcGEtdmFjYW5jZXMuY29tIj5VLkMuUC5BLjwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHA6Ly93d3cuY2hhdGVhdXZpbGxhbmRyeS5mciI+TGUgQ2jDonRlYXUgZGUgVmlsbGFuZHJ5PC9hPjwvbGk+PGxpPjxhIHRhcmdldD1fYmxhbmsgaHJlZj0iaHR0cHM6Ly93d3cuYXBmLWZyYW5jZWhhbmRpY2FwLm9yZy8iPkEuUC5GLjwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHA6Ly93d3cuZWNoZWNzLmFzc28uZnIvRGVmYXVsdC5hc3B4P0NhdD01NyI+RC5QLkouSi48L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwczovL3Vuc3Mub3JnLyI+VS5OLlMuUy48L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwczovL3VzZXAub3JnLyI+VS5TLkUuUC48L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vd3d3LmFlZmUuZnIvIj5BLkUuRi5FLjwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHA6Ly93d3cuZmZzZS5mci8iPkYuRi5TLkUuPC9hPjwvbGk+PGxpPjxhIHRhcmdldD1fYmxhbmsgaHJlZj0iaHR0cDovL3d3dy5mZW1peHNwb3J0cy5mci8iPkZlbWl4J1Nwb3J0czwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHA6Ly93d3cuZWNoZWNzLmFzc28uZnIvQWN0dS5hc3B4P1JlZj0xMzAwMCI+VkFSSUFOVEVTPC9hPjwvbGk+PGxpPjxhIHRhcmdldD1fYmxhbmsgaHJlZj0iaHR0cHM6Ly93d3cuYW1mLmFzc28uZnIvIj5BLk0uRi48L2E+PC9saT48bGk+PGEgdGFyZ2V0PV9ibGFuayBocmVmPSJodHRwOi8vZWNoZWNzLmFzc28uZnIvQWN0dS5hc3B4P1JlZj0xMzkzOCI+QXBwcmVuZHJlIGxlcyDDqWNoZWNzIGVuIDI0IGhldXJlczwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHBzOi8vd3d3LnByby1ldm9sdXRpb24tZWNoZWNzLmNvbS8iPlBybyBFdm9sdXRpb24gw4ljaGVjczwvYT48L2xpPjxsaT48YSB0YXJnZXQ9X2JsYW5rIGhyZWY9Imh0dHBzOi8vd3d3LnJvYmluZHViaWVuLm9yZy8iPlJvYmluIGR1IEJpZW48L2E+PC9saT48L3VsPjwvbGk+PGxpPjxhIGhyZWY9Imh0dHA6Ly9lY2hlY3MuYXNzby5mci9BY3R1LmFzcHg/UmVmPTEwNzcxIj5Cb3V0aXF1ZTwvYT48L2xpPjwvdWw+ZAIDDxYCHgdWaXNpYmxlaBYCAgEPDxYEHghJbWFnZVVybAUWaW1hZ2VzL0JhbmRlYXUvcHNmLmpwZx4LTmF2aWdhdGVVcmwFKWh0dHA6Ly9lY2hlY3MuYXNzby5mci9BY3R1LmFzcHg/UmVmPTEzMjkwZGQCBw9kFgICAQ9kFg4CAw8QDxYGHg5EYXRhVmFsdWVGaWVsZAUDS2V5Hg1EYXRhVGV4dEZpZWxkBQVUZXh0ZR4LXyFEYXRhQm91bmRnZBAVBA1DYWRlbmNlIExlbnRlCDEgaCBLLk8uBlJhcGlkZQVCbGl0ehUEBExlbnQIVW5lSGV1cmUGUmFwaWRlBUJsaXR6FCsDBGdnZ2dkZAIHDxAPFgYfBQUDS2V5HwYFBVRleHRlHwdnZBAVDAdqYW52aWVyCGbDqXZyaWVyBG1hcnMFYXZyaWwDbWFpBGp1aW4HanVpbGxldAVhb8O7dAlzZXB0ZW1icmUHb2N0b2JyZQhub3ZlbWJyZQlkw6ljZW1icmUVDAdqYW52aWVyB2ZldnJpZXIEbWFycwVhdnJpbANtYWkEanVpbgdqdWlsbGV0BGFvdXQJc2VwdGVtYnJlB29jdG9icmUIbm92ZW1icmUIZGVjZW1icmUUKwMMZ2dnZ2dnZ2dnZ2dnZGQCCQ8QDxYGHwUFBXZhbHVlHwYFBXZhbHVlHwdnZBAVGwQyMDAwBDIwMDEEMjAwMgQyMDAzBDIwMDQEMjAwNQQyMDA2BDIwMDcEMjAwOAQyMDA5BDIwMTAEMjAxMQQyMDEyBDIwMTMEMjAxNAQyMDE1BDIwMTYEMjAxNwQyMDE4BDIwMTkEMjAyMAQyMDIxBDIwMjIEMjAyMwQyMDI0BDIwMjUEMjAyNhUbBDIwMDAEMjAwMQQyMDAyBDIwMDMEMjAwNAQyMDA1BDIwMDYEMjAwNwQyMDA4BDIwMDkEMjAxMAQyMDExBDIwMTIEMjAxMwQyMDE0BDIwMTUEMjAxNgQyMDE3BDIwMTgEMjAxOQQyMDIwBDIwMjEEMjAyMgQyMDIzBDIwMjQEMjAyNQQyMDI2FCsDG2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAg0PEA8WBh8FBQV2YWx1ZR8GBQV2YWx1ZR8HZ2QQFRsEMjAwMAQyMDAxBDIwMDIEMjAwMwQyMDA0BDIwMDUEMjAwNgQyMDA3BDIwMDgEMjAwOQQyMDEwBDIwMTEEMjAxMgQyMDEzBDIwMTQEMjAxNQQyMDE2BDIwMTcEMjAxOAQyMDE5BDIwMjAEMjAyMQQyMDIyBDIwMjMEMjAyNAQyMDI1BDIwMjYVGwQyMDAwBDIwMDEEMjAwMgQyMDAzBDIwMDQEMjAwNQQyMDA2BDIwMDcEMjAwOAQyMDA5BDIwMTAEMjAxMQQyMDEyBDIwMTMEMjAxNAQyMDE1BDIwMTYEMjAxNwQyMDE4BDIwMTkEMjAyMAQyMDIxBDIwMjIEMjAyMwQyMDI0BDIwMjUEMjAyNhQrAxtnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dkZAITDxAPFgYfBQUCSWQfBgULRGVzY3JpcHRpb24fB2dkEBXoARJGSURFIEbDqXZyaWVyIDIwMjcRRklERSBKYW52aWVyIDIwMjcSRklERSBEZWNlbWJyZSAyMDI2EkZJREUgTm92ZW1icmUgMjAyNhFGSURFIE9jdG9icmUgMjAyNhNGSURFIFNlcHRlbWJyZSAyMDI2D0ZJREUgQW/Du3QgMjAyNhFGSURFIEp1aWxsZXQgMjAyNg5GSURFIEp1aW4gMjAyNg1GSURFIE1haSAyMDI2D0ZJREUgQXZyaWwgMjAyNg5GSURFIE1hcnMgMjAyNhJGSURFIEbDqXZyaWVyIDIwMjYRRklERSBKYW52aWVyIDIwMjYSRklERSBEZWNlbWJyZSAyMDI1EkZJREUgTm92ZW1icmUgMjAyNRFGSURFIE9jdG9icmUgMjAyNRNGSURFIFNlcHRlbWJyZSAyMDI1D0ZJREUgQW/Du3QgMjAyNRFGSURFIEp1aWxsZXQgMjAyNQ5GSURFIEp1aW4gMjAyNQ1GSURFIE1haSAyMDI1D0ZJREUgQXZyaWwgMjAyNQ5GSURFIE1hcnMgMjAyNRJGSURFIEbDqXZyaWVyIDIwMjURRklERSBKYW52aWVyIDIwMjUSRklERSBEZWNlbWJyZSAyMDI0EkZJREUgTm92ZW1icmUgMjAyNBFGSURFIE9jdG9icmUgMjAyNBNGSURFIFNlcHRlbWJyZSAyMDI0DkZJREUgQW91dCAyMDI0EUZJREUgSnVpbGxldCAyMDI0DkZJREUgSnVpbiAyMDI0DUZJREUgTWFpIDIwMjQPRklERSBBdnJpbCAyMDI0DkZJREUgTWFycyAyMDI0EkZJREUgRsOpdnJpZXIgMjAyNBFGSURFIEphbnZpZXIgMjAyNBJGSURFIERlY2VtYnJlIDIwMjMSRklERSBOb3ZlbWJyZSAyMDIzEUZJREUgT2N0b2JyZSAyMDIzE0ZJREUgU2VwdGVtYnJlIDIwMjMORklERSBBb3V0IDIwMjMRRklERSBKdWlsbGV0IDIwMjMORklERSBKdWluIDIwMjMNRklERSBNYWkgMjAyMw9GSURFIEF2cmlsIDIwMjMORklERSBNYXJzIDIwMjMSRklERSBGw6l2cmllciAyMDIzEUZJREUgSmFudmllciAyMDIzEkZJREUgRGVjZW1icmUgMjAyMhJGSURFIE5vdmVtYnJlIDIwMjIRRklERSBPY3RvYnJlIDIwMjITRklERSBTZXB0ZW1icmUgMjAyMg5GSURFIEFvdXQgMjAyMhFGSURFIEp1aWxsZXQgMjAyMg5GSURFIEp1aW4gMjAyMg1GSURFIE1haSAyMDIyD0ZJREUgQXZyaWwgMjAyMg5GSURFIE1hcnMgMjAyMhJGSURFIEbDqXZyaWVyIDIwMjIRRklERSBKYW52aWVyIDIwMjISRklERSBEZWNlbWJyZSAyMDIxEkZJREUgTm92ZW1icmUgMjAyMRFGSURFIE9jdG9icmUgMjAyMRNGSURFIFNlcHRlbWJyZSAyMDIxDkZJREUgQW91dCAyMDIxEUZJREUgSnVpbGxldCAyMDIxDkZJREUgSnVpbiAyMDIxDUZJREUgTWFpIDIwMjEPRklERSBBdnJpbCAyMDIxDkZJREUgTWFycyAyMDIxEkZJREUgRsOpdnJpZXIgMjAyMRFGSURFIEphbnZpZXIgMjAyMRJGSURFIERlY2VtYnJlIDIwMjASRklERSBOb3ZlbWJyZSAyMDIwEUZJREUgT2N0b2JyZSAyMDIwE0ZJREUgU2VwdGVtYnJlIDIwMjAORklERSBBb3V0IDIwMjARRklERSBKdWlsbGV0IDIwMjAORklERSBKdWluIDIwMjANRklERSBNYWkgMjAyMA9GSURFIEF2cmlsIDIwMjAORklERSBNYXJzIDIwMjASRklERSBGw6l2cmllciAyMDIwEUZJREUgSmFudmllciAyMDIwEkZJREUgRGVjZW1icmUgMjAxORJGSURFIE5vdmVtYnJlIDIwMTkRRklERSBPY3RvYnJlIDIwMTkTRklERSBTZXB0ZW1icmUgMjAxOQ5GSURFIEFvdXQgMjAxORFGSURFIEp1aWxsZXQgMjAxOQ5GSURFIEp1aW4gMjAxOQ1GSURFIE1haSAyMDE5D0ZJREUgQXZyaWwgMjAxOQ5GSURFIE1hcnMgMjAxORJGSURFIEbDqXZyaWVyIDIwMTkRRklERSBKYW52aWVyIDIwMTkSRklERSBEZWNlbWJyZSAyMDE4EkZJREUgTm92ZW1icmUgMjAxOBFGSURFIE9jdG9icmUgMjAxOBNGSURFIFNlcHRlbWJyZSAyMDE4DkZJREUgQW91dCAyMDE4EUZJREUgSnVpbGxldCAyMDE4DkZJREUgSnVpbiAyMDE4DUZJREUgTWFpIDIwMTgPRklERSBBdnJpbCAyMDE4DkZJREUgTWFycyAyMDE4EkZJREUgRsOpdnJpZXIgMjAxOBFGSURFIEphbnZpZXIgMjAxOBJGSURFIERlY2VtYnJlIDIwMTcSRklERSBOb3ZlbWJyZSAyMDE3EUZJREUgT2N0b2JyZSAyMDE3E0ZJREUgU2VwdGVtYnJlIDIwMTcORklERSBBb3V0IDIwMTcRRklERSBKdWlsbGV0IDIwMTcORklERSBKdWluIDIwMTcNRklERSBNYWkgMjAxNw9GSURFIEF2cmlsIDIwMTcORklERSBNYXJzIDIwMTcSRklERSBGw6l2cmllciAyMDE3EUZJREUgSmFudmllciAyMDE3EkZJREUgRGVjZW1icmUgMjAxNhJGSURFIE5vdmVtYnJlIDIwMTYRRklERSBPY3RvYnJlIDIwMTYTRklERSBTZXB0ZW1icmUgMjAxNg5GSURFIEFvdXQgMjAxNhFGSURFIEp1aWxsZXQgMjAxNg5GSURFIEp1aW4gMjAxNg1GSURFIE1haSAyMDE2D0ZJREUgQXZyaWwgMjAxNg5GSURFIE1hcnMgMjAxNhJGSURFIEbDqXZyaWVyIDIwMTYRRklERSBKYW52aWVyIDIwMTYSRklERSBEZWNlbWJyZSAyMDE1EkZJREUgTm92ZW1icmUgMjAxNRFGSURFIE9jdG9icmUgMjAxNRNGSURFIFNlcHRlbWJyZSAyMDE1DkZJREUgQW91dCAyMDE1EUZJREUgSnVpbGxldCAyMDE1DkZJREUgSnVpbiAyMDE1DUZJREUgTWFpIDIwMTUPRklERSBBdnJpbCAyMDE1DkZJREUgTWFycyAyMDE1EkZJREUgRsOpdnJpZXIgMjAxNRFGSURFIEphbnZpZXIgMjAxNRJGSURFIERlY2VtYnJlIDIwMTQSRklERSBOb3ZlbWJyZSAyMDE0EUZJREUgT2N0b2JyZSAyMDE0E0ZJREUgU2VwdGVtYnJlIDIwMTQORklERSBBb3V0IDIwMTQRRklERSBKdWlsbGV0IDIwMTQORklERSBKdWluIDIwMTQNRklERSBNYWkgMjAxNA9GSURFIEF2cmlsIDIwMTQORklERSBNYXJzIDIwMTQSRklERSBGw6l2cmllciAyMDE0EUZJREUgSmFudmllciAyMDE0E0ZJREUgRMOpY2VtYnJlIDIwMTMSRklERSBOb3ZlbWJyZSAyMDEzEUZJREUgT2N0b2JyZSAyMDEzE0ZJREUgU2VwdGVtYnJlIDIwMTMORklERSBBb3V0IDIwMTMRRklERSBKdWlsbGV0IDIwMTMORklERSBKdWluIDIwMTMNRklERSBNYWkgMjAxMw9GSURFIEF2cmlsIDIwMTMORklERSBNYXJzIDIwMTMSRklERSBGw6l2cmllciAyMDEzEUZJREUgSmFudmllciAyMDEzE0ZJREUgRMOpY2VtYnJlIDIwMTISRklERSBOb3ZlbWJyZSAyMDEyEUZJREUgT2N0b2JyZSAyMDEyE0ZJREUgU2VwdGVtYnJlIDIwMTIORklERSBBb3V0IDIwMTIRRklERSBKdWlsbGV0IDIwMTINRklERSBNYWkgMjAxMg5GSURFIE1hcnMgMjAxMhFGSURFIEphbnZpZXIgMjAxMhJGSURFIE5vdmVtYnJlIDIwMTETRklERSBTZXB0ZW1icmUgMjAxMRFGSURFIEp1aWxsZXQgMjAxMQ1GSURFIE1haSAyMDExDkZJREUgTWFycyAyMDExEUZJREUgSmFudmllciAyMDExEkZJREUgTm92ZW1icmUgMjAxMBNGSURFIFNlcHRlbWJyZSAyMDEwEUZJREUgSnVpbGxldCAyMDEwDUZJREUgTWFpIDIwMTAORklERSBNYXJzIDIwMTARRklERSBKYW52aWVyIDIwMTASRklERSBOb3ZlbWJyZSAyMDA5E0ZJREUgU2VwdGVtYnJlIDIwMDkRRklERSBKdWlsbGV0IDIwMDkPRklERSBBdnJpbCAyMDA5EUZJREUgSmFudmllciAyMDA5EUZJREUgT2N0b2JyZSAyMDA4EUZJREUgSnVpbGxldCAyMDA4D0ZJREUgQXZyaWwgMjAwOBFGSURFIEphbnZpZXIgMjAwOBFGSURFIE9jdG9icmUgMjAwNxFGSURFIEp1aWxsZXQgMjAwNw9GSURFIEF2cmlsIDIwMDcRRklERSBKYW52aWVyIDIwMDcRRklERSBPY3RvYnJlIDIwMDYRRklERSBKdWlsbGV0IDIwMDYPRklERSBBdnJpbCAyMDA2EUZJREUgSmFudmllciAyMDA2EUZJREUgT2N0b2JyZSAyMDA1EUZJREUgSnVpbGxldCAyMDA1D0ZJREUgQXZyaWwgMjAwNRFGSURFIEphbnZpZXIgMjAwNRFGSURFIE9jdG9icmUgMjAwNBFGSURFIEp1aWxsZXQgMjAwNA9GSURFIEF2cmlsIDIwMDQRRklERSBKYW52aWVyIDIwMDQRRklERSBPY3RvYnJlIDIwMDMRRklERSBKdWlsbGV0IDIwMDMPRklERSBBdnJpbCAyMDAzEUZJREUgSmFudmllciAyMDAzEUZJREUgT2N0b2JyZSAyMDAyEUZJREUgSnVpbGxldCAyMDAyD0ZJREUgQXZyaWwgMjAwMhFGSURFIEphbnZpZXIgMjAwMhFGSURFIE9jdG9icmUgMjAwMRFGSURFIEp1aWxsZXQgMjAwMQ9GSURFIEF2cmlsIDIwMDERRklERSBKYW52aWVyIDIwMDERRklERSBPY3RvYnJlIDIwMDARRklERSBKdWlsbGV0IDIwMDAPRklERSBBdnJpbCAyMDAwEUZJREUgSmFudmllciAyMDAwFegBAzM5MwMzOTIDMzg5AzM4OAMzODYDMzg0AzM4MQMzNzcDMzc1AzM3NAMzNjkDMzY4AzM2NwMzNjYDMzY1AzM2MgMzNjEDMzU5AzM1NwMzNTMDMzUyAzM1MQMzNDkDMzQ1AzM0NAMzNDMDMzQxAzMzOQMzMzcDMzM1AzMzMwMzMzEDMzMwAzMyNQMzMjQDMzIzAzMyMgMzMTkDMzE2AzMxNQMzMTMDMzExAzMwOQMzMDUDMzA0AzMwMwMzMDIDMjk5AzI5OAMyOTcDMjg4AzI4NwMyODYDMjg0AzI4MgMyODEDMjgwAzI3OQMyNzgDMjc2AzI3NQMyNzQDMjczAzI3MgMyNzEDMjY5AzI2OAMyNjcDMjY2AzI2NQMyNjQDMjYzAzI2MgMyNjADMjU5AzI1OAMyNTcDMjU1AzI1NAMyNTMDMjUyAzI1MQMyNTADMjQ5AzI0OAMyNDcDMjQ1AzI0NAMyNDMDMjQyAzI0MAMyMzkDMjM4AzIzNwMyMzYDMjM1AzIzNAMyMzMDMjMyAzIzMAMyMjkDMjI4AzIyNQMyMjQDMjIyAzIyMQMyMTgDMjE3AzIxNAMyMjADMjE5AzIxMgMyMTEDMjEwAzIwOQMyMDcDMjAzAzIwMgMyMDEDMjAwAzE5OQMxOTgDMTk3AzE5NgMxOTUDMTkzAzE5MgMxODkDMTkwAzE4OAMxODcDMTg2AzE4MwMxODIDMTgxAzE4MAMxNzkDMTc2AzE3NQMxNzQDMTcyAzE3MQMxNjgDMTY3AzE2NgMxNjQDMTYzAzE2MQMxNjADMTU5AzE1OAMxNTUDMTU0AzE1NgMxNTEDMTUwAzE0OQMxNDYDMTQ1AzE0NAMxNDMDMTQyAzE0MQMxMzgDMTQ3AzEzMQMxMzcDMTI4AzEzNgMxMjYDMTM1AzEyNQMxMzQDMTIzAzEzMwMxMjADMTE5AzExOAE3ATYBNQE0ATMBMgExAjE1Ajk0AjkzAjkyAjkxAjkwAjg5Ajg4Ajg3Ajg2Ajg1Ajg0AjgzAjgyAjgxAjgwAzExNwI3OQI3OAI3NwI3NgI3NQI3NAI3MwI3MgI3MQI3MAI2OQI2OAI2NwI2NgI2NQI2NAI2MwI2MgI2MQI2MAI1OQI1OAI1NwI1NgI1NQI1NAI1MwI1MgI1MQI1MBQrA+gBZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAhcPEA8WBh8FBQJJZB8GBQtEZXNjcmlwdGlvbh8HZ2QQFWUVUmFwaWRlIETDqWNlbWJyZSAyMDI2FFJhcGlkZSBOb3ZlbWJyZSAyMDI2E1JhcGlkZSBPY3RvYnJlIDIwMjYVUmFwaWRlIFNlcHRlbWJyZSAyMDI2EVJhcGlkZSBBb8O7dCAyMDI2E1JhcGlkZSBKdWlsbGV0IDIwMjYQUmFwaWRlIEp1aW4gMjAyNg9SYXBpZGUgTWFpIDIwMjYRUmFwaWRlIEF2cmlsIDIwMjYQUmFwaWRlIE1hcnMgMjAyNhRSYXBpZGUgRsOpdnJpZXIgMjAyNhNSYXBpZGUgSmFudmllciAyMDI2FVJhcGlkZSBEw6ljZW1icmUgMjAyNRRSYXBpZGUgTm92ZW1icmUgMjAyNRNSYXBpZGUgT2N0b2JyZSAyMDI1FVJhcGlkZSBTZXB0ZW1icmUgMjAyNRFSYXBpZGUgQW/Du3QgMjAyNRNSYXBpZGUgSnVpbGxldCAyMDI1EFJhcGlkZSBKdWluIDIwMjUPUmFwaWRlIE1haSAyMDI1EVJhcGlkZSBBdnJpbCAyMDI1EFJhcGlkZSBNYXJzIDIwMjUUUmFwaWRlIEbDqXZyaWVyIDIwMjUTUmFwaWRlIEphbnZpZXIgMjAyNRVSYXBpZGUgRMOpY2VtYnJlIDIwMjQUUmFwaWRlIE5vdmVtYnJlIDIwMjQTUmFwaWRlIE9jdG9icmUgMjAyNBVSYXBpZGUgU2VwdGVtYnJlIDIwMjQRUmFwaWRlIEFvw7t0IDIwMjQTUmFwaWRlIEp1aWxsZXQgMjAyNBBSYXBpZGUgSnVpbiAyMDI0D1JhcGlkZSBNYWkgMjAyNBFSYXBpZGUgQXZyaWwgMjAyNBBSYXBpZGUgTWFycyAyMDI0FFJhcGlkZSBGw6l2cmllciAyMDI0E1JhcGlkZSBKYW52aWVyIDIwMjQVUmFwaWRlIETDqWNlbWJyZSAyMDIzFFJhcGlkZSBOb3ZlbWJyZSAyMDIzE1JhcGlkZSBPY3RvYnJlIDIwMjMVUmFwaWRlIFNlcHRlbWJyZSAyMDIzEVJhcGlkZSBBb8O7dCAyMDIzE1JhcGlkZSBKdWlsbGV0IDIwMjMQUmFwaWRlIEp1aW4gMjAyMw9SYXBpZGUgTWFpIDIwMjMRUmFwaWRlIEF2cmlsIDIwMjMQUmFwaWRlIE1hcnMgMjAyMxRSYXBpZGUgRsOpdnJpZXIgMjAyMxNSYXBpZGUgSmFudmllciAyMDIzFVJhcGlkZSBEw6ljZW1icmUgMjAyMhRSYXBpZGUgTm92ZW1icmUgMjAyMhNSYXBpZGUgT2N0b2JyZSAyMDIyFVJhcGlkZSBTZXB0ZW1icmUgMjAyMhFSYXBpZGUgQW/Du3QgMjAyMhNSYXBpZGUgSnVpbGxldCAyMDIyEFJhcGlkZSBKdWluIDIwMjIPUmFwaWRlIE1haSAyMDIyFFJhcGlkZSBGw6l2cmllciAyMDIyFVJhcGlkZSBTZXB0ZW1icmUgMjAyMRRSYXBpZGUgRsOpdnJpZXIgMjAyMRVSYXBpZGUgU2VwdGVtYnJlIDIwMjAUUmFwaWRlIEbDqXZyaWVyIDIwMjAVUmFwaWRlIFNlcHRlbWJyZSAyMDE5FFJhcGlkZSBGw6l2cmllciAyMDE5FVJhcGlkZSBTZXB0ZW1icmUgMjAxOBRSYXBpZGUgRsOpdnJpZXIgMjAxOBVSYXBpZGUgU2VwdGVtYnJlIDIwMTcUUmFwaWRlIEbDqXZyaWVyIDIwMTcVUmFwaWRlIFNlcHRlbWJyZSAyMDE2FFJhcGlkZSBGw6l2cmllciAyMDE2FVJhcGlkZSBTZXB0ZW1icmUgMjAxNRRSYXBpZGUgRsOpdnJpZXIgMjAxNRVSYXBpZGUgU2VwdGVtYnJlIDIwMTQUUmFwaWRlIEbDqXZyaWVyIDIwMTQVUmFwaWRlIFNlcHRlbWJyZSAyMDEzFFJhcGlkZSBGw6l2cmllciAyMDEzFVJhcGlkZSBTZXB0ZW1icmUgMjAxMhRSYXBpZGUgRsOpdnJpZXIgMjAxMhVSYXBpZGUgU2VwdGVtYnJlIDIwMTEUUmFwaWRlIEbDqXZyaWVyIDIwMTEVUmFwaWRlIFNlcHRlbWJyZSAyMDEwFFJhcGlkZSBGw6l2cmllciAyMDEwFVJhcGlkZSBTZXB0ZW1icmUgMjAwORRSYXBpZGUgRsOpdnJpZXIgMjAwORVSYXBpZGUgU2VwdGVtYnJlIDIwMDgUUmFwaWRlIEbDqXZyaWVyIDIwMDgVUmFwaWRlIFNlcHRlbWJyZSAyMDA3FFJhcGlkZSBGw6l2cmllciAyMDA3FVJhcGlkZSBTZXB0ZW1icmUgMjAwNhNSYXBpZGUgRsOpdnJpZXIyMDA2FVJhcGlkZSBTZXB0ZW1icmUgMjAwNRRSYXBpZGUgRsOpdnJpZXIgMjAwNRVSYXBpZGUgU2VwdGVtYnJlIDIwMDQUUmFwaWRlIEbDqXZyaWVyIDIwMDQVUmFwaWRlIFNlcHRlbWJyZSAyMDAzFFJhcGlkZSBGw6l2cmllciAyMDAzFVJhcGlkZSBTZXB0ZW1icmUgMjAwMhRSYXBpZGUgRsOpdnJpZXIgMjAwMhVSYXBpZGUgU2VwdGVtYnJlIDIwMDEUUmFwaWRlIEbDqXZyaWVyIDIwMDEVUmFwaWRlIFNlcHRlbWJyZSAyMDAwFFJhcGlkZSBGw6l2cmllciAyMDAwFWUDMzkxAzM5MAMzODcDMzg1AzM4MwMzODADMzgyAzM3OQMzNzgDMzczAzM3MgMzNzEDMzcwAzM2NAMzNjMDMzYwAzM1OAMzNTYDMzU1AzM1NAMzNTADMzQ4AzM0NwMzNDYDMzQyAzM0MAMzMzgDMzM2AzMzNAMzMzIDMzI5AzMyOAMzMjcDMzI2AzMyMQMzMjADMzE4AzMxNwMzMTQDMzEyAzMxMAMzMDgDMzA3AzMwNgMzMDEDMzAwAzI4NQMyOTYDMjk1AzI5NAMyOTMDMjgzAzI5MgMyOTEDMjg5AzI5MAMyNzcDMjcwAzI2MQMyNTYDMjQ2AzI0MQMyMjcDMjI2AzIxNgMyMDgDMjA2AzE5MQMxNzgDMTcwAzE2OQMxNTcDMTQ4AzEzMAMxMjkDMTI0AjE0AjEzAjEyAzExNgMxMTUDMTE0AzExMwMxMTIDMTExAzExMAMxMDkDMTA4AzEwNwMxMDYDMTA1AzEwNAMxMDMDMTAyAzEwMQMxMDACOTkCOTgCOTcCOTYCOTUUKwNlZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dkZAIbD2QWAgIBDxYCHgtfIUl0ZW1Db3VudAIFFgpmD2QWAmYPFQIyPGgyPjxkaXYgYWxpZ249Y2VudGVyPkwnaW5mbyBlbiBjb250aW51PC9kaXY+PC9oMj5bPHA+PGlmcmFtZSBzcmM9RnJhbWVMYXN0TmV3cy5hc3B4IGZyYW1lYm9yZGVyPSIwIiBzY3JvbGxpbmc9eWVzIGhlaWdodD0yODBweD48L2lmcmFtZT4gPC9wPmQCAQ9kFgJmDxUCIjxoMj5QcsOpdmVudGlvbiBkZXMgdmlvbGVuY2VzPC9oMj6TBDxwPjxhIGNsYXNzPWxpZW5fdGV4dGUgaHJlZj0iaHR0cHM6Ly9iaXQubHkvRkZFc2lnbmFsZW1lbnQiIHRhcmdldD0iX2JsYW5rIj48aW1nIGNsYXNzPWZsb2F0bGVmdCBib3JkZXI9MCBzcmM9QWN0dXMvMTI4NjAvc2lnbmFsZW1lbnRfYm91dG9uLmpwZyB3aWR0aD0yNDA+PC9hPjwvcD48cCBjbGFzcz1wYXJhX2p1c3RpZmllPjxhIGNsYXNzPWxpZW5fdGV4dGUgaHJlZj0iaHR0cHM6Ly9jb2xvc3NlLmZyLyIgdGFyZ2V0PSJfYmxhbmsiPjxpbWcgY2xhc3M9ZmxvYXRsZWZ0IGJvcmRlcj0wIHNyYz1BY3R1cy8xMTI3NC9jb2xvc3NlLmpwZyB3aWR0aD0yNDA+PC9hPjwvcD48cCBjbGFzcz1wYXJhX2p1c3RpZmllPjxhIGNsYXNzPWxpZW5fdGV4dGUgaHJlZj0iRGVmYXVsdC5hc3B4P0NhdD03MiI+UmV0cm91dmV6IG5vcyByZXNzb3VyY2VzIGVuIGxpZ25lIGFmaW4gZGUgbHV0dGVyIGNvbnRyZSBsZXMgdmlvbGVuY2VzIHN1ciBsYSBwYWdlIGRlIGxhIENvbW1pc3Npb24gZGUgcHLDqXZlbnRpb24gZGVzIHZpb2xlbmNlcy48L2E+PC9wPmQCAg9kFgJmDxUCAIAHPHA+PGltZyBjbGFzcz1mbG9hdGxlZnQgYm9yZGVyPTAgc3JjPUFjdHVzLzExMjc0L01pbmlzdGVyZV9TcG9ydHNfMjAyMi5qcGcgd2lkdGg9MjQwPjwvcD48cCBjbGFzcz1wYXJhX2p1c3RpZmllPjxhIGNsYXNzPWxpZW5fdGV4dGUgaHJlZj0iaHR0cHM6Ly9jbGFzc2VjaGVjcy5mZmVjaGVjcy5mci8iIHRhcmdldD0iX2JsYW5rIj48aW1nIGNsYXNzPWZsb2F0bGVmdCBib3JkZXI9MCBzcmM9QWN0dXMvMTEyNzQvY2xhc3NlY2hlY3MyMDI1LmpwZyB3aWR0aD0zMDA+PC9hPjwvcD48cCBjbGFzcz1wYXJhX2p1c3RpZmllPjxhIGNsYXNzPWxpZW5fdGV4dGUgaHJlZj0iaHR0cHM6Ly9lY2hlY3MuYXNzby5mci9BY3R1LmFzcHg/UmVmPTE1MjYwIiB0YXJnZXQ9Il9ibGFuayI+PC9wPjxwIGNsYXNzPXBhcmFfanVzdGlmaWU+PGltZyBjbGFzcz1mbG9hdGxlZnQgYm9yZGVyPTAgc3JjPUFjdHVzLzExMjc0L1ZpbGxlX8OpY2hlY3NfY2FycsOpX0ZGRS5qcGcgd2lkdGg9MzAwIHN0eWxlPSJtYXJnaW4tYm90dG9tOiAyMHB4OyI+IDwvYT48L3A+PHAgY2xhc3M9cGFyYV9qdXN0aWZpZT48YSBjbGFzcz1saWVuX3RleHRlIGhyZWY9Imh0dHBzOi8vd3d3LmNyZWRpdG11dHVlbC5mci9mci9hbGxpYW5jZWZlZGVyYWxlL3BhcnRlbmFyaWF0cy9zcG9ydC9mZWRlcmF0aW9uLWZyYW5jYWlzZS1kZXMtZWNoZWNzLmh0bWw/dXRtX3NvdXJjZT1GRkUmdXRtX21lZGl1bT1wYXJ0ZW5hcmlhdCZ1dG1fY2FtcGFpZ249b2ZmcmUtZW5nYWdlbWVudHMtYXNzbyZ1dG1fY29udGVudD1iYW5uaWVyZSIgdGFyZ2V0PSJfYmxhbmsiPjxpbWcgY2xhc3M9ZmxvYXRsZWZ0IGJvcmRlcj0wIHNyYz1BY3R1cy8xMTI3NC9DTS5qcGcgd2lkdGg9MzAwIHN0eWxlPSJtYXJnaW4tYm90dG9tOiAyMHB4OyI+PC9hPjwvcD5kAgMPZBYCZg8VAgCRATxwPjxkaXYgYWxpZ249Y2VudGVyPjxhIGNsYXNzPWxpZW5fdGV4dGUgaHJlZj1EZWZhdWx0LmFzcHg/Q2F0PTQyIHRhcmdldD1fcGFyZW50PjxpbWcgYm9yZGVyPTAgYWxpZ249Y2VudGVyIHNyYz1pbWFnZXMvSW5mb3NmZWRlLnBuZyAvPjwvZGl2PjwvcD5kAgQPZBYCZg8VAgDZAjxwPjxpZnJhbWUgc3JjPSJodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9wbHVnaW5zL2xpa2Vib3gucGhwP2hyZWY9aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2ZmZWNoZWNzP2ZyZWY9dHMmYW1wO3dpZHRoPTI3MCZhbXA7Y29sb3JzY2hlbWU9bGlnaHQmYW1wO3Nob3dfZmFjZXM9dHJ1ZSZhbXA7Ym9yZGVyX2NvbG9yPXdoaXRlJmFtcDtzdHJlYW09ZmFsc2UmYW1wO2hlYWRlcj1mYWxzZSZhbXA7aGVpZ2h0PTMzMCIgc2Nyb2xsaW5nPSJubyIgZnJhbWVib3JkZXI9IjAiIHN0eWxlPSJib3JkZXI6bm9uZTsgb3ZlcmZsb3c6aGlkZGVuOyB3aWR0aDoyNzBweDsgaGVpZ2h0OjMzMHB4OyI+PC9pZnJhbWU+PC9wPmQCCQ9kFgQCAQ8PFgIfAQUsNiBydWUgZGUgbCdFZ2xpc2UgfCA5MjYwMCBBU05JRVJFUyBTVVIgU0VJTkVkZAIDDw8WAh8BBQ4wMSAzOSA0NCA2NSA4MGRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYGBShjdGwwMCRDb250ZW50UGxhY2VIb2xkZXJNYWluJENtZEFubm9uY2VzBSljdGwwMCRDb250ZW50UGxhY2VIb2xkZXJNYWluJENtZFJlc3VsdGF0cwUnY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyTWFpbiRDbWRQYXJ0aWVzBSxjdGwwMCRDb250ZW50UGxhY2VIb2xkZXJNYWluJENtZEhvbW9sb2d1ZUZGRQUuY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyTWFpbiRDbWRIb21vbG9ndWVzRmlkZQUwY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyTWFpbiRDbWRIb21vbG9ndWVzUmFwaWRl9ZI938n1oJz6pOdJiPnoN9gTPnA=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="624A48DD" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWmgMCvsT75gICwMy+vwoCx92OvgYCurHP5gQCv+Ko3QMC45nOogQCmrzaugcC1pnj+Q8Cgp++8QsCyIiJoAICwbjLxwoCwriTqwIC7v2N+gcC8cPL7QUC9ZaX+QQCia2Czw0Cqpqn+QcCjb363QwC8/2GrgYC8/3yhQEC8/3u+AgC8/3a3wMC8/22swsC8/2ilgIC8/2ezQ0C8/2KoAUC8/2myQMC8/2SrAsCmMSgtQwCmMSc6AcCmMSIzw4CmMTkogYCmMTQmQECmMTM/AgCmMS40AMCmMSUtwsCmMTA3wkCmMS8swEChdPCmwIChdO+/w0ChdOq0gQChdOGiQwChdPy7AcChdPuww4ChdPapgYC27SLXALwruOADQLwrperCgLwrovWAwLwrr/xCALwrtMdAvCux7gJAvCu++MGAvCu744OAvCuw+cIAvCu9wICm5fFmwcCm5f5xgwCm5ft4QUCm5eBjA0Cm5e1twoCm5ep0gMCm5fd/ggCm5fxGQKbl6XxAgKbl9mdCgKGgKe1CQKGgNvRBgKGgM/8DwKGgOOnBwKGgJfCDAKGgIvtBQKGgL+IDQKPm+5eAqKv3qMOAuCe2oQEAsX3vZoCAvK6hNsJAteT5u4HAtHSuMcFAouk/PEJAtrgk7EIAvz5mrAPArbL3toDAouksPAJAvK6/NsJAteT3u4HAvz5nrAPAtHS8McFArbL0toDAsX36ZoCAtrgy7EIAvK68NsJAvz5krAPAuCeiocEAsX37ZoCAtrgz7EIAvK69NsJArbLytoDAoukrPAJAuCejocEAtrgw7EIAvK66NsJAvz5irAPArbLztoDAuCegocEAtrgx7EIAr/Z2cQGArbLwtoDAoukpPAJAuCehocEAsX3mZoCAvK64NsJAtHS5McFArbLxtoDAuCeuocEAtrg/7EIAvK65NsJArbL+toDAouk3PEJAuCevocEAsX3kZoCAvO6gNsJAsiT4u4HAv35orAPAsiT5u4HAv35prAPAtLSuMcFAoyk/PEJAsb3sZoCAtvgk7EIArDZ9cQGAvO6+NsJAsiT2u4HAtLS/McFArfL3toDAoyksPAJAuGekocEAsb39ZoCAtvg17EIAvO6/NsJAsiT3u4HAv35nrAPAtLS8McFArfL0toDAoyktPAJAuGelocEAsb36ZoCArDZrccGAvO68NsJAsiT0u4HAv35krAPArfL1toDAoykqPAJAuGeiocEAsb37ZoCAtvgz7EIArDZoccGAvO69NsJAsiT1u4HAv35lrAPArfLytoDAoykrPAJAuGejocEAsb34ZoCArDZpccGAvO66NsJAsiTyu4HAv35irAPAtLS7McFArfLztoDAoykoPAJAuGegocEAsb35ZoCArDZ2cQGAvO67NsJAsiTzu4HArfLwtoDAoykpPAJAsb3mZoCAtvg+7EIAsiTwu4HAv35grAPAoyk2PEJArDZ3cQGAvO64NsJAsb3nZoCAtvg/7EIArDZ0cQGAvO65NsJAv35hrAPAuGevocEAsb3kZoCAtvg87EIArDZ1cQGAvS6gNsJAsmT4u4HAv75orAPAtPShMcFAqjL5toDAuKe2oQEAsf3vZoCAvS6hNsJArHZ8cQGAsmT5u4HAv75prAPAtPSuMcFAuKe3oQEAsf3sZoCAtzgk7EIArHZ9cQGAvS6+NsJAtPS/McFAqjL3toDAo2ksPAJAsf39ZoCAtzg17EIAsmT3u4HAv75nrAPAtPS8McFAo2ktPAJAuKelocEAtzgy7EIArHZrccGAvS68NsJAsmT0u4HAqjL1toDAo2kqPAJAtPS9McFAtzgz7EIArHZoccGAvS69NsJAtPS6McFAqjLytoDAo2krPAJAuKejocEAsf34ZoCAtzgw7EIAsmTyu4HAv75lrAPAtzgx7EIAv75irAPAsmTzu4HAtPS7McFAtPS4McFAqjLztoDAqjLwtoDAo2koPAJAuKehocEAuKegocEArHZ3cQGAvS64NsJAsmTwu4HApGY8pABApKY8pABApOY8pABApSY8pABApWY8pABApaY8pABApeY8pABApeYjpMBAo+YgpMBAo+YhpMBAo+YupMBAo+YvpMBAo+YspMBAoCY3pABAoCY0pABAoCYlpMBAoCYipMBAoCYjpMBAoCYgpMBAoCYhpMBAoCYupMBAoCYvpMBAoCYspMBAv75grAPApGY3pABApGY0pABApGYlpMBApGYipMBApGYjpMBApGYgpMBApGYhpMBApGYupMBApGYvpMBApGYspMBApKY3pABApKY0pABApKYlpMBApKYipMBApKYjpMBApKYgpMBApKYhpMBApKYupMBApKYvpMBApKYspMBApOY3pABApOY0pABApOYlpMBApOYipMBApOYjpMBApOYgpMBApOYhpMBApOYupMBApOYvpMBApOYspMBAp6Q8skJAvzY3YYHApnhs/MJAtrB5AcCkPPY7QwCxqacswsCmeG38wkC48/zrQ0C1IK67AYC8auY2QgCxqbQsAsC48+3rQ0C/NiVhgcCmeHr8AkCrZz2xwYCxqbUsAsCmeHv8AkC8auQ2QgC9+q28AoCkPOU7QwCrZzqxwYCmeHj8AkC8auU2QgC2sHUBwL36qrwCgLjz6OtDQKZ4efwCQLxq4jZCAL36q7wCgKtnOLHBgLjz6etDQLUgq7sBgLxq4zZCALawcwHAvfqovAKAvzYuYYHApnhn/MJAvGrgNkIAtrBwAcCrZyaxgYC48/frQ0CmeGT8wkC8auE2QgC2sHEBwL36trwCgL82LGGBwKZ4ZfzCQKR89jtDAL06sbwCgKR86TtDAKqnLrGBgLHppizCwLHppyzCwLgz/+tDQL92N2GBwLVgsbsBgKW4bPzCQLbwdgHApbh6/AJAv3YiYYHAvTqtvAKAvTqqvAKAv3YgYYHAtvBzAcC9Oqi8AoC9Oqm8AoC7quE2QgC9Ora8AoC+tjdhgcC76uY2QgCl+Hr8AkC0oK+7AYC2MHQBwLvq5TZCAKX4ZvzCQLSgq7sBgKrnObHBgKxoMCkDgKxoMSkDgKxoPikDgL16qbwCgKO84TtDAKrnJrGBgLEpviwCwLhz9+tDQL62L2GBwKX4ZPzCQLSgqbsBgLvq4TZCALYwcQHAvXq2vAKAo7zuO0MAqucnsYGAsSm/LALAuHP060NAvrYsYYHApfhl/MJAqmgnKcOAqmgkKcOAqmg1KQOAqmgyKQOAqmgzKQOAqipjfEFd7GCYTPPq7cAEX320N8FN6xSkSU=" />
+<div  id="content">
+  <div id="page-titre">
+    <span id="ctl00_ContentPlaceHolderMain_LabelTitre" class="actu-titre">Les Tournois homologués</span>
+    <hr class=rubrique />
+  </div>
+  <div class="page-mid">
+  <table id=TableChoix cellSpacing=4 cellPadding=2 Class=page>
+    <tr>
+      <td width=50% valign=top class=tableau_violet_c>
+        <!------------------------------ Recherche Annonces --------------------------->
+        <table cellspacing=0 cellpadding=3 border=0 ID=Table1 width=100%>
+          <tr>
+            <td class=tableau_violet_f colspan=2>Les Annonces de Tournois</td>
+          </tr>
+          <tr>
+            <td class=tableau_violet width=30%>Cadence :&nbsp;</td>
+            <td class=tableau_violet width=70%>
+              <select name="ctl00$ContentPlaceHolderMain$DropAnnonces" id="ctl00_ContentPlaceHolderMain_DropAnnonces" class="drop_normal">
+	<option selected="selected" value="Lent">Cadence Lente</option>
+	<option value="UneHeure">1 h K.O.</option>
+	<option value="Rapide">Rapide</option>
+	<option value="Blitz">Blitz</option>
+
+</select>
+              <input type="image" name="ctl00$ContentPlaceHolderMain$CmdAnnonces" id="ctl00_ContentPlaceHolderMain_CmdAnnonces" src="images/t_ok2.gif" border="0" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan=2 class=tableau_violet_c>
+              Il est possible de consulter les annonces de Tournois 
+              à la <a class=lien_texte href="Calendrier.aspx">rubrique Calendrier</a>,<br />
+              à la <a class=lien_texte href="Ligues.aspx">rubrique Ligue</a><br /> et 
+              à la <a class=lien_texte href="Comites.aspx">rubrique Comités</a>.<br />&nbsp;
+            </td>
+          </tr>
+        </table>
+        <!------------------------------ Recherche Résultats --------------------------->
+        <table cellspacing=0 cellpadding=3 border=0 ID=Table2 width=100%>
+          <tr>
+            <td colspan=2 class=tableau_violet_f>Les résultats des Tournois</td>
+          </tr>
+          <tr>
+            <td class=tableau_violet width=20%>Mois :</td>
+            <td class=tableau_violet width=80%>
+              <select name="ctl00$ContentPlaceHolderMain$DropResultatsMois" id="ctl00_ContentPlaceHolderMain_DropResultatsMois" class="drop_normal">
+	<option value="janvier">janvier</option>
+	<option selected="selected" value="fevrier">f&#233;vrier</option>
+	<option value="mars">mars</option>
+	<option value="avril">avril</option>
+	<option value="mai">mai</option>
+	<option value="juin">juin</option>
+	<option value="juillet">juillet</option>
+	<option value="aout">ao&#251;t</option>
+	<option value="septembre">septembre</option>
+	<option value="octobre">octobre</option>
+	<option value="novembre">novembre</option>
+	<option value="decembre">d&#233;cembre</option>
+
+</select>
+              <select name="ctl00$ContentPlaceHolderMain$DropResultatsAnnees" id="ctl00_ContentPlaceHolderMain_DropResultatsAnnees" class="drop_normal">
+	<option value="2000">2000</option>
+	<option value="2001">2001</option>
+	<option value="2002">2002</option>
+	<option value="2003">2003</option>
+	<option value="2004">2004</option>
+	<option value="2005">2005</option>
+	<option value="2006">2006</option>
+	<option value="2007">2007</option>
+	<option value="2008">2008</option>
+	<option value="2009">2009</option>
+	<option value="2010">2010</option>
+	<option value="2011">2011</option>
+	<option value="2012">2012</option>
+	<option value="2013">2013</option>
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+	<option value="2017">2017</option>
+	<option value="2018">2018</option>
+	<option value="2019">2019</option>
+	<option value="2020">2020</option>
+	<option value="2021">2021</option>
+	<option value="2022">2022</option>
+	<option value="2023">2023</option>
+	<option value="2024">2024</option>
+	<option value="2025">2025</option>
+	<option selected="selected" value="2026">2026</option>
+
+</select>
+              <input type="image" name="ctl00$ContentPlaceHolderMain$CmdResultats" id="ctl00_ContentPlaceHolderMain_CmdResultats" src="images/t_ok2.gif" border="0" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan=2 class=tableau_violet_c>
+              &nbsp;
+            </td>
+          </tr>
+        </table>
+        <!------------------------------ Recherche Bases de parties --------------------------->
+        <table cellspacing=0 cellpadding=3 border=0 ID=TableListesParties width=100%>
+          <tr>
+            <td colspan=2 class=tableau_violet_f>Les bases de parties</td>
+          </tr>
+          <tr>
+            <td class=tableau_violet width=30%>Année :</td>
+            <td class=tableau_violet width=70%>
+              <select name="ctl00$ContentPlaceHolderMain$DropPartiesAnnee" id="ctl00_ContentPlaceHolderMain_DropPartiesAnnee" class="drop_normal">
+	<option value="2000">2000</option>
+	<option value="2001">2001</option>
+	<option value="2002">2002</option>
+	<option value="2003">2003</option>
+	<option value="2004">2004</option>
+	<option value="2005">2005</option>
+	<option value="2006">2006</option>
+	<option value="2007">2007</option>
+	<option value="2008">2008</option>
+	<option value="2009">2009</option>
+	<option value="2010">2010</option>
+	<option value="2011">2011</option>
+	<option value="2012">2012</option>
+	<option value="2013">2013</option>
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+	<option value="2017">2017</option>
+	<option value="2018">2018</option>
+	<option value="2019">2019</option>
+	<option value="2020">2020</option>
+	<option value="2021">2021</option>
+	<option value="2022">2022</option>
+	<option value="2023">2023</option>
+	<option value="2024">2024</option>
+	<option value="2025">2025</option>
+	<option selected="selected" value="2026">2026</option>
+
+</select>
+              <input type="image" name="ctl00$ContentPlaceHolderMain$CmdParties" id="ctl00_ContentPlaceHolderMain_CmdParties" src="images/t_ok2.gif" border="0" />
+            </td>
+          </tr>
+        </table>  
+      </td>
+      <td width=50% valign=top class=tableau_violet_c>
+        <!------------------------------ Tournois à Normes --------------------------->
+        <table cellspacing=0 cellpadding=3 border=0 ID=TableELO>
+          <tr>
+            <td class=tableau_violet_f>Tournois à Normes</td>
+          </tr>
+          <tr>
+            <td class=tableau_violet align=center>
+              Liste des Tournois à Normes
+              <input type="image" name="ctl00$ContentPlaceHolderMain$CmdHomologueFFE" id="ctl00_ContentPlaceHolderMain_CmdHomologueFFE" src="images/t_ok2.gif" border="0" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan=2 class=tableau_violet_c>
+              Affiche la liste des Tournois déclarés à Normes (ce qui ne signifie pas qu'une norme sera forcément possible).<br />&nbsp;
+            </td>
+          </tr>
+        </table>
+        <!---------------------------- Homologués Elo Fide ------------------------->
+        <table cellspacing=0 cellpadding=3 border=0 ID=TableFIDE>
+          <tr>
+            <td class=tableau_violet_f>Tournois Homologués elo Fide</td>
+          </tr>
+          <tr>
+            <td class=tableau_violet align=center>
+              <select name="ctl00$ContentPlaceHolderMain$DropHomologuesFide" id="ctl00_ContentPlaceHolderMain_DropHomologuesFide" class="drop_normal">
+	<option value="393">FIDE F&#233;vrier 2027</option>
+	<option value="392">FIDE Janvier 2027</option>
+	<option value="389">FIDE Decembre 2026</option>
+	<option value="388">FIDE Novembre 2026</option>
+	<option value="386">FIDE Octobre 2026</option>
+	<option selected="selected" value="384">FIDE Septembre 2026</option>
+	<option value="381">FIDE Ao&#251;t 2026</option>
+	<option value="377">FIDE Juillet 2026</option>
+	<option value="375">FIDE Juin 2026</option>
+	<option value="374">FIDE Mai 2026</option>
+	<option value="369">FIDE Avril 2026</option>
+	<option value="368">FIDE Mars 2026</option>
+	<option value="367">FIDE F&#233;vrier 2026</option>
+	<option value="366">FIDE Janvier 2026</option>
+	<option value="365">FIDE Decembre 2025</option>
+	<option value="362">FIDE Novembre 2025</option>
+	<option value="361">FIDE Octobre 2025</option>
+	<option value="359">FIDE Septembre 2025</option>
+	<option value="357">FIDE Ao&#251;t 2025</option>
+	<option value="353">FIDE Juillet 2025</option>
+	<option value="352">FIDE Juin 2025</option>
+	<option value="351">FIDE Mai 2025</option>
+	<option value="349">FIDE Avril 2025</option>
+	<option value="345">FIDE Mars 2025</option>
+	<option value="344">FIDE F&#233;vrier 2025</option>
+	<option value="343">FIDE Janvier 2025</option>
+	<option value="341">FIDE Decembre 2024</option>
+	<option value="339">FIDE Novembre 2024</option>
+	<option value="337">FIDE Octobre 2024</option>
+	<option value="335">FIDE Septembre 2024</option>
+	<option value="333">FIDE Aout 2024</option>
+	<option value="331">FIDE Juillet 2024</option>
+	<option value="330">FIDE Juin 2024</option>
+	<option value="325">FIDE Mai 2024</option>
+	<option value="324">FIDE Avril 2024</option>
+	<option value="323">FIDE Mars 2024</option>
+	<option value="322">FIDE F&#233;vrier 2024</option>
+	<option value="319">FIDE Janvier 2024</option>
+	<option value="316">FIDE Decembre 2023</option>
+	<option value="315">FIDE Novembre 2023</option>
+	<option value="313">FIDE Octobre 2023</option>
+	<option value="311">FIDE Septembre 2023</option>
+	<option value="309">FIDE Aout 2023</option>
+	<option value="305">FIDE Juillet 2023</option>
+	<option value="304">FIDE Juin 2023</option>
+	<option value="303">FIDE Mai 2023</option>
+	<option value="302">FIDE Avril 2023</option>
+	<option value="299">FIDE Mars 2023</option>
+	<option value="298">FIDE F&#233;vrier 2023</option>
+	<option value="297">FIDE Janvier 2023</option>
+	<option value="288">FIDE Decembre 2022</option>
+	<option value="287">FIDE Novembre 2022</option>
+	<option value="286">FIDE Octobre 2022</option>
+	<option value="284">FIDE Septembre 2022</option>
+	<option value="282">FIDE Aout 2022</option>
+	<option value="281">FIDE Juillet 2022</option>
+	<option value="280">FIDE Juin 2022</option>
+	<option value="279">FIDE Mai 2022</option>
+	<option value="278">FIDE Avril 2022</option>
+	<option value="276">FIDE Mars 2022</option>
+	<option value="275">FIDE F&#233;vrier 2022</option>
+	<option value="274">FIDE Janvier 2022</option>
+	<option value="273">FIDE Decembre 2021</option>
+	<option value="272">FIDE Novembre 2021</option>
+	<option value="271">FIDE Octobre 2021</option>
+	<option value="269">FIDE Septembre 2021</option>
+	<option value="268">FIDE Aout 2021</option>
+	<option value="267">FIDE Juillet 2021</option>
+	<option value="266">FIDE Juin 2021</option>
+	<option value="265">FIDE Mai 2021</option>
+	<option value="264">FIDE Avril 2021</option>
+	<option value="263">FIDE Mars 2021</option>
+	<option value="262">FIDE F&#233;vrier 2021</option>
+	<option value="260">FIDE Janvier 2021</option>
+	<option value="259">FIDE Decembre 2020</option>
+	<option value="258">FIDE Novembre 2020</option>
+	<option value="257">FIDE Octobre 2020</option>
+	<option value="255">FIDE Septembre 2020</option>
+	<option value="254">FIDE Aout 2020</option>
+	<option value="253">FIDE Juillet 2020</option>
+	<option value="252">FIDE Juin 2020</option>
+	<option value="251">FIDE Mai 2020</option>
+	<option value="250">FIDE Avril 2020</option>
+	<option value="249">FIDE Mars 2020</option>
+	<option value="248">FIDE F&#233;vrier 2020</option>
+	<option value="247">FIDE Janvier 2020</option>
+	<option value="245">FIDE Decembre 2019</option>
+	<option value="244">FIDE Novembre 2019</option>
+	<option value="243">FIDE Octobre 2019</option>
+	<option value="242">FIDE Septembre 2019</option>
+	<option value="240">FIDE Aout 2019</option>
+	<option value="239">FIDE Juillet 2019</option>
+	<option value="238">FIDE Juin 2019</option>
+	<option value="237">FIDE Mai 2019</option>
+	<option value="236">FIDE Avril 2019</option>
+	<option value="235">FIDE Mars 2019</option>
+	<option value="234">FIDE F&#233;vrier 2019</option>
+	<option value="233">FIDE Janvier 2019</option>
+	<option value="232">FIDE Decembre 2018</option>
+	<option value="230">FIDE Novembre 2018</option>
+	<option value="229">FIDE Octobre 2018</option>
+	<option value="228">FIDE Septembre 2018</option>
+	<option value="225">FIDE Aout 2018</option>
+	<option value="224">FIDE Juillet 2018</option>
+	<option value="222">FIDE Juin 2018</option>
+	<option value="221">FIDE Mai 2018</option>
+	<option value="218">FIDE Avril 2018</option>
+	<option value="217">FIDE Mars 2018</option>
+	<option value="214">FIDE F&#233;vrier 2018</option>
+	<option value="220">FIDE Janvier 2018</option>
+	<option value="219">FIDE Decembre 2017</option>
+	<option value="212">FIDE Novembre 2017</option>
+	<option value="211">FIDE Octobre 2017</option>
+	<option value="210">FIDE Septembre 2017</option>
+	<option value="209">FIDE Aout 2017</option>
+	<option value="207">FIDE Juillet 2017</option>
+	<option value="203">FIDE Juin 2017</option>
+	<option value="202">FIDE Mai 2017</option>
+	<option value="201">FIDE Avril 2017</option>
+	<option value="200">FIDE Mars 2017</option>
+	<option value="199">FIDE F&#233;vrier 2017</option>
+	<option value="198">FIDE Janvier 2017</option>
+	<option value="197">FIDE Decembre 2016</option>
+	<option value="196">FIDE Novembre 2016</option>
+	<option value="195">FIDE Octobre 2016</option>
+	<option value="193">FIDE Septembre 2016</option>
+	<option value="192">FIDE Aout 2016</option>
+	<option value="189">FIDE Juillet 2016</option>
+	<option value="190">FIDE Juin 2016</option>
+	<option value="188">FIDE Mai 2016</option>
+	<option value="187">FIDE Avril 2016</option>
+	<option value="186">FIDE Mars 2016</option>
+	<option value="183">FIDE F&#233;vrier 2016</option>
+	<option value="182">FIDE Janvier 2016</option>
+	<option value="181">FIDE Decembre 2015</option>
+	<option value="180">FIDE Novembre 2015</option>
+	<option value="179">FIDE Octobre 2015</option>
+	<option value="176">FIDE Septembre 2015</option>
+	<option value="175">FIDE Aout 2015</option>
+	<option value="174">FIDE Juillet 2015</option>
+	<option value="172">FIDE Juin 2015</option>
+	<option value="171">FIDE Mai 2015</option>
+	<option value="168">FIDE Avril 2015</option>
+	<option value="167">FIDE Mars 2015</option>
+	<option value="166">FIDE F&#233;vrier 2015</option>
+	<option value="164">FIDE Janvier 2015</option>
+	<option value="163">FIDE Decembre 2014</option>
+	<option value="161">FIDE Novembre 2014</option>
+	<option value="160">FIDE Octobre 2014</option>
+	<option value="159">FIDE Septembre 2014</option>
+	<option value="158">FIDE Aout 2014</option>
+	<option value="155">FIDE Juillet 2014</option>
+	<option value="154">FIDE Juin 2014</option>
+	<option value="156">FIDE Mai 2014</option>
+	<option value="151">FIDE Avril 2014</option>
+	<option value="150">FIDE Mars 2014</option>
+	<option value="149">FIDE F&#233;vrier 2014</option>
+	<option value="146">FIDE Janvier 2014</option>
+	<option value="145">FIDE D&#233;cembre 2013</option>
+	<option value="144">FIDE Novembre 2013</option>
+	<option value="143">FIDE Octobre 2013</option>
+	<option value="142">FIDE Septembre 2013</option>
+	<option value="141">FIDE Aout 2013</option>
+	<option value="138">FIDE Juillet 2013</option>
+	<option value="147">FIDE Juin 2013</option>
+	<option value="131">FIDE Mai 2013</option>
+	<option value="137">FIDE Avril 2013</option>
+	<option value="128">FIDE Mars 2013</option>
+	<option value="136">FIDE F&#233;vrier 2013</option>
+	<option value="126">FIDE Janvier 2013</option>
+	<option value="135">FIDE D&#233;cembre 2012</option>
+	<option value="125">FIDE Novembre 2012</option>
+	<option value="134">FIDE Octobre 2012</option>
+	<option value="123">FIDE Septembre 2012</option>
+	<option value="133">FIDE Aout 2012</option>
+	<option value="120">FIDE Juillet 2012</option>
+	<option value="119">FIDE Mai 2012</option>
+	<option value="118">FIDE Mars 2012</option>
+	<option value="7">FIDE Janvier 2012</option>
+	<option value="6">FIDE Novembre 2011</option>
+	<option value="5">FIDE Septembre 2011</option>
+	<option value="4">FIDE Juillet 2011</option>
+	<option value="3">FIDE Mai 2011</option>
+	<option value="2">FIDE Mars 2011</option>
+	<option value="1">FIDE Janvier 2011</option>
+	<option value="15">FIDE Novembre 2010</option>
+	<option value="94">FIDE Septembre 2010</option>
+	<option value="93">FIDE Juillet 2010</option>
+	<option value="92">FIDE Mai 2010</option>
+	<option value="91">FIDE Mars 2010</option>
+	<option value="90">FIDE Janvier 2010</option>
+	<option value="89">FIDE Novembre 2009</option>
+	<option value="88">FIDE Septembre 2009</option>
+	<option value="87">FIDE Juillet 2009</option>
+	<option value="86">FIDE Avril 2009</option>
+	<option value="85">FIDE Janvier 2009</option>
+	<option value="84">FIDE Octobre 2008</option>
+	<option value="83">FIDE Juillet 2008</option>
+	<option value="82">FIDE Avril 2008</option>
+	<option value="81">FIDE Janvier 2008</option>
+	<option value="80">FIDE Octobre 2007</option>
+	<option value="117">FIDE Juillet 2007</option>
+	<option value="79">FIDE Avril 2007</option>
+	<option value="78">FIDE Janvier 2007</option>
+	<option value="77">FIDE Octobre 2006</option>
+	<option value="76">FIDE Juillet 2006</option>
+	<option value="75">FIDE Avril 2006</option>
+	<option value="74">FIDE Janvier 2006</option>
+	<option value="73">FIDE Octobre 2005</option>
+	<option value="72">FIDE Juillet 2005</option>
+	<option value="71">FIDE Avril 2005</option>
+	<option value="70">FIDE Janvier 2005</option>
+	<option value="69">FIDE Octobre 2004</option>
+	<option value="68">FIDE Juillet 2004</option>
+	<option value="67">FIDE Avril 2004</option>
+	<option value="66">FIDE Janvier 2004</option>
+	<option value="65">FIDE Octobre 2003</option>
+	<option value="64">FIDE Juillet 2003</option>
+	<option value="63">FIDE Avril 2003</option>
+	<option value="62">FIDE Janvier 2003</option>
+	<option value="61">FIDE Octobre 2002</option>
+	<option value="60">FIDE Juillet 2002</option>
+	<option value="59">FIDE Avril 2002</option>
+	<option value="58">FIDE Janvier 2002</option>
+	<option value="57">FIDE Octobre 2001</option>
+	<option value="56">FIDE Juillet 2001</option>
+	<option value="55">FIDE Avril 2001</option>
+	<option value="54">FIDE Janvier 2001</option>
+	<option value="53">FIDE Octobre 2000</option>
+	<option value="52">FIDE Juillet 2000</option>
+	<option value="51">FIDE Avril 2000</option>
+	<option value="50">FIDE Janvier 2000</option>
+
+</select>
+              <input type="image" name="ctl00$ContentPlaceHolderMain$CmdHomologuesFide" id="ctl00_ContentPlaceHolderMain_CmdHomologuesFide" src="images/t_ok2.gif" border="0" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan=2 class=tableau_violet_c>
+              Affiche la liste des Tournois homologués pour le elo Fide ainsi que le suivi des résultats.<br />&nbsp;
+            </td>
+          </tr>
+        </table>
+        <!---------------------------- Homologués rapides ------------------------->
+        <table cellspacing=0 cellpadding=3 border=0 ID=TableRapide>
+          <tr>
+            <td class=tableau_violet_f>Tournois Homologués elo rapide</td>
+          </tr>
+          <tr>
+            <td class=tableau_violet align=center>
+              <select name="ctl00$ContentPlaceHolderMain$DropHomologuesRapide" id="ctl00_ContentPlaceHolderMain_DropHomologuesRapide" class="drop_normal">
+	<option value="391">Rapide D&#233;cembre 2026</option>
+	<option selected="selected" value="390">Rapide Novembre 2026</option>
+	<option value="387">Rapide Octobre 2026</option>
+	<option value="385">Rapide Septembre 2026</option>
+	<option value="383">Rapide Ao&#251;t 2026</option>
+	<option value="380">Rapide Juillet 2026</option>
+	<option value="382">Rapide Juin 2026</option>
+	<option value="379">Rapide Mai 2026</option>
+	<option value="378">Rapide Avril 2026</option>
+	<option value="373">Rapide Mars 2026</option>
+	<option value="372">Rapide F&#233;vrier 2026</option>
+	<option value="371">Rapide Janvier 2026</option>
+	<option value="370">Rapide D&#233;cembre 2025</option>
+	<option value="364">Rapide Novembre 2025</option>
+	<option value="363">Rapide Octobre 2025</option>
+	<option value="360">Rapide Septembre 2025</option>
+	<option value="358">Rapide Ao&#251;t 2025</option>
+	<option value="356">Rapide Juillet 2025</option>
+	<option value="355">Rapide Juin 2025</option>
+	<option value="354">Rapide Mai 2025</option>
+	<option value="350">Rapide Avril 2025</option>
+	<option value="348">Rapide Mars 2025</option>
+	<option value="347">Rapide F&#233;vrier 2025</option>
+	<option value="346">Rapide Janvier 2025</option>
+	<option value="342">Rapide D&#233;cembre 2024</option>
+	<option value="340">Rapide Novembre 2024</option>
+	<option value="338">Rapide Octobre 2024</option>
+	<option value="336">Rapide Septembre 2024</option>
+	<option value="334">Rapide Ao&#251;t 2024</option>
+	<option value="332">Rapide Juillet 2024</option>
+	<option value="329">Rapide Juin 2024</option>
+	<option value="328">Rapide Mai 2024</option>
+	<option value="327">Rapide Avril 2024</option>
+	<option value="326">Rapide Mars 2024</option>
+	<option value="321">Rapide F&#233;vrier 2024</option>
+	<option value="320">Rapide Janvier 2024</option>
+	<option value="318">Rapide D&#233;cembre 2023</option>
+	<option value="317">Rapide Novembre 2023</option>
+	<option value="314">Rapide Octobre 2023</option>
+	<option value="312">Rapide Septembre 2023</option>
+	<option value="310">Rapide Ao&#251;t 2023</option>
+	<option value="308">Rapide Juillet 2023</option>
+	<option value="307">Rapide Juin 2023</option>
+	<option value="306">Rapide Mai 2023</option>
+	<option value="301">Rapide Avril 2023</option>
+	<option value="300">Rapide Mars 2023</option>
+	<option value="285">Rapide F&#233;vrier 2023</option>
+	<option value="296">Rapide Janvier 2023</option>
+	<option value="295">Rapide D&#233;cembre 2022</option>
+	<option value="294">Rapide Novembre 2022</option>
+	<option value="293">Rapide Octobre 2022</option>
+	<option value="283">Rapide Septembre 2022</option>
+	<option value="292">Rapide Ao&#251;t 2022</option>
+	<option value="291">Rapide Juillet 2022</option>
+	<option value="289">Rapide Juin 2022</option>
+	<option value="290">Rapide Mai 2022</option>
+	<option value="277">Rapide F&#233;vrier 2022</option>
+	<option value="270">Rapide Septembre 2021</option>
+	<option value="261">Rapide F&#233;vrier 2021</option>
+	<option value="256">Rapide Septembre 2020</option>
+	<option value="246">Rapide F&#233;vrier 2020</option>
+	<option value="241">Rapide Septembre 2019</option>
+	<option value="227">Rapide F&#233;vrier 2019</option>
+	<option value="226">Rapide Septembre 2018</option>
+	<option value="216">Rapide F&#233;vrier 2018</option>
+	<option value="208">Rapide Septembre 2017</option>
+	<option value="206">Rapide F&#233;vrier 2017</option>
+	<option value="191">Rapide Septembre 2016</option>
+	<option value="178">Rapide F&#233;vrier 2016</option>
+	<option value="170">Rapide Septembre 2015</option>
+	<option value="169">Rapide F&#233;vrier 2015</option>
+	<option value="157">Rapide Septembre 2014</option>
+	<option value="148">Rapide F&#233;vrier 2014</option>
+	<option value="130">Rapide Septembre 2013</option>
+	<option value="129">Rapide F&#233;vrier 2013</option>
+	<option value="124">Rapide Septembre 2012</option>
+	<option value="14">Rapide F&#233;vrier 2012</option>
+	<option value="13">Rapide Septembre 2011</option>
+	<option value="12">Rapide F&#233;vrier 2011</option>
+	<option value="116">Rapide Septembre 2010</option>
+	<option value="115">Rapide F&#233;vrier 2010</option>
+	<option value="114">Rapide Septembre 2009</option>
+	<option value="113">Rapide F&#233;vrier 2009</option>
+	<option value="112">Rapide Septembre 2008</option>
+	<option value="111">Rapide F&#233;vrier 2008</option>
+	<option value="110">Rapide Septembre 2007</option>
+	<option value="109">Rapide F&#233;vrier 2007</option>
+	<option value="108">Rapide Septembre 2006</option>
+	<option value="107">Rapide F&#233;vrier2006</option>
+	<option value="106">Rapide Septembre 2005</option>
+	<option value="105">Rapide F&#233;vrier 2005</option>
+	<option value="104">Rapide Septembre 2004</option>
+	<option value="103">Rapide F&#233;vrier 2004</option>
+	<option value="102">Rapide Septembre 2003</option>
+	<option value="101">Rapide F&#233;vrier 2003</option>
+	<option value="100">Rapide Septembre 2002</option>
+	<option value="99">Rapide F&#233;vrier 2002</option>
+	<option value="98">Rapide Septembre 2001</option>
+	<option value="97">Rapide F&#233;vrier 2001</option>
+	<option value="96">Rapide Septembre 2000</option>
+	<option value="95">Rapide F&#233;vrier 2000</option>
+
+</select>
+              <input type="image" name="ctl00$ContentPlaceHolderMain$CmdHomologuesRapide" id="ctl00_ContentPlaceHolderMain_CmdHomologuesRapide" src="images/t_ok2.gif" border="0" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan=2 class=tableau_violet_c>
+              Affiche la liste des Tournois homologués pour le classement rapide ainsi que le suivi des résultats.<br />&nbsp;
+            </td>
+          </tr>
+        </table> 
+      </td>
+    </tr>
+  </table>
+  </div>
+</div>
+<!------------------ Colonne Fixed ------------------------->
+
+
+<div id="sidebar">
+  
+    <div class="postbar">
+      <h2><div align=center>L'info en continu</div></h2>
+      <p><iframe src=FrameLastNews.aspx frameborder="0" scrolling=yes height=280px></iframe> </p>
+    </div>
+  
+    <div class="postbar">
+      <h2>Prévention des violences</h2>
+      <p><a class=lien_texte href="https://bit.ly/FFEsignalement" target="_blank"><img class=floatleft border=0 src=Actus/12860/signalement_bouton.jpg width=240></a></p><p class=para_justifie><a class=lien_texte href="https://colosse.fr/" target="_blank"><img class=floatleft border=0 src=Actus/11274/colosse.jpg width=240></a></p><p class=para_justifie><a class=lien_texte href="Default.aspx?Cat=72">Retrouvez nos ressources en ligne afin de lutter contre les violences sur la page de la Commission de prévention des violences.</a></p>
+    </div>
+  
+    <div class="postbar">
+      
+      <p><img class=floatleft border=0 src=Actus/11274/Ministere_Sports_2022.jpg width=240></p><p class=para_justifie><a class=lien_texte href="https://classechecs.ffechecs.fr/" target="_blank"><img class=floatleft border=0 src=Actus/11274/classechecs2025.jpg width=300></a></p><p class=para_justifie><a class=lien_texte href="https://echecs.asso.fr/Actu.aspx?Ref=15260" target="_blank"></p><p class=para_justifie><img class=floatleft border=0 src=Actus/11274/Ville_échecs_carré_FFE.jpg width=300 style="margin-bottom: 20px;"> </a></p><p class=para_justifie><a class=lien_texte href="https://www.creditmutuel.fr/fr/alliancefederale/partenariats/sport/federation-francaise-des-echecs.html?utm_source=FFE&utm_medium=partenariat&utm_campaign=offre-engagements-asso&utm_content=banniere" target="_blank"><img class=floatleft border=0 src=Actus/11274/CM.jpg width=300 style="margin-bottom: 20px;"></a></p>
+    </div>
+  
+    <div class="postbar">
+      
+      <p><div align=center><a class=lien_texte href=Default.aspx?Cat=42 target=_parent><img border=0 align=center src=images/Infosfede.png /></div></p>
+    </div>
+  
+    <div class="postbar">
+      
+      <p><iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/ffechecs?fref=ts&amp;width=270&amp;colorscheme=light&amp;show_faces=true&amp;border_color=white&amp;stream=false&amp;header=false&amp;height=330" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:270px; height:330px;"></iframe></p>
+    </div>
+  
+  <!-- <script charset="ISO-8859-1" type="text/javascript">document.write("<scr"+"ipt src='http://adnext.fr/richmedia.adv?id=103452&plc=3&s=all&ts="+(new Date).getTime()+"'></scr"+"ipt>");</script> -->
+</div>
+<div style="clear: both;"></div>
+</form>
+
+    </div>
+  </div>
+</div>
+<!-- end #page -->
+<div id="ctl00_divfooter">
+<div id="footer">
+  <p>
+    <strong>Copyright  © 2015 FFE | 
+    <a href="http://www.echecs.asso.fr/Ag/Mentions_legales_FFE.pdf">Mentions légales</a> |
+    <a href="http://www.echecs.asso.fr/Ag/RGPD.pdf">Protection des données</a></strong><br>
+    Fédération Française des Echecs | <span id="ctl00_LabelAdresse">6 rue de l'Eglise | 92600 ASNIERES SUR SEINE</span> <br>
+    tél : <span id="ctl00_LabelTel">01 39 44 65 80</span> | contact : 
+    <a href="mailto:contact@ffechecs.fr">contact@ffechecs.fr</a> | webmestre : 
+    <a href="mailto:erick.mouret@echecs.asso.fr">erick.mouret@echecs.asso.fr</a>
+  </p><br>
+  <p id="logo-ffe"><img src="images/logo-ffe.png" /></p>
+</div>
+</div>
+</body>
+</html>
+
