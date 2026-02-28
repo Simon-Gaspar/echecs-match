@@ -15,6 +15,9 @@ import { fetchRouteInfo } from "@/lib/utils/osrm";
 import { useAuth } from "@/lib/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 
+// In-memory cache to keep data instantly available when navigating back from a tournament page
+let cachedData: { tournaments: Tournament[], lastUpdate: string | null } | null = null;
+
 export default function Home() {
   const { user } = useAuth();
   const [filters, setFilters] = useState<FilterState>({
@@ -156,22 +159,38 @@ export default function Home() {
   }, [tournaments, filters, shortlistedIds, targetCoords]);
 
   useEffect(() => {
+    // If we already have the data in memory (user navigated back), use it instantly
+    if (cachedData) {
+      setTournaments(cachedData.tournaments);
+      setLastUpdate(cachedData.lastUpdate);
+      setLoading(false);
+      return;
+    }
+
+    const isFirstLoad = !sessionStorage.getItem('echecs-app-loaded');
     const startTime = Date.now();
+
     fetch("/api/tournaments")
       .then((res) => res.json())
       .then((data) => {
+        // Save to cache for future back navigations
+        cachedData = { tournaments: data.tournaments, lastUpdate: data.lastUpdate };
+
         setTournaments(data.tournaments);
         setLastUpdate(data.lastUpdate);
 
         const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, 3000 - elapsed);
+        // Only enforce the 3s loading animation on the very first visit
+        const remaining = isFirstLoad ? Math.max(0, 3000 - elapsed) : 0;
 
         setTimeout(async () => {
           setLoading(false);
+          sessionStorage.setItem('echecs-app-loaded', 'true');
+
           let savedAlerts: AlertConfig[] = [];
           if (user) {
-            const { data } = await supabase.from('alerts').select('*').eq('user_id', user.id);
-            if (data) savedAlerts = data as unknown as AlertConfig[];
+            const { data: dbAlerts } = await supabase.from('alerts').select('*').eq('user_id', user.id);
+            if (dbAlerts) savedAlerts = dbAlerts as unknown as AlertConfig[];
           } else {
             savedAlerts = JSON.parse(localStorage.getItem('echecs-alerts') || '[]');
           }
