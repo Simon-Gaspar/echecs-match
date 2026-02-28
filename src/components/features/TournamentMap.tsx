@@ -61,6 +61,17 @@ function MapEvents({ onBoundsChange, tournaments }: {
             onBoundsChange(visibleIds);
         }
     });
+
+    useEffect(() => {
+        if (!onBoundsChange) return;
+        // Trigger initial bounds calculation so the list isn't empty on first load
+        const bounds = map.getBounds();
+        const visibleIds = tournaments
+            .filter(t => bounds.contains([t.location.lat, t.location.lng]))
+            .map(t => t.id);
+        onBoundsChange(visibleIds);
+    }, [map, onBoundsChange, tournaments]);
+
     return null;
 }
 

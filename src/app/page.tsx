@@ -38,7 +38,10 @@ export default function Home() {
   const [lastUpdate, setLastUpdate] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const [visibleIds, setVisibleIds] = useState<string[]>([]);
+
+  // Track visible IDs on the map to filter the list. `null` means map hasn't reported bounds yet.
+  const [visibleIds, setVisibleIds] = useState<string[] | null>(null);
+
   const [shortlistedIds, setShortlistedIds] = useState<string[]>([]);
   const [targetCoords, setTargetCoords] = useState<{ lat: number, lng: number } | null>(null);
   const [carResults, setCarResults] = useState<Record<string, { carDistance: string, duration: string }>>({});
@@ -266,7 +269,9 @@ export default function Home() {
   };
 
   const displayTournaments = useMemo(() => {
-    return visibleIds.length > 0
+    // If the map hasn't reported its bounds yet, show all sorted tournaments.
+    // Otherwise, strictly filter by whatever the map says is visible (even if 0).
+    return visibleIds !== null
       ? sortedTournaments.filter(t => visibleIds.includes(t.id))
       : sortedTournaments;
   }, [sortedTournaments, visibleIds]);
@@ -369,7 +374,7 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
-                  {visibleIds.length > 0 && visibleIds.length < sortedTournaments.length && (
+                  {visibleIds !== null && visibleIds.length < sortedTournaments.length && (
                     <Badge variant="secondary" className="text-[10px] h-5 px-1.5 font-bold uppercase tracking-tighter opacity-70">
                       Zone visible
                     </Badge>

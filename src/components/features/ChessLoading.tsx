@@ -1,19 +1,30 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { Trophy } from "lucide-react";
+import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
+import { Database } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const CHESS_PHRASES = [
-    "Blundering my queen...",
-    "Thinking like Magnus...",
-    "En Passant or Riot...",
-    "Consulting Stockfish 17...",
-    "Castle early, castle late...",
-    "Sacrificing the bishop...",
-    "Calculating 42 variations...",
-    "Polishing the pawns..."
+    "Analyse de la base de données FFE...",
+    "Récupération des tournois suisses...",
+    "Géocodage des adresses de jeu...",
+    "Mise à jour des listes d'inscrits...",
+    "Calcul de l'Elo moyen des joueurs...",
+    "Détection des cadences de jeu...",
+    "Préparation de la carte interactive..."
 ];
+
+function Counter({ from, to }: { from: number, to: number }) {
+    const count = useMotionValue(from);
+    const rounded = useTransform(count, Math.round);
+
+    useEffect(() => {
+        const animation = animate(count, to, { duration: 2, ease: "easeOut" });
+        return animation.stop;
+    }, []);
+
+    return <motion.span>{rounded}</motion.span>;
+}
 
 export function ChessLoading() {
     const [index, setIndex] = useState(0);
@@ -26,20 +37,15 @@ export function ChessLoading() {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center h-full gap-6">
-            <div className="relative w-16 h-16">
-                <motion.div
-                    className="absolute inset-0 border-4 border-primary/20 rounded-full"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                />
-                <motion.div
-                    className="absolute inset-0 border-4 border-t-primary rounded-full"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <Trophy className="w-6 h-6 text-primary animate-pulse" />
+        <div className="flex flex-col items-center justify-center h-full gap-8">
+            <div className="flex flex-col items-center gap-2">
+                <div className="flex items-baseline gap-1 text-5xl md:text-7xl font-black text-primary tracking-tighter drop-shadow-sm">
+                    <Counter from={0} to={850} />
+                    <span className="text-3xl md:text-5xl text-primary/80">+</span>
+                </div>
+                <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest flex items-center gap-2">
+                    <Database className="w-4 h-4" />
+                    Tournois Actifs Centralisés
                 </div>
             </div>
             <div className="h-8 flex flex-col items-center justify-center overflow-hidden text-center">
