@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-28T18:09:34.412Z",
+  "lastUpdate": "2026-02-28T19:41:42.759Z",
   "tournaments": [
     {
       "id": "71210",
@@ -12,7 +12,10 @@
         "city": "PARIS",
         "address": "PARIS"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 14,
+      "avgElo": 1538,
+      "topPlayerElo": 1784,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71210",
       "date": "2026-02-28",
       "isInternal": false
@@ -1135,8 +1138,8 @@
         "address": "TARBES"
       },
       "hasPlayersList": true,
-      "registeredCount": 25,
-      "avgElo": 1850,
+      "registeredCount": 26,
+      "avgElo": 1847,
       "topPlayerElo": 2184,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71127",
       "date": "2026-04-04",
@@ -1154,8 +1157,8 @@
         "address": "TARBES"
       },
       "hasPlayersList": true,
-      "registeredCount": 12,
-      "avgElo": 1528,
+      "registeredCount": 13,
+      "avgElo": 1509,
       "topPlayerElo": 1667,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71128",
       "date": "2026-04-04",
@@ -1714,9 +1717,9 @@
         "address": "HYERES"
       },
       "hasPlayersList": true,
-      "registeredCount": 7,
-      "avgElo": 1667,
-      "topPlayerElo": 1949,
+      "registeredCount": 12,
+      "avgElo": 1721,
+      "topPlayerElo": 2347,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70562",
       "date": "2026-04-11",
       "isInternal": false
@@ -2496,7 +2499,7 @@
         "address": "BRIVE LA GAILLARDE"
       },
       "hasPlayersList": true,
-      "registeredCount": 2,
+      "registeredCount": 3,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71173",
       "date": "2026-05-08",
       "isInternal": false
@@ -3773,8 +3776,8 @@
         "address": "LA PLAGNE TARENTAISE"
       },
       "hasPlayersList": true,
-      "registeredCount": 17,
-      "avgElo": 1714,
+      "registeredCount": 19,
+      "avgElo": 1699,
       "topPlayerElo": 1890,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70512",
       "date": "2026-07-04",
@@ -3849,8 +3852,8 @@
         "address": "SAINT QUENTIN"
       },
       "hasPlayersList": true,
-      "registeredCount": 14,
-      "avgElo": 1514,
+      "registeredCount": 15,
+      "avgElo": 1512,
       "topPlayerElo": 1795,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=69310",
       "date": "2026-07-04",
@@ -4575,9 +4578,9 @@
         "address": "DIEPPE"
       },
       "hasPlayersList": true,
-      "registeredCount": 25,
-      "avgElo": 1886,
-      "topPlayerElo": 2310,
+      "registeredCount": 31,
+      "avgElo": 1931,
+      "topPlayerElo": 2399,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70913",
       "date": "2026-08-21",
       "isInternal": false
@@ -4594,9 +4597,9 @@
         "address": "DIEPPE"
       },
       "hasPlayersList": true,
-      "registeredCount": 17,
-      "avgElo": 1508,
-      "topPlayerElo": 1642,
+      "registeredCount": 22,
+      "avgElo": 1523,
+      "topPlayerElo": 1687,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70914",
       "date": "2026-08-21",
       "isInternal": false
@@ -5012,8 +5015,8 @@
         "address": "SETE"
       },
       "hasPlayersList": true,
-      "registeredCount": 111,
-      "avgElo": 1584,
+      "registeredCount": 112,
+      "avgElo": 1583,
       "topPlayerElo": 2095,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70029",
       "date": "2026-02-28",
@@ -5049,7 +5052,10 @@
         "city": "TOULOUSE",
         "address": "TOULOUSE"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 41,
+      "avgElo": 1527,
+      "topPlayerElo": 1933,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71049",
       "date": "2026-02-28",
       "isInternal": false
@@ -5085,8 +5091,8 @@
         "address": "AUBAGNE"
       },
       "hasPlayersList": true,
-      "registeredCount": 54,
-      "avgElo": 1913,
+      "registeredCount": 53,
+      "avgElo": 1917,
       "topPlayerElo": 2584,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70653",
       "date": "2026-03-01",
@@ -5104,8 +5110,8 @@
         "address": "AUBAGNE"
       },
       "hasPlayersList": true,
-      "registeredCount": 93,
-      "avgElo": 1426,
+      "registeredCount": 92,
+      "avgElo": 1424,
       "topPlayerElo": 1685,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70654",
       "date": "2026-03-01",
@@ -5142,8 +5148,8 @@
         "address": "MALICORNE SUR SARTHE"
       },
       "hasPlayersList": true,
-      "registeredCount": 40,
-      "avgElo": 1549,
+      "registeredCount": 38,
+      "avgElo": 1531,
       "topPlayerElo": 2245,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71078",
       "date": "2026-03-01",
@@ -5286,8 +5292,8 @@
         "address": "VICDESSOS"
       },
       "hasPlayersList": true,
-      "registeredCount": 60,
-      "avgElo": 1475,
+      "registeredCount": 62,
+      "avgElo": 1473,
       "topPlayerElo": 1995,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=69748",
       "date": "2026-03-01",
@@ -8020,8 +8026,8 @@
         "address": "CHECY"
       },
       "hasPlayersList": true,
-      "registeredCount": 15,
-      "avgElo": 1356,
+      "registeredCount": 16,
+      "avgElo": 1352,
       "topPlayerElo": 1711,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71183",
       "date": "2026-05-03",
@@ -9708,9 +9714,6 @@
         "address": "DIEPPE"
       },
       "hasPlayersList": true,
-      "registeredCount": 6,
-      "avgElo": 1598,
-      "topPlayerElo": 1990,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70980",
       "date": "2026-08-23",
       "isInternal": false
@@ -9864,9 +9867,9 @@
         "address": "CHAMBERY"
       },
       "hasPlayersList": true,
-      "registeredCount": 18,
-      "avgElo": 1567,
-      "topPlayerElo": 1969,
+      "registeredCount": 25,
+      "avgElo": 1601,
+      "topPlayerElo": 2026,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71263",
       "date": "2026-02-28",
       "isInternal": false
@@ -10437,7 +10440,7 @@
         "address": "CHECY"
       },
       "hasPlayersList": true,
-      "registeredCount": 7,
+      "registeredCount": 9,
       "avgElo": 1380,
       "topPlayerElo": 1618,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71182",
@@ -10921,22 +10924,22 @@
       "isInternal": false
     },
     {
-      "id": "swiss-TFVHQU5PX1BB",
+      "id": "swiss-zLTAxLUxlbnQ",
       "name": "LUGANO_PARADISO 2DAYS",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 47.5581077,
-        "lng": 7.5878261,
-        "city": "Basel",
-        "address": "Basel"
+        "lat": 46.0050102,
+        "lng": 8.9520281,
+        "city": "Lugano",
+        "address": "Lugano"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/upload/basel_carnival_fest_new_2025.pdf",
       "date": "2026-03-01"
     },
     {
-      "id": "swiss-SG90ZWwgQXNj",
+      "id": "swiss-zLTA3LUxlbnQ",
       "name": "Hotel Ascona: Standard-Open",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -10951,22 +10954,22 @@
       "date": "2026-03-07"
     },
     {
-      "id": "swiss-U01NOiAxLiBS",
+      "id": "swiss-My0xNS1MZW50",
       "name": "SMM: 1. Runde",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2026-03-15"
     },
     {
-      "id": "swiss-QlZNIDcuIFJ1",
+      "id": "swiss-zLTEyLUxlbnQ",
       "name": "BVM 7. Runde",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -10981,7 +10984,7 @@
       "date": "2026-03-12"
     },
     {
-      "id": "swiss-THVnYW5vOiBT",
+      "id": "swiss-MtMjEtTGVudA",
       "name": "Lugano: Seniorenturnier",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -10996,37 +10999,22 @@
       "date": "2026-03-21"
     },
     {
-      "id": "swiss-U3RlaW4gYW0g",
+      "id": "swiss-My0yMi1MZW50",
       "name": "Stein am Rhein Open",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 47.6789633,
-        "lng": 8.6150926,
-        "city": "Rhein",
-        "address": "Rhein"
+        "lat": 47.5581077,
+        "lng": 7.5878261,
+        "city": "Basel",
+        "address": "Basel"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/upload/basel_carnival_fest_new_2025.pdf",
       "date": "2026-03-22"
     },
     {
-      "id": "swiss-WsO8cmljaDog",
-      "name": "Zürich: Réti Amateur Open",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 47.3744489,
-        "lng": 8.5410422,
-        "city": "Zürich",
-        "address": "Zürich"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.screti.ch/reti-amateur-open.html",
-      "date": "2026-03-22"
-    },
-    {
-      "id": "swiss-NC4gUXVhbGl0",
+      "id": "swiss-zLTI5LUxlbnQ",
       "name": "4. Qualiturnier in Payerne",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11041,7 +11029,7 @@
       "date": "2026-03-29"
     },
     {
-      "id": "swiss-QkFTRUwgU1BS",
+      "id": "swiss-My0yOS1MZW50",
       "name": "BASEL SPRING OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11056,7 +11044,7 @@
       "date": "2026-03-29"
     },
     {
-      "id": "swiss-UGF5ZXJuZTog",
+      "id": "swiss-MtMjktTGVudA",
       "name": "Payerne: Open de la Broye",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11071,37 +11059,37 @@
       "date": "2026-03-29"
     },
     {
-      "id": "swiss-U3dpc3MgWW91",
+      "id": "swiss-0LTA4LUxlbnQ",
       "name": "Swiss Young Masters 2026",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 47.5581077,
-        "lng": 7.5878261,
-        "city": "Basel",
-        "address": "Basel, Switzerland"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://swissyoungmasters.ch/swiss-young-masters/",
       "date": "2026-04-08"
     },
     {
-      "id": "swiss-TFVHQU5PLVBB",
+      "id": "swiss-0LTA2LUxlbnQ",
       "name": "LUGANO-PARADISO EASTER FESTIVA",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 45.9897313,
-        "lng": 8.9461979,
-        "city": "PARADISO",
-        "address": "PARADISO"
+        "lat": 46.0050102,
+        "lng": 8.9520281,
+        "city": "Lugano",
+        "address": "Lugano"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/upload/basel_carnival_2025.pdf",
       "date": "2026-04-06"
     },
     {
-      "id": "swiss-QmFkIFJhZ2F6",
+      "id": "swiss-QtMTgtTGVudA",
       "name": "Bad Ragaz: Seniorenturnier",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11116,22 +11104,22 @@
       "date": "2026-04-18"
     },
     {
-      "id": "swiss-U01NOiAyLiBS",
+      "id": "swiss-NC0xOS1MZW50",
       "name": "SMM: 2. Runde",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2026-04-19"
     },
     {
-      "id": "swiss-TE9DQVJOTyBP",
+      "id": "swiss-NC0yNi1MZW50",
       "name": "LOCARNO OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11146,22 +11134,22 @@
       "date": "2026-04-26"
     },
     {
-      "id": "swiss-NzkuIFRodW5l",
+      "id": "swiss-QtMjYtTGVudA",
       "name": "79. Thuner Stadtmeisterschaft",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.7582827,
-        "lng": 7.628086,
-        "city": "Thun",
-        "address": "Thun"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.schachklubthun.ch/tsm26",
       "date": "2026-04-26"
     },
     {
-      "id": "swiss-U0VSUElBTk8g",
+      "id": "swiss-UtMDMtTGVudA",
       "name": "SERPIANO SENIOR Over 50",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11176,68 +11164,83 @@
       "date": "2026-05-03"
     },
     {
-      "id": "swiss-U0VSUElBTk8g",
+      "id": "swiss-1LTAzLUxlbnQ",
       "name": "SERPIANO GENERAL OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 38.8384102,
-        "lng": -84.8266564,
-        "city": "GENERAL",
-        "address": "GENERAL"
+        "lat": 47.5581077,
+        "lng": 7.5878261,
+        "city": "Basel",
+        "address": "Basel"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/upload/basel_carnival_2025.pdf",
       "date": "2026-05-03"
     },
     {
-      "id": "swiss-TWl0cm9wYWN1",
+      "id": "swiss-1LTExLUxlbnQ",
       "name": "Mitropacup 2026 St. Veit",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.7672814,
-        "lng": 14.3576981,
-        "city": "St. Veit an der Glan",
-        "address": "St. Veit an der Glan, Austria"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/termin-anzeigen/mitropacup-2026-st-veit.html",
       "date": "2026-05-11"
     },
     {
-      "id": "swiss-U01NOiAzLiBS",
+      "id": "swiss-NS0xMC1MZW50",
       "name": "SMM: 3. Runde",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2026-05-10"
     },
     {
-      "id": "swiss-QUNPIEFtYXRl",
+      "id": "swiss-NS0xNS1MZW50",
       "name": "ACO Amateur-WM 2026",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.991704,
-        "lng": 6.9277916,
-        "city": "amateur",
-        "address": "amateur"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.amateurchess.com/events/aco-2026-world-amateur-chess-championship",
       "date": "2026-05-15"
     },
     {
-      "id": "swiss-SW50LiBCb2Rl",
+      "id": "swiss-UtMTctTGVudA",
       "name": "Int. Bodenseeopen",
+      "format": "Lent",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.schachklubbregenz.at",
+      "date": "2026-05-17"
+    },
+    {
+      "id": "swiss-UtMTYtTGVudA",
+      "name": "Int. Bodensee-Seniorenopen",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
@@ -11248,55 +11251,25 @@
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.schachklubbregenz.at",
-      "date": "2026-05-17"
-    },
-    {
-      "id": "swiss-SW50LiBCb2Rl",
-      "name": "Int. Bodensee-Seniorenopen",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "Seniorenopen",
-        "address": "Seniorenopen"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.schachklubbregenz.at",
       "date": "2026-05-16"
     },
     {
-      "id": "swiss-RmVzdGl2YWwg",
-      "name": "Festival d’Échecs de Gex 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.2389346,
-        "lng": 6.1250238,
-        "city": "Gex",
-        "address": "Gex"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.amicale-echecs.com/page.php?doc=k1&e=p&s=1",
-      "date": "2026-05-17"
-    },
-    {
-      "id": "swiss-QlVOREVTVFVS",
+      "id": "swiss-1LTE3LUxlbnQ",
       "name": "BUNDESTURNIER 2026",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.9484742,
-        "lng": 7.4521749,
-        "city": "Bern",
-        "address": "Bern, Switzerland"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/bundesturnier_4140465.html",
       "date": "2026-05-17"
     },
     {
-      "id": "swiss-QUNPIFN1cGVy",
+      "id": "swiss-NS0yNC1MZW50",
       "name": "ACO Super Senioren 65+ WM",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11311,22 +11284,22 @@
       "date": "2026-05-24"
     },
     {
-      "id": "swiss-U0pFTSAtIEZp",
+      "id": "swiss-UtMjUtTGVudA",
       "name": "SJEM - Finalturnier U10 - U18",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 47.3496571,
-        "lng": 7.903787,
-        "city": "Olten",
-        "address": "Olten, Switzerland"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.jugendschach.ch",
       "date": "2026-05-25"
     },
     {
-      "id": "swiss-MTcuIEVuZ2Fk",
+      "id": "swiss-NS0yNS1MZW50",
       "name": "17. Engadiner Pfingstopen",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11341,22 +11314,22 @@
       "date": "2026-05-25"
     },
     {
-      "id": "swiss-U01NOiA0LiBS",
+      "id": "swiss-Ni0wNy1MZW50",
       "name": "SMM: 4. Runde",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2026-06-07"
     },
     {
-      "id": "swiss-U0FOIEJFUk5B",
+      "id": "swiss-YtMDctTGVudA",
       "name": "SAN BERNARDINO 2DAYS",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11371,7 +11344,7 @@
       "date": "2026-06-07"
     },
     {
-      "id": "swiss-REFWT1MgQ0hF",
+      "id": "swiss-Ni0xNC1MZW50",
       "name": "DAVOS CHESS FESTIVAL",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11386,7 +11359,7 @@
       "date": "2026-06-14"
     },
     {
-      "id": "swiss-TGFheDogU2Vu",
+      "id": "swiss-Ni0yMC1MZW50",
       "name": "Laax: Seniorenturnier",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11401,38 +11374,23 @@
       "date": "2026-06-20"
     },
     {
-      "id": "swiss-U01NOiA1LiBS",
+      "id": "swiss-Ni0yMS1MZW50",
       "name": "SMM: 5. Runde",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2026-06-21"
     },
     {
-      "id": "swiss-U2FuIEJlcm5h",
+      "id": "swiss-Ny0wNS1MZW50",
       "name": "San Bernardino Senior O50",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.9484742,
-        "lng": 7.4521749,
-        "city": "Bern",
-        "address": "Bern"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.swisschesstour.com/1/upload/1_basel_spring_open_2026.pdf",
-      "date": "2026-07-05"
-    },
-    {
-      "id": "swiss-U0FOIEJFUk5B",
-      "name": "SAN BERNARDINO WE OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
@@ -11446,7 +11404,7 @@
       "date": "2026-07-05"
     },
     {
-      "id": "swiss-UmFwcGVyc3dp",
+      "id": "swiss-3LTA1LUxlbnQ",
       "name": "Rapperswil-Jona: Rosen-Open",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11461,7 +11419,7 @@
       "date": "2026-07-05"
     },
     {
-      "id": "swiss-U0VNIDIwMjYg",
+      "id": "swiss-ctMTktTGVudA",
       "name": "SEM 2026 Grächen",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11476,7 +11434,7 @@
       "date": "2026-07-19"
     },
     {
-      "id": "swiss-NTkuIEludGVy",
+      "id": "swiss-ctMjQtTGVudA",
       "name": "59. Internationales Schachfestival Biel/Bienne",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11491,22 +11449,22 @@
       "date": "2026-07-24"
     },
     {
-      "id": "swiss-WsOcUklDSFNF",
+      "id": "swiss-gtMDItTGVudA",
       "name": "ZÜRICHSEE AMATEUR 1",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 47.5581077,
-        "lng": 7.5878261,
-        "city": "Basel",
-        "address": "Basel"
+        "lat": 47.3744489,
+        "lng": 8.5410422,
+        "city": "Zürich",
+        "address": "Zürich"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/upload/1_basel_spring_open_2026.pdf",
       "date": "2026-08-02"
     },
     {
-      "id": "swiss-QWRlbGJvZGVu",
+      "id": "swiss-OC0xMi1MZW50",
       "name": "Adelboden Seniorenturnier",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11521,7 +11479,7 @@
       "date": "2026-08-12"
     },
     {
-      "id": "swiss-V0lMIDJEQVlT",
+      "id": "swiss-gtMTYtTGVudA",
       "name": "WIL 2DAYS OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11536,37 +11494,37 @@
       "date": "2026-08-16"
     },
     {
-      "id": "swiss-U01NOiA2LiBS",
+      "id": "swiss-4LTIzLUxlbnQ",
       "name": "SMM: 6. Runde NLB - 4. Liga",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2026-08-23"
     },
     {
-      "id": "swiss-V09ITEVOIEFN",
+      "id": "swiss-OC0zMC1MZW50",
       "name": "WOHLEN AMATEUR OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.991704,
-        "lng": 6.9277916,
-        "city": "AMATEUR",
-        "address": "AMATEUR"
+        "lat": 47.5581077,
+        "lng": 7.5878261,
+        "city": "Basel",
+        "address": "Basel"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/upload/1_basel_spring_open_2026.pdf",
       "date": "2026-08-30"
     },
     {
-      "id": "swiss-R3JhbmQgcHJp",
+      "id": "swiss-5LTA2LUxlbnQ",
       "name": "Grand prix de Monthey",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11581,7 +11539,7 @@
       "date": "2026-09-06"
     },
     {
-      "id": "swiss-TUVORFJJU0lP",
+      "id": "swiss-ktMDYtTGVudA",
       "name": "MENDRISIO OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11596,22 +11554,22 @@
       "date": "2026-09-06"
     },
     {
-      "id": "swiss-S2lyY2hiZXJn",
+      "id": "swiss-OS0wNi1MZW50",
       "name": "Kirchberger Open",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.9384877,
-        "lng": 7.4230084,
-        "city": "Kirchberger",
-        "address": "Kirchberger"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.sckirchberg.ch",
       "date": "2026-09-06"
     },
     {
-      "id": "swiss-MS4gUXVhbGl0",
+      "id": "swiss-OS0wNy1MZW50",
       "name": "1. Qualiturnier in Hergiswil",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11626,22 +11584,22 @@
       "date": "2026-09-07"
     },
     {
-      "id": "swiss-U01NOiA3LiBS",
+      "id": "swiss-5LTEzLUxlbnQ",
       "name": "SMM: 7. Runde NLB - 4. Liga",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2026-09-13"
     },
     {
-      "id": "swiss-UG9udHJlc2lu",
+      "id": "swiss-5LTE2LUxlbnQ",
       "name": "Pontresina, Seniorenturnier",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11656,7 +11614,7 @@
       "date": "2026-09-16"
     },
     {
-      "id": "swiss-UmhlaW5mZWxk",
+      "id": "swiss-OS0xMy1MZW50",
       "name": "Rheinfelden: Standard-Open",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11671,22 +11629,22 @@
       "date": "2026-09-13"
     },
     {
-      "id": "swiss-U01NOiBFbnRz",
+      "id": "swiss-OS0xOS1MZW50",
       "name": "SMM: Entscheidungsspiele 1. - 4. Liga",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2026-09-19"
     },
     {
-      "id": "swiss-U2FtYXJrYW5k",
+      "id": "swiss-ktMjgtTGVudA",
       "name": "Samarkand: Schacholympiade",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11701,7 +11659,7 @@
       "date": "2026-09-28"
     },
     {
-      "id": "swiss-QUNPIFNlbmlv",
+      "id": "swiss-MC0xMC1MZW50",
       "name": "ACO Senioren 50+ WM",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11716,22 +11674,22 @@
       "date": "2026-10-10"
     },
     {
-      "id": "swiss-WsOcUklDSFNl",
+      "id": "swiss-AtMDQtTGVudA",
       "name": "ZÜRICHSee AMATEUR 2",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 47.5581077,
-        "lng": 7.5878261,
-        "city": "Basel",
-        "address": "Basel"
+        "lat": 47.3744489,
+        "lng": 8.5410422,
+        "city": "Zürich",
+        "address": "Zürich"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/upload/1_basel_spring_open_2026.pdf",
       "date": "2026-10-04"
     },
     {
-      "id": "swiss-R3N0YWFkIFNl",
+      "id": "swiss-MC0xMS1MZW50",
       "name": "Gstaad Seniorenturnier",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11746,37 +11704,37 @@
       "date": "2026-10-11"
     },
     {
-      "id": "swiss-QnVkdmEyNC4x",
+      "id": "swiss-AtMjQtTGVudA",
       "name": "Budva",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 42.2885656,
-        "lng": 18.8419505,
-        "city": "Budva",
-        "address": "Budva, Montenegro"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/termin-anzeigen/budva-montenegro-europaeischer-klubcup.html",
       "date": "2026-10-24"
     },
     {
-      "id": "swiss-U2VlYmFjaCBX",
+      "id": "swiss-AtMTgtTGVudA",
       "name": "Seebach Weekend Open",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 46.3917138,
-        "lng": 8.0643947,
-        "city": "Weekend",
-        "address": "Weekend"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://sc-seebach.ch/weekend-open",
       "date": "2026-10-18"
     },
     {
-      "id": "swiss-TEVOWkVSSEVJ",
+      "id": "swiss-MC0xOC1MZW50",
       "name": "LENZERHEIDE AMATEUR",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11791,37 +11749,7 @@
       "date": "2026-10-18"
     },
     {
-      "id": "swiss-VGh1bjogOS5P",
-      "name": "Thun: 9.Oberl. Meisterschaft",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.7582827,
-        "lng": 7.628086,
-        "city": "Thun",
-        "address": "Thun"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.schachinthun.ch/",
-      "date": "2026-10-18"
-    },
-    {
-      "id": "swiss-U01NOiBBdWZz",
-      "name": "SMM: Aufstiegsspiele",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.8182,
-        "lng": 8.2275,
-        "city": "SMM",
-        "address": "SMM"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.swisschess.ch/smm.html",
-      "date": "2026-10-24"
-    },
-    {
-      "id": "swiss-RkxJTVMgVklQ",
+      "id": "swiss-AtMjUtTGVudA",
       "name": "FLIMS VIP OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11836,22 +11764,22 @@
       "date": "2026-10-25"
     },
     {
-      "id": "swiss-THV6ZXJuZXIg",
+      "id": "swiss-MS0wMS1MZW50",
       "name": "Luzerner Open",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 47.0505452,
-        "lng": 8.3054682,
-        "city": "Luzern",
-        "address": "Luzern"
+        "lat": 46.7985624,
+        "lng": 8.2319736,
+        "city": "Suisse",
+        "address": "Suisse"
       },
       "hasPlayersList": false,
       "homologationLink": "https://www.schach-isv.ch",
       "date": "2026-11-01"
     },
     {
-      "id": "swiss-TFVHQU5PIE9Q",
+      "id": "swiss-EtMDEtTGVudA",
       "name": "LUGANO OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11866,22 +11794,7 @@
       "date": "2026-11-01"
     },
     {
-      "id": "swiss-THVnYW5vIE9w",
-      "name": "Lugano Open",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.0050102,
-        "lng": 8.9520281,
-        "city": "Lugano",
-        "address": "Lugano"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.swisschesstour.com/1/upload/1_basel_spring_open_2026.pdf",
-      "date": "2026-11-01"
-    },
-    {
-      "id": "swiss-QmVybiBTZW5p",
+      "id": "swiss-xLTEyLUxlbnQ",
       "name": "Bern Seniorenturnier",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11896,7 +11809,7 @@
       "date": "2026-11-12"
     },
     {
-      "id": "swiss-Mi4gUXVhbGl0",
+      "id": "swiss-MS0wOC1MZW50",
       "name": "2. Qualiturnier in Lugano",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11911,7 +11824,7 @@
       "date": "2026-11-08"
     },
     {
-      "id": "swiss-T3BlbiBkdSBK",
+      "id": "swiss-EtMjktTGVudA",
       "name": "Open du Jura 2026",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11926,22 +11839,7 @@
       "date": "2026-11-29"
     },
     {
-      "id": "swiss-REFWT1MgTkVX",
-      "name": "DAVOS NEW SKI OPEN",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.796198,
-        "lng": 9.8236892,
-        "city": "Davos",
-        "address": "Davos"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.swisschesstour.com/1/upload/1_basel_spring_open_2026.pdf",
-      "date": "2026-11-29"
-    },
-    {
-      "id": "swiss-QmFkIFJhZ2F6",
+      "id": "swiss-Mi0wMy1MZW50",
       "name": "Bad Ragaz Seniorenturnier",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11956,7 +11854,7 @@
       "date": "2026-12-03"
     },
     {
-      "id": "swiss-U0NIQUZGSEFV",
+      "id": "swiss-ItMDYtTGVudA",
       "name": "SCHAFFHAUSEN 2DAYS OPEN",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -11971,22 +11869,22 @@
       "date": "2026-12-06"
     },
     {
-      "id": "swiss-TcOcTkNIRU4g",
+      "id": "swiss-yLTEzLUxlbnQ",
       "name": "MÜNCHEN CHESS HAPPENING",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
       "location": {
-        "lat": 48.1371079,
-        "lng": 11.5753822,
-        "city": "Munich",
-        "address": "Munich, Germany"
+        "lat": 47.5581077,
+        "lng": 7.5878261,
+        "city": "Basel",
+        "address": "Basel"
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.swisschesstour.com/1/upload/1_basel_spring_open_2026.pdf",
       "date": "2026-12-13"
     },
     {
-      "id": "swiss-QkFTRUwgWE1B",
+      "id": "swiss-yLTMwLUxlbnQ",
       "name": "BASEL XMAS FESTIVAL",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -12001,22 +11899,7 @@
       "date": "2026-12-30"
     },
     {
-      "id": "swiss-NTAuIFpVRVJD",
-      "name": "50. ZUERCHER WEIHNACHTSOPEN",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 47.3744489,
-        "lng": 8.5410422,
-        "city": "Zürich",
-        "address": "Zürich"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://weihnachtsopen.ch",
-      "date": "2026-12-30"
-    },
-    {
-      "id": "swiss-U0NIQUZGSEFV",
+      "id": "swiss-EtMTAtTGVudA",
       "name": "SCHAFFHAUSEN NEW YEAR 2027",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -12031,7 +11914,7 @@
       "date": "2027-01-10"
     },
     {
-      "id": "swiss-WsO8cmljaCBT",
+      "id": "swiss-EtMjEtTGVudA",
       "name": "Zürich Seniorenturnier 1",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -12046,7 +11929,7 @@
       "date": "2027-01-21"
     },
     {
-      "id": "swiss-My4gUXVhbGl0",
+      "id": "swiss-EtMTctTGVudA",
       "name": "3. Qualiturnier 2027 in Genf",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -12061,7 +11944,7 @@
       "date": "2027-01-17"
     },
     {
-      "id": "swiss-WsO8cmljaCBT",
+      "id": "swiss-ItMTgtTGVudA",
       "name": "Zürich Seniorenturnier 2",
       "format": "Lent",
       "eloBracket": "Toutes catégories",
@@ -12076,7 +11959,7 @@
       "date": "2027-02-18"
     },
     {
-      "id": "swiss-QnVyZ2RvcmY6",
+      "id": "swiss-yLTE0LUxlbnQ",
       "name": "Burgdorf: 25. Stadthaus-Open",
       "format": "Lent",
       "eloBracket": "Toutes catégories",

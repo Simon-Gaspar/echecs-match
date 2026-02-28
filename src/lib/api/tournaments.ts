@@ -85,24 +85,27 @@ const mockTournaments: Tournament[] = [
 
 export async function getTournaments(): Promise<Tournament[]> {
     try {
-        let ffeData: Tournament[] = [];
+        let allData: Tournament[] = [];
 
-        // 1. Load FFE data (from cache or live)
+        // 1. Load data from the combined JSON (produced by scrape.ts)
         const jsonPath = path.join(process.cwd(), 'src/data/tournaments.json');
         if (fs.existsSync(jsonPath)) {
             const jsonData = fs.readFileSync(jsonPath, 'utf8');
-            ffeData = JSON.parse(jsonData).tournaments || [];
+            allData = JSON.parse(jsonData).tournaments || [];
         } else {
-            ffeData = await fetchLiveTournaments();
+            // Fallback: If no JSON, fetch everything live
+            const [ffeTournaments, swissTournaments] = await Promise.all([
+                fetchLiveTournaments(),
+                fetchSwissTournaments()
+            ]);
+            allData = [...ffeTournaments, ...swissTournaments];
         }
 
-        // 2. Fetch Swiss data (always live for now as it's fast)
-        const swissData = await fetchSwissTournaments();
-
-        const combined = [...ffeData, ...swissData].map(t => ({
+        const combined = allData.map(t => ({
             ...t,
             isInternal: t.isInternal || isInternalTournament(t.name)
         }));
+
         if (combined.length > 0) {
             return combined;
         }

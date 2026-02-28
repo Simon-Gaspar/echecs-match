@@ -66,34 +66,35 @@ async function getCoordinates(city: string): Promise<CityCoordinates> {
 }
 
 function extractCity(name: string): string {
-    // Standard patterns in Swiss calendar:
-    // "Lugano: Senior..." -> Lugano
-    // "Open in Basel" -> Basel
-    // "Zurich Open" -> Zurich
+    const nameWithSpaces = name.replace(/_/g, ' ');
 
-    const nameClean = name.replace(/^(14\.|15\.|73\.|79\.)\s+/, "");
-    if (nameClean.includes(':')) return nameClean.split(':')[0].trim();
-    if (nameClean.includes(' in ')) return nameClean.split(' in ')[1].trim().split(' ')[0].replace(/[.,]/g, '');
-
-    // Split by dashes and take the last parts
-    const parts = nameClean.split(/[-–]/);
-    if (parts.length > 1) {
-        const lastPart = parts[parts.length - 1].trim().split(' ')[0];
-        if (lastPart.length > 3) return lastPart;
+    // 1. Check for "City: ..." pattern (very common in Swiss calendar)
+    if (nameWithSpaces.includes(':')) {
+        const potentialCity = nameWithSpaces.split(':')[0].trim();
+        // If it's a known city or at least a single word starting with uppercase
+        if (/^[A-Z][a-z\xC0-\u017F]+/.test(potentialCity)) {
+            return potentialCity;
+        }
     }
 
-    // Common swiss cities and regions to match
+    // 2. Check for "Open in City" pattern
+    const inMatch = nameWithSpaces.match(/\s+in\s+([A-Z][a-z\xC0-\u017F]+)/i);
+    if (inMatch) return inMatch[1];
+
+    // 3. Common swiss cities and regions to match
     const majorCities = [
         'Zürich', 'Zurich', 'Genève', 'Geneva', 'Basel', 'Bâle', 'Bern', 'Berne', 'Lausanne',
         'Winterthur', 'Lucerne', 'Luzern', 'St. Gallen', 'Lugano', 'Biel', 'Bienne', 'Thun',
         'Fribourg', 'Schaffhausen', 'Chur', 'Neuchâtel', 'Payerne', 'Martigny', 'Locarno',
         'Riehen', 'Davos', 'Aarau', 'Wil', 'Inzling', 'Graechen', 'St. Moritz', 'Baden',
         'Zug', 'Sion', 'Uster', 'Montreux', 'Thalwil', 'Stäfa', 'Ascona', 'Payerne', 'Lyss',
-        'Prangins', 'Echallens', 'Vevey', 'Nyon', 'Morges', 'Gland', 'Bulle', 'Muri', 'Rapperswil', 'Ascona'
+        'Prangins', 'Echallens', 'Vevey', 'Nyon', 'Morges', 'Gland', 'Bulle', 'Muri', 'Rapperswil',
+        'Ascona', 'Mendrisio', 'Chiasso', 'Bellinzona', 'Sion', 'Sierre', 'Visp', 'Brig', 'Martigny'
     ];
 
     for (const city of majorCities) {
-        if (nameClean.includes(city)) return city;
+        const regex = new RegExp(`\\b${city}\\b`, 'i');
+        if (regex.test(nameWithSpaces)) return city;
     }
 
     return "Suisse";
@@ -196,8 +197,10 @@ export async function fetchSwissTournaments(): Promise<Tournament[]> {
             }
 
             if (name.length > 3 && isoDate.length === 10) {
+                // Ensure ID is truly unique by including city and date
+                const idPayload = `${name}-${city}-${isoDate}-${format}`;
                 tournaments.push({
-                    id: `swiss-${Buffer.from(name + date).toString('base64').slice(0, 12)}`,
+                    id: `swiss-${Buffer.from(idPayload).toString('base64').replace(/=/g, '').slice(-12)}`,
                     name: name,
                     format: format,
                     eloBracket: "Toutes catégories",
@@ -214,8 +217,13 @@ export async function fetchSwissTournaments(): Promise<Tournament[]> {
             }
         }
 
-        console.log(`Found ${tournaments.length} Swiss tournaments.`);
-        return tournaments;
+        // Deduplicate locally just in case
+        const seenIds = new Set();
+        return tournaments.filter(t => {
+            if (seenIds.has(t.id)) return false;
+            seenIds.add(t.id);
+            return true;
+        });
     } catch (e) {
         console.error("Swiss scraping failed:", e);
         return [];
