@@ -3,10 +3,7 @@
 import { useEffect, useState, useMemo, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "leaflet.markercluster/dist/MarkerCluster.css";
-import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import L from "leaflet";
-import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Tournament } from "@/lib/types/tournament";
 
 // Custom premium marker icon using divIcon for Tailwind styling and pulsing effect
@@ -198,14 +195,7 @@ export default function TournamentMap({ tournaments, hoveredId, onBoundsChange, 
             <MapUpdater center={center} zoom={zoom} />
             <MapEvents onBoundsChange={onBoundsChange} tournaments={tournaments} />
 
-            <MarkerClusterGroup
-                chunkedLoading
-                spiderfyOnMaxZoom={true}
-                showCoverageOnHover={false}
-                maxClusterRadius={40}
-            >
-                {markers}
-            </MarkerClusterGroup>
+            {markers}
         </MapContainer>
     );
 }
