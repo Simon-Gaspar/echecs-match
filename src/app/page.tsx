@@ -288,12 +288,19 @@ export default function Home() {
   };
 
   const displayTournaments = useMemo(() => {
-    // If the map hasn't reported its bounds yet, show all sorted tournaments.
-    // Otherwise, strictly filter by whatever the map says is visible (even if 0).
-    return visibleIds !== null
-      ? sortedTournaments.filter(t => visibleIds.includes(t.id))
-      : sortedTournaments;
-  }, [sortedTournaments, visibleIds]);
+    // If we have map visibility data, use it strictly.
+    if (visibleIds !== null) {
+      return sortedTournaments.filter(t => visibleIds.includes(t.id));
+    }
+
+    // Fallback: if we have a target location (geolocation/search), sortedTournaments is already filtered by distance.
+    // If we have NO target location yet, show only a limited number of results (e.g. first 50) to avoid overwhelming the list with far away ones.
+    if (targetCoords) {
+      return sortedTournaments;
+    }
+
+    return sortedTournaments.slice(0, 50);
+  }, [sortedTournaments, visibleIds, targetCoords]);
 
   const resetFilters = () => {
     setFilters({

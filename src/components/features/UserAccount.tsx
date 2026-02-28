@@ -22,6 +22,8 @@ export function UserAccount() {
     const [isOpen, setIsOpen] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [email, setEmail] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
     // Profile Modal State
     const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
@@ -29,8 +31,19 @@ export function UserAccount() {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        await login(email);
-        setShowLoginModal(false);
+        setIsSubmitting(true);
+        try {
+            await login(email);
+            setIsSuccess(true);
+            setTimeout(() => {
+                setShowLoginModal(false);
+                setIsSuccess(false);
+            }, 3000);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (isLoading) {
@@ -77,30 +90,57 @@ export function UserAccount() {
                                     </p>
                                 </div>
 
-                                <form onSubmit={handleLogin} className="space-y-4">
-                                    <div className="space-y-1.5">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Email</label>
-                                        <div className="relative">
-                                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                                            <input
-                                                required
-                                                type="email"
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
-                                                placeholder="votre@email.com"
-                                                className="w-full bg-muted/30 border-2 border-transparent focus:border-primary focus:bg-background h-12 rounded-2xl pl-12 pr-4 outline-none transition-all font-medium"
-                                            />
+                                {isSuccess ? (
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        className="text-center py-4"
+                                    >
+                                        <div className="w-12 h-12 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <Mail className="w-6 h-6 text-emerald-500" />
                                         </div>
-                                    </div>
+                                        <h3 className="text-lg font-bold">Lien envoyé !</h3>
+                                        <p className="text-sm text-muted-foreground mt-2">
+                                            Vérifiez votre boîte mail pour vous connecter instantanément.
+                                        </p>
+                                    </motion.div>
+                                ) : (
+                                    <>
+                                        <form onSubmit={handleLogin} className="space-y-4">
+                                            <div className="space-y-1.5">
+                                                <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Email</label>
+                                                <div className="relative">
+                                                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                                                    <input
+                                                        required
+                                                        type="email"
+                                                        value={email}
+                                                        onChange={(e) => setEmail(e.target.value)}
+                                                        placeholder="votre@email.com"
+                                                        className="w-full bg-muted/30 border-2 border-transparent focus:border-primary focus:bg-background h-12 rounded-2xl pl-12 pr-4 outline-none transition-all font-medium"
+                                                    />
+                                                </div>
+                                            </div>
 
-                                    <Button type="submit" className="w-full h-12 rounded-2xl font-black uppercase tracking-widest text-xs shadow-lg shadow-primary/20 mt-4">
-                                        Se connecter
-                                    </Button>
-                                </form>
+                                            <Button
+                                                type="submit"
+                                                disabled={isSubmitting}
+                                                className="w-full h-12 rounded-2xl font-black uppercase tracking-widest text-xs shadow-lg shadow-primary/20 mt-4"
+                                            >
+                                                {isSubmitting ? (
+                                                    <div className="flex items-center gap-2">
+                                                        <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                                                        Envoi...
+                                                    </div>
+                                                ) : "Se connecter / S'inscrire"}
+                                            </Button>
+                                        </form>
 
-                                <p className="text-[10px] text-center text-muted-foreground mt-8 uppercase tracking-widest font-bold opacity-40">
-                                    En vous connectant, vous acceptez nos CGU de grand maître.
-                                </p>
+                                        <p className="text-[10px] text-center text-muted-foreground mt-8 uppercase tracking-widest font-bold opacity-40">
+                                            Aucun mot de passe requis. Nous vous envoyons un lien magique.
+                                        </p>
+                                    </>
+                                )}
                             </motion.div>
                         </div>
                     )}
