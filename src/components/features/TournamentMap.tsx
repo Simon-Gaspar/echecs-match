@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -43,34 +43,47 @@ function MapEvents({ onBoundsChange, tournaments }: {
     onBoundsChange?: (ids: string[]) => void,
     tournaments: Tournament[]
 }) {
-    const map = useMapEvents({
-        moveend: () => {
-            if (!onBoundsChange) return;
-            const bounds = map.getBounds();
-            const visibleIds = tournaments
-                .filter(t => bounds.contains([t.location.lat, t.location.lng]))
-                .map(t => t.id);
-            onBoundsChange(visibleIds);
-        },
-        zoomend: () => {
-            if (!onBoundsChange) return;
-            const bounds = map.getBounds();
-            const visibleIds = tournaments
-                .filter(t => bounds.contains([t.location.lat, t.location.lng]))
-                .map(t => t.id);
-            onBoundsChange(visibleIds);
-        }
-    });
+    const map = useMap();
+    const tournamentsRef = useRef(tournaments);
+    const onBoundsChangeRef = useRef(onBoundsChange);
+
+    // Keep refs up to date
+    useEffect(() => {
+        tournamentsRef.current = tournaments;
+    }, [tournaments]);
 
     useEffect(() => {
-        if (!onBoundsChange) return;
-        // Trigger initial bounds calculation so the list isn't empty on first load
-        const bounds = map.getBounds();
-        const visibleIds = tournaments
-            .filter(t => bounds.contains([t.location.lat, t.location.lng]))
-            .map(t => t.id);
-        onBoundsChange(visibleIds);
-    }, [map, onBoundsChange, tournaments]);
+        onBoundsChangeRef.current = onBoundsChange;
+    }, [onBoundsChange]);
+
+    useEffect(() => {
+        if (!map) return;
+
+        const updateVisibleIds = () => {
+            if (!onBoundsChangeRef.current) return;
+            const bounds = map.getBounds();
+            const visibleIds = tournamentsRef.current
+                .filter(t => bounds.contains([t.location.lat, t.location.lng]))
+                .map(t => t.id);
+            onBoundsChangeRef.current(visibleIds);
+        };
+
+        // Standard Leaflet events
+        map.on('moveend', updateVisibleIds);
+        map.on('zoomend', updateVisibleIds);
+
+        // Initial check after map is ready
+        updateVisibleIds();
+
+        // Also check after a short delay for cases where the map is still centering
+        const timer = setTimeout(updateVisibleIds, 500);
+
+        return () => {
+            map.off('moveend', updateVisibleIds);
+            map.off('zoomend', updateVisibleIds);
+            clearTimeout(timer);
+        };
+    }, [map]);
 
     return null;
 }

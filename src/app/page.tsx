@@ -288,6 +288,9 @@ export default function Home() {
   };
 
   const displayTournaments = useMemo(() => {
+    // Debug log to trace filtering
+    // console.log("Filtering:", { visible: visibleIds?.length, sorted: sortedTournaments.length, target: !!targetCoords });
+
     // If we have map visibility data, use it strictly.
     if (visibleIds !== null) {
       return sortedTournaments.filter(t => visibleIds.includes(t.id));
