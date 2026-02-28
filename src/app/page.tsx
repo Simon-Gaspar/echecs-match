@@ -161,6 +161,25 @@ export default function Home() {
     });
   }, [tournaments, filters, shortlistedIds, targetCoords]);
 
+  // Initial HTML5 Geolocation to center the user automatically
+  useEffect(() => {
+    const hasGeolocated = sessionStorage.getItem('echecs-geolocated');
+
+    if (!hasGeolocated && navigator.geolocation && !filters.city && !filters.cityCoords) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setTargetCoords({ lat: position.coords.latitude, lng: position.coords.longitude });
+          sessionStorage.setItem('echecs-geolocated', 'true');
+        },
+        (error) => {
+          console.warn("Geolocation failed or denied", error);
+          sessionStorage.setItem('echecs-geolocated', 'false'); // Don't ask again this session
+        },
+        { timeout: 10000 }
+      );
+    }
+  }, []);
+
   useEffect(() => {
     // If we already have the data in memory (user navigated back), use it instantly
     if (cachedData) {

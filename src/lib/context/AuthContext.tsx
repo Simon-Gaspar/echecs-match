@@ -12,7 +12,7 @@ export interface UserProfile {
 export interface AuthContextType {
     user: UserProfile | null;
     isLoading: boolean;
-    login: (email: string, license?: string) => Promise<void>;
+    login: (email: string) => Promise<void>;
     logout: () => void;
     updateProfile: (updates: Partial<UserProfile>) => void;
 }
@@ -80,14 +80,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     };
 
-    const login = async (email: string, license?: string) => {
+    const login = async (email: string) => {
         setIsLoading(true);
         const { error } = await supabase.auth.signInWithOtp({
             email,
             options: {
-                data: {
-                    license: license // Used during initial sign up trigger
-                },
                 emailRedirectTo: window.location.origin,
             }
         });

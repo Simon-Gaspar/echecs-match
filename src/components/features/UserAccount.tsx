@@ -22,7 +22,6 @@ export function UserAccount() {
     const [isOpen, setIsOpen] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [email, setEmail] = useState("");
-    const [license, setLicense] = useState("");
 
     // Profile Modal State
     const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
@@ -30,7 +29,7 @@ export function UserAccount() {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        await login(email, license);
+        await login(email);
         setShowLoginModal(false);
     };
 
@@ -94,20 +93,6 @@ export function UserAccount() {
                                         </div>
                                     </div>
 
-                                    <div className="space-y-1.5">
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">N° Licence (Optionnel)</label>
-                                        <div className="relative">
-                                            <Shield className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                                            <input
-                                                type="text"
-                                                value={license}
-                                                onChange={(e) => setLicense(e.target.value)}
-                                                placeholder="A123456"
-                                                className="w-full bg-muted/30 border-2 border-transparent focus:border-primary focus:bg-background h-12 rounded-2xl pl-12 pr-4 outline-none transition-all font-medium"
-                                            />
-                                        </div>
-                                    </div>
-
                                     <Button type="submit" className="w-full h-12 rounded-2xl font-black uppercase tracking-widest text-xs shadow-lg shadow-primary/20 mt-4">
                                         Se connecter
                                     </Button>
@@ -119,7 +104,7 @@ export function UserAccount() {
                             </motion.div>
                         </div>
                     )}
-                </AnimatePresence>
+                </AnimatePresence >
             </>
         );
     }

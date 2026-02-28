@@ -29,7 +29,6 @@ export function ProfileModal({ isOpen, onClose, initialTab = 'profile' }: Profil
 
     // Profile Edit State
     const [editName, setEditName] = useState("");
-    const [editLicense, setEditLicense] = useState("");
     const [editElo, setEditElo] = useState("");
     const [isSaving, setIsSaving] = useState(false);
 
@@ -38,7 +37,6 @@ export function ProfileModal({ isOpen, onClose, initialTab = 'profile' }: Profil
             setActiveTab(initialTab);
             if (user) {
                 setEditName(user.name || "");
-                setEditLicense(user.license || "");
                 setEditElo(user.elo?.toString() || "");
                 if (initialTab === 'alerts' || activeTab === 'alerts') {
                     fetchAlerts();
@@ -78,7 +76,6 @@ export function ProfileModal({ isOpen, onClose, initialTab = 'profile' }: Profil
         setIsSaving(true);
         await updateProfile({
             name: editName,
-            license: editLicense || undefined,
             elo: editElo ? parseInt(editElo) : undefined
         });
         setIsSaving(false);
@@ -157,17 +154,7 @@ export function ProfileModal({ isOpen, onClose, initialTab = 'profile' }: Profil
                                         className="mt-1 w-full bg-background border rounded-xl px-4 py-3 text-sm font-medium outline-none focus:border-primary transition-all"
                                     />
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">N° Licence FFE</label>
-                                        <input
-                                            type="text"
-                                            value={editLicense}
-                                            onChange={(e) => setEditLicense(e.target.value)}
-                                            placeholder="Ex: A123456"
-                                            className="mt-1 w-full bg-background border rounded-xl px-4 py-3 text-sm uppercase font-medium outline-none focus:border-primary transition-all"
-                                        />
-                                    </div>
+                                <div className="grid grid-cols-1 gap-4">
                                     <div>
                                         <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Classement Elo</label>
                                         <input
