@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-
+import { supabase } from '@/lib/supabase';
 export interface UserProfile {
     id: string;
     email: string;
@@ -24,47 +24,104 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Mock persistence
-        const savedUser = localStorage.getItem('echecs-match-user');
-        if (savedUser) {
-            try {
-                setUser(JSON.parse(savedUser));
-            } catch (e) {
-                console.error("Failed to parse saved user");
+        // Check active sessions and sets the user
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            if (session?.user) {
+                fetchUserProfile(session.user.id, session.user.email!);
+            } else {
+                setIsLoading(false);
             }
-        }
-        setIsLoading(false);
+        });
+
+        // Listen for changes on auth state (sign in, sign out, etc.)
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+            if (session?.user) {
+                fetchUserProfile(session.user.id, session.user.email!);
+            } else {
+                setUser(null);
+                setIsLoading(false);
+            }
+        });
+
+        return () => subscription.unsubscribe();
     }, []);
+
+    const fetchUserProfile = async (userId: string, email: string) => {
+        try {
+            // First fetch existing profile or create a default one
+            let { data: profile, error } = await supabase
+                .from('profiles')
+                .select('*')
+                .eq('id', userId)
+                .single();
+
+            if (error && error.code === 'PGRST116') {
+                // Profile doesn't exist yet, we will rely on default values 
+                // but let's just make a mock one for the UI state until the user updates it
+                profile = null;
+            } else if (error) {
+                console.error("Error fetching profile:", error);
+            }
+
+            const newUser: UserProfile = {
+                id: userId,
+                email: email,
+                name: profile?.name || email.split('@')[0],
+                license: profile?.license,
+                elo: profile?.elo,
+                avatar: profile?.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${email}`
+            };
+
+            setUser(newUser);
+        } catch (error) {
+            console.error("Auth context error:", error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     const login = async (email: string, license?: string) => {
         setIsLoading(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-        const newUser: UserProfile = {
-            id: Math.random().toString(36).substr(2, 9),
+        const { error } = await supabase.auth.signInWithOtp({
             email,
-            name: email.split('@')[0],
-            license,
-            elo: license ? 1500 : undefined, // Mock Elo
-            avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${email}`
-        };
+            options: {
+                data: {
+                    license: license // Used during initial sign up trigger
+                },
+                emailRedirectTo: window.location.origin,
+            }
+        });
 
-        setUser(newUser);
-        localStorage.setItem('echecs-match-user', JSON.stringify(newUser));
+        setIsLoading(false);
+        if (error) {
+            alert(error.message);
+            throw error;
+        } else {
+            alert('Un email magique vous a été envoyé ! Vérifiez votre boîte de réception.');
+        }
+    };
+
+    const logout = async () => {
+        setIsLoading(true);
+        await supabase.auth.signOut();
         setIsLoading(false);
     };
 
-    const logout = () => {
-        setUser(null);
-        localStorage.removeItem('echecs-match-user');
-    };
-
-    const updateProfile = (updates: Partial<UserProfile>) => {
+    const updateProfile = async (updates: Partial<UserProfile>) => {
         if (!user) return;
-        const updated = { ...user, ...updates };
-        setUser(updated);
-        localStorage.setItem('echecs-match-user', JSON.stringify(updated));
+
+        try {
+            const { error } = await supabase
+                .from('profiles')
+                .upsert({ id: user.id, ...updates, updated_at: new Date() });
+
+            if (error) throw error;
+
+            setUser({ ...user, ...updates });
+        } catch (error) {
+            console.error("Error updating profile:", error);
+            alert("Erreur lors de la mise à jour du profil.");
+        }
     };
 
     return (

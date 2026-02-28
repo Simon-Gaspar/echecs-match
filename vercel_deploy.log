@@ -1,0 +1,49 @@
+Retrieving project…
+Deploying simons-projects-7ec78859/echecs-match
+Uploading [--------------------] (0.0B/70B)
+Uploading [====================] (70.0B/70B)
+Inspect: https://vercel.com/simons-projects-7ec78859/echecs-match/GtmK4buZRHFPyvff3DTW2AHAaBhS [3s]
+Production: https://echecs-match-bxydjvcfh-simons-projects-7ec78859.vercel.app [3s]
+https://echecs-match-bxydjvcfh-simons-projects-7ec78859.vercel.appBuilding...
+Building...
+Building: Running build in Washington, D.C., USA (East) – iad1
+Building: Build machine configuration: 2 cores, 8 GB
+Building: Retrieving list of deployment files...
+Building: Downloading 65 deployment files...
+Building: Restored build cache from previous deployment (4b7ECxwRR75y7HH32PnTEEYsehQC)
+Building: Running "vercel build"
+Building: Vercel CLI 50.23.2
+Building: Installing dependencies...
+Building: added 10 packages in 2s
+Building: 256 packages are looking for funding
+Building: run `npm fund` for details
+Building: Detected Next.js version: 16.1.6
+Building: Running "npm run build"
+Building: > echecs-match@0.1.0 build
+Building: > next build
+Building: ▲ Next.js 16.1.6 (Turbopack)
+Building: Creating an optimized production build ...
+Building: ✓ Compiled successfully in 11.8s
+Building: Running TypeScript ...
+Building: Collecting page data using 1 worker ...
+Building: Error: Failed to collect configuration for /tournaments/[id]
+Building: at ignore-listed frames {
+Building: [cause]: Error: supabaseUrl is required.
+Building: at <unknown> (.next/server/chunks/ssr/_b7714d9b._.js:40:43442)
+Building: at new dM (.next/server/chunks/ssr/_b7714d9b._.js:40:43693)
+Building: at module evaluation (.next/server/chunks/ssr/_b7714d9b._.js:40:48033)
+Building: at instantiateModule (.next/server/chunks/ssr/[turbopack]_runtime.js:740:9)
+Building: at getOrInstantiateModuleFromParent (.next/server/chunks/ssr/[turbopack]_runtime.js:763:12)
+Building: at Context.esmImport [as i] (.next/server/chunks/ssr/[turbopack]_runtime.js:228:20)
+Building: at module evaluation (.next/server/chunks/ssr/_142ff74e._.js:1:33)
+Building: at instantiateModule (.next/server/chunks/ssr/[turbopack]_runtime.js:740:9)
+Building: at getOrInstantiateModuleFromParent (.next/server/chunks/ssr/[turbopack]_runtime.js:763:12)
+Building: at Context.commonJsRequire [as r] (.next/server/chunks/ssr/[turbopack]_runtime.js:249:12)
+Building: }
+Building: > Build error occurred
+Building: Error: Failed to collect page data for /tournaments/[id]
+Building: at ignore-listed frames {
+Building: type: 'Error'
+Building: }
+Building: Error: Command "npm run build" exited with 1
+Error: Command "npm run build" exited with 1

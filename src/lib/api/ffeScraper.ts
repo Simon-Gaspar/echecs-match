@@ -41,6 +41,10 @@ async function getCoordinates(city: string): Promise<CityCoordinates> {
 
     try {
         const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(normalizedCity + ', France')}&format=json&limit=1`;
+
+        // Ensure 1 request/sec max for Nominatim ToS
+        await new Promise(r => setTimeout(r, 1100));
+
         const response = await fetch(url, {
             headers: { 'User-Agent': 'EchecsMatchApp/1.0' }
         });
@@ -91,13 +95,14 @@ async function fetchRegisteredCount(ref: string): Promise<{ count: number | unde
     return { count: undefined, listUrl: null };
 }
 
-async function fetchEloStats(fullUrl: string): Promise<{ avgElo?: number, topPlayerElo?: number } | undefined> {
+async function fetchEloStats(fullUrl: string): Promise<{ avgElo?: number, topPlayerElo?: number, playerCount: number } | undefined> {
     try {
         const res = await fetch(fullUrl);
         const html = await res.text();
         const $ = cheerio.load(html);
 
         const elos: number[] = [];
+        let playerCount = 0;
         const rows = $('table tr');
 
         // Find the header row (usually class papi_liste_t)
@@ -119,6 +124,10 @@ async function fetchEloStats(fullUrl: string): Promise<{ avgElo?: number, topPla
             // Only process player rows (papi_liste_f, papi_liste_p) or skip header
             if ($(row).hasClass('papi_liste_t')) return;
             const cells = $(row).find('td');
+            if (cells.length < 3) return; // Basic sanity check to ensure it's a data row
+
+            playerCount++;
+
             if (cells.length < eloColIndex + 1) return;
 
             const eloText = cells.eq(eloColIndex).text().trim();
@@ -130,13 +139,14 @@ async function fetchEloStats(fullUrl: string): Promise<{ avgElo?: number, topPla
             }
         });
 
+        let avgElo, topPlayerElo;
         if (elos.length > 2) { // Ensure we have enough data to be meaningful
             const sum = elos.reduce((a, b) => a + b, 0);
-            return {
-                avgElo: Math.round(sum / elos.length),
-                topPlayerElo: Math.max(...elos)
-            };
+            avgElo = Math.round(sum / elos.length);
+            topPlayerElo = Math.max(...elos);
         }
+
+        return { avgElo, topPlayerElo, playerCount };
     } catch (e) {
         console.error(`Failed to fetch Elo stats from ${fullUrl}`);
     }
@@ -232,8 +242,17 @@ export async function fetchLiveTournaments(): Promise<Tournament[]> {
     // Convert raw to Tournament objects (with geocoding)
     const rawTournamentObjects: Tournament[] = [];
     const processedKeys = new Set();
+    const totalRaw = allRawTournaments.length;
+    let processedCount = 0;
+
+    console.log(`\nFetching details (geocoding, player count, Elo) for ${totalRaw} tournaments. This may take a while...`);
 
     for (const item of allRawTournaments) {
+        processedCount++;
+        if (processedCount % 50 === 0) {
+            console.log(`Processing tournaments: ${processedCount}/${totalRaw} (${Math.round(processedCount / totalRaw * 100)}%)`);
+        }
+
         const key = `${item.id || item.link}`;
         if (processedKeys.has(key)) continue;
         processedKeys.add(key);
@@ -243,6 +262,8 @@ export async function fetchLiveTournaments(): Promise<Tournament[]> {
         // Fetch player count & Elo stats (with a small delay for server friendliness)
         let registeredCountNum = undefined;
         let eloStats = undefined;
+        let hasPlayersList = false;
+
         if (item.id) {
             await new Promise(r => setTimeout(r, 100)); // Small sleep
             const extra = await fetchRegisteredCount(item.id);
@@ -250,7 +271,11 @@ export async function fetchLiveTournaments(): Promise<Tournament[]> {
 
             // If the ficha tournoi says there's a list, fetch it
             if (extra.listUrl) {
+                hasPlayersList = true;
                 eloStats = await fetchEloStats(extra.listUrl);
+                if (eloStats?.playerCount && eloStats.playerCount > 0) {
+                    registeredCountNum = eloStats.playerCount;
+                }
             }
         }
 
@@ -265,7 +290,8 @@ export async function fetchLiveTournaments(): Promise<Tournament[]> {
             item.handicapX,
             registeredCountNum,
             eloStats?.avgElo,
-            eloStats?.topPlayerElo
+            eloStats?.topPlayerElo,
+            hasPlayersList
         ));
     }
 
@@ -341,7 +367,8 @@ function createTournamentObject(
     handicapX?: boolean,
     registeredCount?: number,
     avgElo?: number,
-    topPlayerElo?: number
+    topPlayerElo?: number,
+    hasPlayersList?: boolean
 ): Tournament {
     let format: 'Blitz' | 'Rapide' | 'Lent' = forcedFormat || 'Lent';
 
@@ -387,7 +414,7 @@ function createTournamentObject(
             city: city,
             address: city
         },
-        hasPlayersList: link.includes('ListeInscrits.aspx'),
+        hasPlayersList: hasPlayersList || false,
         registeredCount: registeredCount,
         avgElo: avgElo,
         topPlayerElo: topPlayerElo,

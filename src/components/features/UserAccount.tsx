@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ProfileModal } from "./ProfileModal";
 
 export function UserAccount() {
     const { user, login, logout, isLoading } = useAuth();
@@ -22,6 +23,10 @@ export function UserAccount() {
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [email, setEmail] = useState("");
     const [license, setLicense] = useState("");
+
+    // Profile Modal State
+    const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+    const [profileModalTab, setProfileModalTab] = useState<'profile' | 'alerts'>('profile');
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -158,8 +163,16 @@ export function UserAccount() {
                             </div>
 
                             <div className="space-y-1">
-                                <MenuItem icon={<UserCircle />} label="Mon Profil" />
-                                <MenuItem icon={<Bell />} label="Mes Alertes" badge="2" />
+                                <MenuItem
+                                    icon={<UserCircle />}
+                                    label="Mon Profil"
+                                    onClick={() => { setIsOpen(false); setProfileModalTab('profile'); setIsProfileModalOpen(true); }}
+                                />
+                                <MenuItem
+                                    icon={<Bell />}
+                                    label="Mes Alertes"
+                                    onClick={() => { setIsOpen(false); setProfileModalTab('alerts'); setIsProfileModalOpen(true); }}
+                                />
                                 <MenuItem icon={<Trophy />} label="Mes Résultats" />
                                 <MenuItem icon={<Settings />} label="Paramètres" />
                             </div>
@@ -177,13 +190,18 @@ export function UserAccount() {
                     </>
                 )}
             </AnimatePresence>
+            <ProfileModal
+                isOpen={isProfileModalOpen}
+                onClose={() => setIsProfileModalOpen(false)}
+                initialTab={profileModalTab}
+            />
         </div>
     );
 }
 
-function MenuItem({ icon, label, badge }: { icon: React.ReactNode, label: string, badge?: string }) {
+function MenuItem({ icon, label, badge, onClick }: { icon: React.ReactNode, label: string, badge?: string, onClick?: () => void }) {
     return (
-        <button className="w-full flex items-center justify-between px-3 py-2 hover:bg-muted rounded-xl transition-colors group">
+        <button onClick={onClick} className="w-full flex items-center justify-between px-3 py-2 hover:bg-muted rounded-xl transition-colors group">
             <div className="flex items-center gap-3">
                 <span className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors">{icon}</span>
                 <span className="text-xs font-bold">{label}</span>

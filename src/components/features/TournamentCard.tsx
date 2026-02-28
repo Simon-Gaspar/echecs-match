@@ -2,8 +2,9 @@ import { useMemo } from "react";
 import { Tournament } from "@/lib/types/tournament";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, ExternalLink, Trophy, Accessibility, Bookmark, Users, Car, Clock, CheckCircle2, AlertCircle } from "lucide-react";
+import { MapPin, ExternalLink, Trophy, Accessibility, Bookmark, Users, Car, Clock, CheckCircle2, AlertCircle, Info } from "lucide-react";
 import { useAuth } from "@/lib/context/AuthContext";
+import Link from "next/link";
 
 interface TournamentCardProps {
     tournament: Tournament;
@@ -149,15 +150,13 @@ export function TournamentCard({ tournament, isHovered, onHover, isShortlisted, 
             </CardContent>
             {!tournament.sections && (
                 <CardFooter className="p-4 pt-0">
-                    <a
-                        href={tournament.homologationLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        href={`/tournaments/${tournament.id}`}
                         className="w-full flex items-center justify-center gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 py-2 rounded-xl text-xs font-bold transition-all border border-border/50 shadow-sm"
                     >
-                        <ExternalLink className="h-4 w-4" />
-                        Fiche Tournoi
-                    </a>
+                        <Info className="h-4 w-4" />
+                        Détails du tournoi
+                    </Link>
                 </CardFooter>
             )}
         </Card>

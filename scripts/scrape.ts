@@ -1,12 +1,18 @@
 import { fetchLiveTournaments } from '../src/lib/api/ffeScraper';
+import { fetchSwissTournaments } from '../src/lib/api/swissScraper';
 import fs from 'fs';
 import path from 'path';
 
 async function main() {
-    console.log("🚀 Starting FFE Global Scrape...");
+    console.log("🚀 Starting Global Scrape (FFE + Switzerland)...");
 
     try {
-        const tournaments = await fetchLiveTournaments();
+        const [ffeTournaments, swissTournaments] = await Promise.all([
+            fetchLiveTournaments(),
+            fetchSwissTournaments()
+        ]);
+
+        const tournaments = [...ffeTournaments, ...swissTournaments];
 
         const dataPath = path.join(process.cwd(), 'src/data/tournaments.json');
         const dir = path.dirname(dataPath);

@@ -12,8 +12,11 @@ import { Header } from "@/components/features/Header";
 import { ChessLoading } from "@/components/features/ChessLoading";
 import { checkAlerts, AlertConfig } from "@/lib/utils/notifications";
 import { fetchRouteInfo } from "@/lib/utils/osrm";
+import { useAuth } from "@/lib/context/AuthContext";
+import { supabase } from "@/lib/supabase";
 
 export default function Home() {
+  const { user } = useAuth();
   const [filters, setFilters] = useState<FilterState>({
     format: [],
     elo: null,
@@ -37,19 +40,37 @@ export default function Home() {
   const [targetCoords, setTargetCoords] = useState<{ lat: number, lng: number } | null>(null);
   const [carResults, setCarResults] = useState<Record<string, { carDistance: string, duration: string }>>({});
 
+  // Load favorites from DB or LocalStorage
   useEffect(() => {
-    const saved = localStorage.getItem('echecs-shortlist');
-    if (saved) {
-      try { setShortlistedIds(JSON.parse(saved)); } catch (e) { /* ignore */ }
+    if (user) {
+      supabase.from('shortlists').select('tournament_id').eq('user_id', user.id)
+        .then(({ data, error }) => {
+          if (!error && data) {
+            setShortlistedIds(data.map(d => d.tournament_id));
+          }
+        });
+    } else {
+      const saved = localStorage.getItem('echecs-shortlist');
+      if (saved) {
+        try { setShortlistedIds(JSON.parse(saved)); } catch (e) { /* ignore */ }
+      }
     }
-  }, []);
+  }, [user]);
 
-  const toggleShortlist = (id: string) => {
-    setShortlistedIds(prev => {
-      const next = prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id];
+  const toggleShortlist = async (id: string) => {
+    const isAdding = !shortlistedIds.includes(id);
+    const next = isAdding ? [...shortlistedIds, id] : shortlistedIds.filter(i => i !== id);
+    setShortlistedIds(next);
+
+    if (user) {
+      if (isAdding) {
+        await supabase.from('shortlists').insert({ user_id: user.id, tournament_id: id });
+      } else {
+        await supabase.from('shortlists').delete().eq('user_id', user.id).eq('tournament_id', id);
+      }
+    } else {
       localStorage.setItem('echecs-shortlist', JSON.stringify(next));
-      return next;
-    });
+    }
   };
 
   const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
@@ -145,9 +166,16 @@ export default function Home() {
         const elapsed = Date.now() - startTime;
         const remaining = Math.max(0, 3000 - elapsed);
 
-        setTimeout(() => {
+        setTimeout(async () => {
           setLoading(false);
-          const savedAlerts = JSON.parse(localStorage.getItem('echecs-alerts') || '[]');
+          let savedAlerts: AlertConfig[] = [];
+          if (user) {
+            const { data } = await supabase.from('alerts').select('*').eq('user_id', user.id);
+            if (data) savedAlerts = data as unknown as AlertConfig[];
+          } else {
+            savedAlerts = JSON.parse(localStorage.getItem('echecs-alerts') || '[]');
+          }
+
           if (savedAlerts.length > 0) {
             const matches = checkAlerts(data.tournaments, savedAlerts);
             if (matches.length > 0) {
@@ -240,21 +268,34 @@ export default function Home() {
     });
   };
 
-  const handleCreateAlert = () => {
+  const handleCreateAlert = async () => {
     if (!filters.cityCoords || !filters.city) {
       alert("Veuillez d'abord sélectionner une ville pour créer une alerte.");
       return;
     }
-    const newAlert: AlertConfig = {
-      id: Date.now().toString(),
+
+    const newAlert: any = {
       format: filters.format.length === 1 ? filters.format[0] : 'Tous',
       radius: filters.radius,
       city: filters.city,
       lat: filters.cityCoords.lat,
       lng: filters.cityCoords.lng
     };
-    const existing = JSON.parse(localStorage.getItem('echecs-alerts') || '[]');
-    localStorage.setItem('echecs-alerts', JSON.stringify([...existing, newAlert]));
+
+    if (user) {
+      newAlert.user_id = user.id;
+      const { error } = await supabase.from('alerts').insert(newAlert);
+      if (error) {
+        console.error(error);
+        alert("Erreur lors de la création de l'alerte.");
+        return;
+      }
+    } else {
+      newAlert.id = Date.now().toString();
+      const existing = JSON.parse(localStorage.getItem('echecs-alerts') || '[]');
+      localStorage.setItem('echecs-alerts', JSON.stringify([...existing, newAlert]));
+    }
+
     alert(`Alerte créée ! Tu seras prévenu des nouveaux tournois [${newAlert.format}] à moins de ${newAlert.radius}km de ${newAlert.city}.`);
   };
 

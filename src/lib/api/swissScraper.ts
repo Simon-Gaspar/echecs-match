@@ -168,14 +168,19 @@ export async function fetchSwissTournaments(): Promise<Tournament[]> {
             let format: 'Blitz' | 'Rapide' | 'Lent' = 'Lent';
             const lower = name.toLowerCase();
 
-            if (lower.includes('blitz') || lower.includes('lampo')) {
+            if (lower.includes('blitz') || lower.includes('lampo') || lower.includes('lightning') || lower.includes('5 min')) {
                 format = 'Blitz';
             } else if (
                 lower.includes('rapid') ||
                 lower.includes('schnell') ||
                 lower.includes('aktiv') ||
                 lower.includes('semilampo') ||
-                lower.includes('semi-rapide')
+                lower.includes('semi-rapide') ||
+                lower.includes('10 min') ||
+                lower.includes('15 min') ||
+                lower.includes('20 min') ||
+                lower.includes('25 min') ||
+                lower.includes('30 min')
             ) {
                 format = 'Rapide';
             }
