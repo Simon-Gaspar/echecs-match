@@ -6,7 +6,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
-import { Calendar, MapPin, Search, Trophy, History, RotateCcw, LocateFixed, Loader2, ArrowUpDown } from "lucide-react";
+import { Calendar, MapPin, Search, Trophy, History, RotateCcw, LocateFixed, Loader2, ArrowUpDown, ShieldX, Star, Users, Layers, Filter } from "lucide-react";
 
 export type FilterState = {
     format: string[];
@@ -35,12 +35,17 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
     const [citySuggestions, setCitySuggestions] = React.useState<any[]>([]);
     const [showSuggestions, setShowSuggestions] = React.useState(false);
     const [isLocating, setIsLocating] = React.useState(false);
+    const [activePopover, setActivePopover] = React.useState<string | null>(null);
     const wrapperRef = React.useRef<HTMLDivElement>(null);
+    const popoverRef = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
                 setShowSuggestions(false);
+            }
+            if (popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
+                setActivePopover(null);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -49,7 +54,6 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
 
     React.useEffect(() => {
         const timeout = setTimeout(async () => {
-            // Only fetch if we have at least 2 chars and the dropdown could be shown
             if (!filters.city || filters.city.length < 2) {
                 setCitySuggestions([]);
                 return;
@@ -57,7 +61,6 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
             if (!showSuggestions) return;
 
             try {
-                // geo.api.gouv.fr is a free, robust, and no-key API for French cities
                 const res = await fetch(`https://geo.api.gouv.fr/communes?nom=${encodeURIComponent(filters.city)}&fields=nom,codesPostaux,centre&boost=population&limit=5`);
                 const data = await res.json();
                 setCitySuggestions(data || []);
@@ -93,6 +96,7 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
 
     const handleEloClick = (option: string) => {
         onChange({ ...filters, elo: option === "Tous" ? null : option });
+        setActivePopover(null);
     };
 
     const handleLocateMe = () => {
@@ -101,7 +105,6 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
         navigator.geolocation.getCurrentPosition(async (position) => {
             try {
                 const { latitude, longitude } = position.coords;
-                // Reverse geocode to get city name
                 const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`);
                 const data = await res.json();
                 const cityName = data.address?.city || data.address?.town || data.address?.village || data.address?.municipality || "Ma position";
@@ -123,241 +126,213 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
     };
 
     return (
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-4 bg-secondary/30 p-4 rounded-xl border border-border/50 backdrop-blur-sm shadow-sm">
-            {/* Localisation */}
-            <div className="flex-1 min-w-[200px] space-y-1.5">
-                <div className="flex items-center gap-2 text-primary opacity-80">
-                    <MapPin className="h-3.5 w-3.5" />
-                    <Label className="text-[10px] font-bold uppercase tracking-wider">Ville / Rayon</Label>
+        <div className="flex items-center gap-3 bg-secondary/20 p-2 rounded-2xl border border-white/5 backdrop-blur-xl shadow-2xl overflow-x-auto no-scrollbar max-w-full">
+            {/* Ville & Rayon */}
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-background/20 rounded-xl border border-white/5 min-w-[280px]">
+                <div className="relative flex-1" ref={wrapperRef}>
+                    <Search className="absolute left-0 top-0 bottom-0 my-auto h-4 w-4 text-primary animate-in fade-in zoom-in duration-500" />
+                    <Input
+                        placeholder="Ville..."
+                        className="pl-6 h-7 bg-transparent border-none shadow-none focus-visible:ring-0 text-xs font-medium placeholder:text-muted-foreground/50 w-full"
+                        value={filters.city}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                            onChange({ ...filters, city: e.target.value, cityCoords: null });
+                            setShowSuggestions(true);
+                        }}
+                        onFocus={() => {
+                            if (filters.city.length >= 2) setShowSuggestions(true);
+                        }}
+                    />
+                    <button
+                        onClick={handleLocateMe}
+                        disabled={isLocating}
+                        className="absolute right-0 top-0 bottom-0 my-auto text-muted-foreground hover:text-primary transition-colors disabled:opacity-50"
+                    >
+                        {isLocating ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <LocateFixed className="h-3.5 w-3.5" />}
+                    </button>
+                    {showSuggestions && citySuggestions.length > 0 && (
+                        <div className="absolute top-[calc(100%+12px)] left-[-12px] right-[-12px] bg-[#0b0c0e]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl z-50 overflow-hidden animate-in slide-in-from-top-2 duration-200">
+                            {citySuggestions.map((city, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => selectCity(city)}
+                                    className="w-full flex items-center justify-between px-4 py-3 text-[11px] font-semibold text-zinc-300 hover:bg-primary/10 hover:text-primary transition-colors text-left"
+                                >
+                                    <span>{city.nom}</span>
+                                    <span className="opacity-40 text-[9px]">{city.codesPostaux?.[0]}</span>
+                                </button>
+                            ))}
+                        </div>
+                    )}
                 </div>
-                <div className="flex gap-2">
-                    <div className="relative flex-1" ref={wrapperRef}>
-                        <Search className="absolute left-2 top-0 bottom-0 my-auto h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
-                        <Input
-                            placeholder="Paris, Lyon..."
-                            className="pl-7 pr-8 text-[11px] h-8 bg-background/50 border-none shadow-none focus-visible:ring-1"
-                            value={filters.city}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                // If they start typing, reset the fixed coords so Nominatim geocodes it again
-                                onChange({ ...filters, city: e.target.value, cityCoords: null });
-                                setShowSuggestions(true);
-                            }}
-                            onFocus={() => {
-                                if (filters.city.length >= 2) setShowSuggestions(true);
-                            }}
-                        />
-                        <button
-                            onClick={handleLocateMe}
-                            disabled={isLocating}
-                            className="absolute right-2 top-0 bottom-0 my-auto text-muted-foreground hover:text-primary transition-colors disabled:opacity-50 h-3.5 w-3.5 flex items-center justify-center"
-                        >
-                            {isLocating ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <LocateFixed className="h-3.5 w-3.5 hover:scale-110 transition-transform" />}
-                        </button>
-                        {showSuggestions && citySuggestions.length > 0 && (
-                            <div className="absolute top-full left-0 right-0 mt-1 bg-zinc-900 border border-zinc-700/50 rounded-md shadow-xl z-50 overflow-hidden">
-                                {citySuggestions.map((city, idx) => (
-                                    <button
-                                        key={idx}
-                                        onClick={() => selectCity(city)}
-                                        className="w-full flex items-center justify-between px-3 py-2 text-[11px] font-medium text-zinc-300 hover:bg-primary/20 hover:text-primary transition-colors focus:bg-primary/20 focus:outline-none"
-                                    >
-                                        <span>{city.nom}</span>
-                                        <span className="opacity-50 text-[10px] ml-2">{city.codesPostaux?.[0]}</span>
-                                    </button>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                    <div className="w-24 px-1 pt-3">
-                        <Slider
-                            value={[filters.radius]}
-                            max={500}
-                            step={10}
-                            onValueChange={(val: number[]) => onChange({ ...filters, radius: val[0] })}
-                        />
-                    </div>
-                    <span className="text-[10px] font-medium pt-2 min-w-[2.2rem] tabular-nums">{filters.radius}km</span>
+
+                <div className="w-[1px] h-4 bg-white/10 mx-1"></div>
+
+                <div className="relative shrink-0" ref={activePopover === 'radius' ? popoverRef : null}>
+                    <button
+                        onClick={() => setActivePopover(activePopover === 'radius' ? null : 'radius')}
+                        className={`flex items-center gap-1.5 px-2 py-1 rounded-lg transition-all text-[10px] font-bold uppercase tracking-tight ${filters.radius !== 50 ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-foreground'}`}
+                    >
+                        <MapPin className="h-3 w-3" />
+                        {filters.radius}km
+                    </button>
+                    {activePopover === 'radius' && (
+                        <div className="absolute top-[calc(100%+16px)] left-1/2 -translate-x-1/2 w-48 p-4 bg-[#0b0c0e]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl z-50 animate-in zoom-in-95 duration-200">
+                            <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-4 block">Rayon (km)</Label>
+                            <Slider
+                                value={[filters.radius]}
+                                max={500}
+                                step={10}
+                                onValueChange={(val: number[]) => onChange({ ...filters, radius: val[0] })}
+                                className="mb-2"
+                            />
+                            <div className="text-center text-xs font-bold text-primary">{filters.radius} km</div>
+                        </div>
+                    )}
                 </div>
             </div>
-            {/* Période Slider */}
-            <div className="space-y-1.5 w-[140px] shrink-0">
-                <div className="flex items-center gap-2 text-primary opacity-80">
-                    <Calendar className="h-3.5 w-3.5" />
-                    <Label className="text-[10px] font-bold uppercase tracking-wider">Période</Label>
-                </div>
-                <div className="bg-background/40 p-2 rounded-lg border border-border/20 space-y-2">
-                    <div className="px-1 pt-1">
+
+            {/* Période */}
+            <div className="relative shrink-0" ref={activePopover === 'timeframe' ? popoverRef : null}>
+                <button
+                    onClick={() => setActivePopover(activePopover === 'timeframe' ? null : 'timeframe')}
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all text-[11px] font-bold uppercase tracking-tight ${filters.timeframe !== 12 ? 'bg-primary/10 border-primary/20 text-primary' : 'bg-background/20 border-white/5 text-muted-foreground hover:border-white/10 hover:text-foreground'}`}
+                >
+                    <Calendar className="h-4 w-4" />
+                    {filters.timeframe === 12 ? 'Période' : `~${filters.timeframe} mois`}
+                </button>
+                {activePopover === 'timeframe' && (
+                    <div className="absolute top-[calc(100%+8px)] left-0 w-48 p-4 bg-[#0b0c0e]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl z-50 animate-in zoom-in-95 duration-200">
+                        <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-4 block">Dans les prochains...</Label>
                         <Slider
                             value={[filters.timeframe]}
                             max={12}
                             min={1}
                             step={1}
                             onValueChange={(val: number[]) => onChange({ ...filters, timeframe: val[0] })}
+                            className="mb-2"
                         />
+                        <div className="text-center text-xs font-bold text-primary">
+                            {filters.timeframe === 12 ? 'Toute l\'année' : `${filters.timeframe} mois`}
+                        </div>
                     </div>
-                    <div className="text-[9px] font-bold text-muted-foreground text-center">
-                        {filters.timeframe === 12 ? 'Toute l\'année' : `Dans les ${filters.timeframe} mois`}
-                    </div>
-                </div>
+                )}
             </div>
 
-            {/* Cadence */}
-            <div className="space-y-1.5">
-                <div className="flex items-center gap-2 text-primary opacity-80">
-                    <History className="h-3.5 w-3.5" />
-                    <Label className="text-[10px] font-bold uppercase tracking-wider">Format</Label>
-                </div>
-                <div className="flex gap-1 bg-background/40 p-0.5 rounded-lg border border-border/20">
-                    {formatOptions.map((opt) => {
-                        const isActive = (opt === "Tous" && filters.format.length === 0) || filters.format.includes(opt);
-                        return (
-                            <button
-                                key={opt}
-                                onClick={() => handleFormatClick(opt)}
-                                className={`px-2 py-1 text-[10px] rounded-md transition-all font-semibold active:scale-95 ${isActive
-                                    ? "bg-primary text-primary-foreground shadow-sm"
-                                    : "text-muted-foreground hover:text-foreground hover:bg-background/50"
-                                    }`}
-                            >
-                                {opt}
-                            </button>
-                        );
-                    })}
-                </div>
+            {/* Format Pills */}
+            <div className="flex gap-1 bg-background/20 p-1 rounded-xl border border-white/5 shrink-0">
+                {formatOptions.map((opt) => {
+                    const isActive = (opt === "Tous" && filters.format.length === 0) || filters.format.includes(opt);
+                    return (
+                        <button
+                            key={opt}
+                            onClick={() => handleFormatClick(opt)}
+                            className={`px-3 py-1.5 text-[10px] rounded-lg transition-all font-bold uppercase tracking-tight active:scale-95 ${isActive
+                                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                                : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                                }`}
+                        >
+                            {opt}
+                        </button>
+                    );
+                })}
             </div>
 
-            {/* Elo */}
-            <div className="space-y-1.5">
-                <div className="flex items-center gap-2 text-primary opacity-80">
-                    <Trophy className="h-3.5 w-3.5" />
-                    <Label className="text-[10px] font-bold uppercase tracking-wider">Elo</Label>
-                </div>
-                <div className="flex gap-1 bg-background/40 p-0.5 rounded-lg border border-border/20">
-                    {eloOptions.map((opt) => {
-                        const isActive = (opt === "Tous" && !filters.elo) || filters.elo === opt;
-                        return (
+            {/* Elo Popover */}
+            <div className="relative shrink-0" ref={activePopover === 'elo' ? popoverRef : null}>
+                <button
+                    onClick={() => setActivePopover(activePopover === 'elo' ? null : 'elo')}
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all text-[11px] font-bold uppercase tracking-tight ${filters.elo ? 'bg-primary/10 border-primary/20 text-primary' : 'bg-background/20 border-white/5 text-muted-foreground hover:border-white/10 hover:text-foreground'}`}
+                >
+                    <Trophy className="h-4 w-4" />
+                    {filters.elo || 'Elo'}
+                </button>
+                {activePopover === 'elo' && (
+                    <div className="absolute top-[calc(100%+8px)] left-0 min-w-[140px] p-1 bg-[#0b0c0e]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl z-50 animate-in zoom-in-95 duration-200">
+                        {eloOptions.map((opt) => (
                             <button
                                 key={opt}
                                 onClick={() => handleEloClick(opt)}
-                                className={`px-2 py-1 text-[10px] rounded-md transition-all font-semibold active:scale-95 ${isActive
-                                    ? "bg-primary text-primary-foreground shadow-sm"
-                                    : "text-muted-foreground hover:text-foreground hover:bg-background/50"
-                                    }`}
+                                className={`w-full text-left px-3 py-2 text-[10px] font-bold uppercase tracking-tighter transition-colors rounded-lg ${filters.elo === (opt === "Tous" ? null : opt) ? 'bg-primary/10 text-primary' : 'text-zinc-400 hover:bg-white/5 hover:text-zinc-200'}`}
                             >
                                 {opt}
                             </button>
-                        );
-                    })}
-                </div>
+                        ))}
+                    </div>
+                )}
             </div>
 
-            {/* Tri */}
-            <div className="space-y-1.5 border-l border-border/30 pl-6 h-10 flex flex-col justify-center">
-                <div className="flex items-center gap-2 text-primary opacity-80">
-                    <ArrowUpDown className="h-3.5 w-3.5" />
-                    <Label className="text-[10px] font-bold uppercase tracking-wider">Tri</Label>
-                </div>
-                <div className="flex gap-1 bg-background/40 p-0.5 rounded-lg border border-border/20">
-                    <button
-                        onClick={() => onChange({ ...filters, sortBy: 'date' })}
-                        className={`px-3 py-1 text-[10px] rounded-md transition-all font-semibold active:scale-95 ${filters.sortBy === 'date'
-                            ? "bg-primary text-primary-foreground shadow-sm"
-                            : "text-muted-foreground hover:text-foreground hover:bg-background/50"
-                            }`}
-                    >
-                        Date
-                    </button>
-                    <button
-                        disabled={!filters.cityCoords}
-                        onClick={() => onChange({ ...filters, sortBy: 'distance' })}
-                        className={`px-3 py-1 text-[10px] rounded-md transition-all font-semibold active:scale-95 transition-opacity ${!filters.cityCoords ? 'opacity-30 cursor-not-allowed' : ''} ${filters.sortBy === 'distance'
-                            ? "bg-primary text-primary-foreground shadow-sm"
-                            : "text-muted-foreground hover:text-foreground hover:bg-background/50"
-                            }`}
-                    >
-                        Proximité
-                    </button>
-                </div>
-            </div>
-
-            {/* Toggles & Actions */}
-            <div className="flex items-center gap-1 self-end bg-background/40 p-1 rounded-xl border border-border/20 h-14">
-                <Label htmlFor="multi-open" className="flex items-center gap-3 px-3 py-1 cursor-pointer hover:bg-background/80 transition-colors rounded-lg group">
-                    <div className="flex flex-col">
-                        <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-tight group-hover:text-foreground transition-colors">Plusieurs</span>
-                        <span className="text-[9px] font-bold text-primary uppercase transition-colors">Opens</span>
-                    </div>
-                    <div className="pointer-events-none">
-                        <Switch
-                            id="multi-open"
-                            checked={filters.multiOpen}
-                            onCheckedChange={(checked) => onChange({ ...filters, multiOpen: checked })}
-                            className="scale-[0.85] shadow-sm data-[state=checked]:bg-primary"
-                        />
-                    </div>
-                </Label>
-
-                <div className="w-[1px] h-8 bg-border/50 mx-1"></div>
-
-                <Label htmlFor="players-list" className="flex items-center gap-3 px-3 py-1 cursor-pointer hover:bg-background/80 transition-colors rounded-lg group">
-                    <div className="flex flex-col">
-                        <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-tight group-hover:text-foreground transition-colors">Liste</span>
-                        <span className="text-[9px] font-bold text-primary uppercase transition-colors">Inscrits</span>
-                    </div>
-                    <div className="pointer-events-none">
-                        <Switch
-                            id="players-list"
-                            checked={filters.hasPlayersList}
-                            onCheckedChange={(checked) => onChange({ ...filters, hasPlayersList: checked })}
-                            className="scale-[0.85] shadow-sm data-[state=checked]:bg-emerald-500"
-                        />
-                    </div>
-                </Label>
-
-                <div className="w-[1px] h-8 bg-border/50 mx-1"></div>
-
-                <Label htmlFor="only-shortlist" className="flex items-center gap-3 px-3 py-1 cursor-pointer hover:bg-background/80 transition-colors rounded-lg group">
-                    <div className="flex flex-col">
-                        <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-tight group-hover:text-foreground transition-colors">Mes</span>
-                        <span className="text-[9px] font-bold text-amber-500 uppercase transition-colors">Favoris</span>
-                    </div>
-                    <div className="pointer-events-none">
-                        <Switch
-                            id="only-shortlist"
-                            checked={filters.onlyShortlist}
-                            onCheckedChange={(checked) => onChange({ ...filters, onlyShortlist: checked })}
-                            className="scale-[0.85] shadow-sm data-[state=checked]:bg-amber-500"
-                        />
-                    </div>
-                </Label>
-
-                <div className="w-[1px] h-8 bg-border/50 mx-1"></div>
-
-                <Label htmlFor="exclude-internal" className="flex items-center gap-3 px-3 py-1 cursor-pointer hover:bg-background/80 transition-colors rounded-lg group">
-                    <div className="flex flex-col">
-                        <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-tight group-hover:text-foreground transition-colors">Sans</span>
-                        <span className="text-[9px] font-bold text-rose-500 uppercase transition-colors">Internes</span>
-                    </div>
-                    <div className="pointer-events-none">
-                        <Switch
-                            id="exclude-internal"
-                            checked={filters.excludeInternal}
-                            onCheckedChange={(checked) => onChange({ ...filters, excludeInternal: checked })}
-                            className="scale-[0.85] shadow-sm data-[state=checked]:bg-rose-500"
-                        />
-                    </div>
-                </Label>
-
-                <div className="w-[1px] h-8 bg-border/50 mx-1"></div>
-
+            {/* Tri Popover */}
+            <div className="relative shrink-0" ref={activePopover === 'sortBy' ? popoverRef : null}>
                 <button
-                    onClick={onReset}
-                    className="h-full px-4 hover:bg-muted/80 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-all active:scale-95 flex flex-col items-center justify-center gap-1 text-muted-foreground hover:text-foreground"
+                    onClick={() => setActivePopover(activePopover === 'sortBy' ? null : 'sortBy')}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl border bg-background/20 border-white/5 text-muted-foreground hover:border-white/10 hover:text-foreground transition-all text-[11px] font-bold uppercase tracking-tight"
                 >
-                    <RotateCcw className="h-3.5 w-3.5" />
-                    Reset
+                    <ArrowUpDown className="h-4 w-4" />
+                    {filters.sortBy === 'date' ? 'Date' : 'Proximité'}
+                </button>
+                {activePopover === 'sortBy' && (
+                    <div className="absolute top-[calc(100%+8px)] left-0 min-w-[140px] p-1 bg-[#0b0c0e]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl z-50 animate-in zoom-in-95 duration-200">
+                        <button
+                            onClick={() => { onChange({ ...filters, sortBy: 'date' }); setActivePopover(null); }}
+                            className={`w-full text-left px-3 py-2 text-[10px] font-bold uppercase rounded-lg ${filters.sortBy === 'date' ? 'bg-primary/10 text-primary' : 'text-zinc-400 hover:bg-white/5'}`}
+                        >
+                            Date
+                        </button>
+                        <button
+                            disabled={!filters.cityCoords}
+                            onClick={() => { onChange({ ...filters, sortBy: 'distance' }); setActivePopover(null); }}
+                            className={`w-full text-left px-3 py-2 text-[10px] font-bold uppercase rounded-lg ${!filters.cityCoords ? 'opacity-30' : ''} ${filters.sortBy === 'distance' ? 'bg-primary/10 text-primary' : 'text-zinc-400 hover:bg-white/5'}`}
+                        >
+                            Proximité
+                        </button>
+                    </div>
+                )}
+            </div>
+
+            <div className="w-[1px] h-6 bg-white/10 shrink-0"></div>
+
+            {/* Icon Toggles */}
+            <div className="flex items-center gap-1.5 shrink-0 px-2">
+                <button
+                    onClick={() => onChange({ ...filters, multiOpen: !filters.multiOpen })}
+                    title="Plusieurs Opens"
+                    className={`p-2 rounded-xl border transition-all active:scale-95 ${filters.multiOpen ? 'bg-primary/20 border-primary/40 text-primary shadow-lg shadow-primary/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
+                >
+                    <Layers className="h-3.5 w-3.5" />
+                </button>
+                <button
+                    onClick={() => onChange({ ...filters, hasPlayersList: !filters.hasPlayersList })}
+                    title="Liste des inscrits"
+                    className={`p-2 rounded-xl border transition-all active:scale-95 ${filters.hasPlayersList ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400 shadow-lg shadow-emerald-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
+                >
+                    <Users className="h-3.5 w-3.5" />
+                </button>
+                <button
+                    onClick={() => onChange({ ...filters, onlyShortlist: !filters.onlyShortlist })}
+                    title="Mes Favoris"
+                    className={`p-2 rounded-xl border transition-all active:scale-95 ${filters.onlyShortlist ? 'bg-amber-500/20 border-amber-500/40 text-amber-500 shadow-lg shadow-amber-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
+                >
+                    <Star className={`h-3.5 w-3.5 ${filters.onlyShortlist ? 'fill-amber-500' : ''}`} />
+                </button>
+                <button
+                    onClick={() => onChange({ ...filters, excludeInternal: !filters.excludeInternal })}
+                    title="Sans Internes"
+                    className={`p-2 rounded-xl border transition-all active:scale-95 ${filters.excludeInternal ? 'bg-rose-500/20 border-rose-500/40 text-rose-400 shadow-lg shadow-rose-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
+                >
+                    <ShieldX className="h-3.5 w-3.5" />
                 </button>
             </div>
+
+            <div className="w-[1px] h-6 bg-white/10 shrink-0 mx-1"></div>
+
+            {/* Reset */}
+            <button
+                onClick={onReset}
+                className="p-2.5 rounded-xl bg-background/20 border border-white/5 text-muted-foreground hover:bg-rose-500/10 hover:text-rose-400 hover:border-rose-500/20 transition-all shrink-0 active:rotate-[-45deg]"
+            >
+                <RotateCcw className="h-4 w-4" />
+            </button>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import { Header } from "@/components/features/Header";
 import { Filters, FilterState } from "@/components/features/Filters";
 import { MapWrapper } from "@/components/features/MapWrapper";
 import { TournamentCard } from "@/components/features/TournamentCard";
@@ -8,9 +9,7 @@ import { Tournament } from "@/lib/types/tournament";
 import { Badge } from "@/components/ui/badge";
 import { Search, RotateCcw, Trophy } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Header } from "@/components/features/Header";
 import { ChessLoading } from "@/components/features/ChessLoading";
-import { checkAlerts, AlertConfig } from "@/lib/utils/notifications";
 import { fetchRouteInfo } from "@/lib/utils/osrm";
 import { useAuth } from "@/lib/context/AuthContext";
 import { supabase } from "@/lib/supabase";
@@ -205,26 +204,9 @@ export default function Home() {
         // Only enforce the 3s loading animation on the very first visit
         const remaining = isFirstLoad ? Math.max(0, 3000 - elapsed) : 0;
 
-        setTimeout(async () => {
+        setTimeout(() => {
           setLoading(false);
           sessionStorage.setItem('echecs-app-loaded', 'true');
-
-          let savedAlerts: AlertConfig[] = [];
-          if (user) {
-            const { data: dbAlerts } = await supabase.from('alerts').select('*').eq('user_id', user.id);
-            if (dbAlerts) savedAlerts = dbAlerts as unknown as AlertConfig[];
-          } else {
-            savedAlerts = JSON.parse(localStorage.getItem('echecs-alerts') || '[]');
-          }
-
-          if (savedAlerts.length > 0) {
-            const matches = checkAlerts(data.tournaments, savedAlerts);
-            if (matches.length > 0) {
-              matches.forEach(m => {
-                alert(`Nouveau tournoi trouvé : ${m.name} à ${m.location.city} !`);
-              });
-            }
-          }
         }, remaining);
       })
       .catch((err) => {
@@ -321,37 +303,6 @@ export default function Home() {
     });
   };
 
-  const handleCreateAlert = async () => {
-    if (!filters.cityCoords || !filters.city) {
-      alert("Veuillez d'abord sélectionner une ville pour créer une alerte.");
-      return;
-    }
-
-    const newAlert: any = {
-      format: filters.format.length === 1 ? filters.format[0] : 'Tous',
-      radius: filters.radius,
-      city: filters.city,
-      lat: filters.cityCoords.lat,
-      lng: filters.cityCoords.lng
-    };
-
-    if (user) {
-      newAlert.user_id = user.id;
-      const { error } = await supabase.from('alerts').insert(newAlert);
-      if (error) {
-        console.error(error);
-        alert("Erreur lors de la création de l'alerte.");
-        return;
-      }
-    } else {
-      newAlert.id = Date.now().toString();
-      const existing = JSON.parse(localStorage.getItem('echecs-alerts') || '[]');
-      localStorage.setItem('echecs-alerts', JSON.stringify([...existing, newAlert]));
-    }
-
-    alert(`Alerte créée ! Tu seras prévenu des nouveaux tournois [${newAlert.format}] à moins de ${newAlert.radius}km de ${newAlert.city}.`);
-  };
-
   return (
     <div className="flex flex-col h-screen overflow-hidden text-foreground">
       <Header lastUpdate={lastUpdate} />
@@ -365,7 +316,7 @@ export default function Home() {
           style={{ visibility: loading && !tournaments.length ? 'hidden' : 'visible' }}
         >
           {/* Top Filter Bar */}
-          <div className="px-4 md:px-8 py-4 shrink-0 flex items-center gap-4 relative z-50">
+          <div className="px-4 md:px-8 py-2 shrink-0 flex items-center gap-4 relative z-50">
             <div className="flex-1">
               <Filters
                 filters={filters}
@@ -392,16 +343,7 @@ export default function Home() {
                 <div className="flex justify-between items-end">
                   <div>
                     <h2 className="font-bold text-lg tracking-tight text-foreground">Tournois</h2>
-                    <div className="flex items-center gap-2">
-                      <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider">{displayTournaments.length} résultat{displayTournaments.length !== 1 ? 's' : ''}</p>
-                      <button
-                        onClick={handleCreateAlert}
-                        className="text-[10px] font-bold text-primary hover:underline flex items-center gap-1 bg-primary/5 px-2 py-0.5 rounded-full transition-colors active:scale-95 shadow-sm"
-                      >
-                        <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                        M'alerter
-                      </button>
-                    </div>
+                    <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider">{displayTournaments.length} résultat{displayTournaments.length !== 1 ? 's' : ''}</p>
                   </div>
                   {visibleIds !== null && visibleIds.length < sortedTournaments.length && (
                     <Badge variant="secondary" className="text-[10px] h-5 px-1.5 font-bold uppercase tracking-tighter opacity-70">
