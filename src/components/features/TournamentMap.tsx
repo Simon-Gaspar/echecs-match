@@ -7,7 +7,7 @@ import L from "leaflet";
 import { Tournament } from "@/lib/types/tournament";
 
 // Custom premium marker icon using divIcon for Tailwind styling and pulsing effect
-const createCustomIcon = (tournament: Tournament, isHovered: boolean) => {
+const createCustomIcon = (tournament: Tournament, isHovered: boolean, zoomLevel: number) => {
     const { format } = tournament;
     // Color based on format
     let colorClass = "bg-blue-500 shadow-blue-500/50";
@@ -17,14 +17,16 @@ const createCustomIcon = (tournament: Tournament, isHovered: boolean) => {
     const baseSize = isHovered ? "w-6 h-6" : "w-4 h-4";
     const coreSize = isHovered ? "w-3 h-3" : "w-2 h-2";
     const zIndex = isHovered ? 1000 : 0;
-    const count = tournament.registeredCount;
-    const showCount = count && count > 0;
+
+    // Show date label only when zoomed in enough
+    const showLabel = zoomLevel >= 9;
+    const dateLabel = showLabel ? new Date(tournament.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }) : '';
 
     return L.divIcon({
         className: "custom-div-icon",
         html: `
             <div class="relative flex items-center justify-center ${baseSize} transition-all duration-300" style="z-index: ${zIndex}">
-                ${showCount ? `<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-white/90 dark:bg-zinc-800/90 text-[8px] font-black text-zinc-800 dark:text-zinc-200 px-1 rounded shadow-sm whitespace-nowrap leading-tight pointer-events-none" style="z-index: ${zIndex + 1}">${count}</div>` : ''}
+                ${showLabel ? `<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-white/90 dark:bg-zinc-800/90 text-[8px] font-black text-zinc-800 dark:text-zinc-200 px-1 rounded shadow-sm whitespace-nowrap leading-tight pointer-events-none" style="z-index: ${zIndex + 1}">${dateLabel}</div>` : ''}
                 <div class="absolute w-full h-full rounded-full ${colorClass} opacity-30 ${isHovered ? 'animate-pulse' : ''}"></div>
                 <div class="relative ${coreSize} rounded-full ${colorClass} border border-white/50 shadow-sm transition-all duration-300"></div>
             </div>
@@ -99,9 +101,17 @@ function MapUpdater({ center, zoom }: { center: [number, number], zoom: number }
     return null;
 }
 
+function ZoomTracker({ onZoomChange }: { onZoomChange: (zoom: number) => void }) {
+    const map = useMapEvents({
+        zoomend: () => { onZoomChange(map.getZoom()); },
+    });
+    return null;
+}
+
 export default function TournamentMap({ tournaments, hoveredId, onBoundsChange, center: searchCenter, zoom: searchZoom }: TournamentMapProps) {
     const [center, setCenter] = useState<[number, number]>([46.2276, 2.2137]);
     const [zoom, setZoom] = useState(6);
+    const [currentZoom, setCurrentZoom] = useState(6);
 
     // Initial map bounding on France
     // Removed automatic geolocation to maintain the global view by default as requested.
@@ -119,18 +129,25 @@ export default function TournamentMap({ tournaments, hoveredId, onBoundsChange, 
             <Marker
                 key={tournament.id}
                 position={[tournament.location.lat, tournament.location.lng]}
-                icon={createCustomIcon(tournament, tournament.id === hoveredId)}
+                icon={createCustomIcon(tournament, tournament.id === hoveredId, currentZoom)}
             >
                 <Popup className="premium-popup">
                     <div className="p-1 min-w-[200px] text-white">
                         <h4 className="font-bold text-sm leading-tight mb-1 line-clamp-2 uppercase tracking-tight">
                             {tournament.name}
                         </h4>
-                        <div className="flex items-center text-[10px] text-zinc-400 mb-3 font-medium">
+                        <div className="flex items-center text-[10px] text-zinc-400 mb-2 font-medium">
                             <span className="uppercase tracking-wider mr-2">{tournament.location.city}</span>
                             <span className="opacity-50">•</span>
-                            <span className="ml-2">{tournament.date}</span>
+                            <span className="ml-2">{new Date(tournament.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
                         </div>
+                        {tournament.registeredCount && tournament.registeredCount > 0 && (
+                            <div className="flex items-center gap-2 text-[10px] text-emerald-400 font-bold mb-2 bg-emerald-400/10 px-2 py-1 rounded-md border border-emerald-400/20">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                                {tournament.registeredCount} joueur{tournament.registeredCount > 1 ? 's' : ''}
+                                {tournament.sections ? ` (${tournament.sections.length} opens)` : ''}
+                            </div>
+                        )}
                         {!tournament.sections ? (
                             <div className="flex flex-wrap gap-1.5 pt-2 border-t border-zinc-800">
                                 <span className={`px-2 py-0.5 text-[10px] rounded-full font-semibold border ${tournament.format === 'Blitz' ? 'bg-red-500/20 text-red-400 border-red-500/30' :
@@ -164,21 +181,17 @@ export default function TournamentMap({ tournaments, hoveredId, onBoundsChange, 
                                 ))}
                             </div>
                         )}
-                        {!tournament.sections && (
-                            <a
-                                href={tournament.homologationLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-4 block w-full text-center py-2 bg-primary text-primary-foreground text-[11px] font-bold rounded-md hover:brightness-110 transition-all border border-primary/20"
-                            >
-                                VOIR LA FICHE FFE
-                            </a>
-                        )}
+                        <a
+                            href={`/tournaments/${tournament.id}`}
+                            className="mt-3 block w-full text-center py-2 bg-primary text-primary-foreground text-[11px] font-bold rounded-md hover:brightness-110 transition-all border border-primary/20"
+                        >
+                            VOIR LES DÉTAILS
+                        </a>
                     </div>
                 </Popup>
             </Marker>
         ));
-    }, [tournaments, hoveredId]);
+    }, [tournaments, hoveredId, currentZoom]);
 
     return (
         <MapContainer
@@ -197,6 +210,7 @@ export default function TournamentMap({ tournaments, hoveredId, onBoundsChange, 
 
             <MapUpdater center={center} zoom={zoom} />
             <MapEvents onBoundsChange={onBoundsChange} tournaments={tournaments} />
+            <ZoomTracker onZoomChange={setCurrentZoom} />
 
             {markers}
         </MapContainer>

@@ -325,10 +325,21 @@ export async function fetchLiveTournaments(): Promise<Tournament[]> {
                 groupedTournaments.push(subGroup[0]);
             } else {
                 const first = subGroup[0];
+                // Aggregate stats across all sections
+                const totalRegistered = subGroup.reduce((sum, s) => sum + (s.registeredCount || 0), 0);
+                const allElos = subGroup.filter(s => s.avgElo).map(s => s.avgElo!);
+                const avgElo = allElos.length > 0 ? Math.round(allElos.reduce((a, b) => a + b, 0) / allElos.length) : undefined;
+                const topElo = subGroup.reduce((max, s) => Math.max(max, s.topPlayerElo || 0), 0) || undefined;
+                const anyPlayersList = subGroup.some(s => s.hasPlayersList);
+
                 groupedTournaments.push({
                     ...first,
                     id: `grouped-${first.id}`,
                     name: prefix,
+                    registeredCount: totalRegistered > 0 ? totalRegistered : undefined,
+                    avgElo: avgElo,
+                    topPlayerElo: topElo,
+                    hasPlayersList: anyPlayersList,
                     sections: subGroup.map(s => ({
                         name: s.name,
                         eloBracket: s.eloBracket,
