@@ -167,12 +167,12 @@ export function UserAccount() {
             <AnimatePresence>
                 {isOpen && (
                     <>
-                        <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+                        <div className="fixed inset-0 z-[60]" onClick={() => setIsOpen(false)} />
                         <motion.div
                             initial={{ opacity: 0, y: 10, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                            className="absolute right-0 mt-2 w-64 bg-card border-2 shadow-xl rounded-2xl overflow-hidden z-50 p-2"
+                            className="absolute right-0 mt-2 w-64 bg-card border-2 shadow-xl rounded-2xl overflow-hidden z-[70] p-2"
                         >
                             <div className="p-3 border-b-2 border-muted/30 mb-1">
                                 <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-1">Statut Fédéral</p>

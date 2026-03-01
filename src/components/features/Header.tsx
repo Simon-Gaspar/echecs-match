@@ -10,7 +10,7 @@ interface HeaderProps {
 
 export function Header({ lastUpdate }: HeaderProps) {
     return (
-        <header className="px-4 md:px-8 py-4 flex items-center justify-between shrink-0">
+        <header className="px-4 md:px-8 py-4 flex items-center justify-between shrink-0 relative z-[60]">
             <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 rotate-3">
                     <span className="text-primary-foreground font-black text-xl">♟</span>

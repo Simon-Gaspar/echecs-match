@@ -126,7 +126,7 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
     };
 
     return (
-        <div className="flex items-center gap-3 bg-secondary/20 p-2 rounded-2xl border border-white/5 backdrop-blur-xl shadow-2xl overflow-x-auto no-scrollbar max-w-full">
+        <div className="flex items-center flex-wrap gap-2 bg-secondary/20 p-2 rounded-2xl border border-white/5 backdrop-blur-xl shadow-2xl max-w-full">
             {/* Ville & Rayon */}
             <div className="flex items-center gap-2 px-3 py-1.5 bg-background/20 rounded-xl border border-white/5 min-w-[280px]">
                 <div className="relative flex-1" ref={wrapperRef}>
@@ -293,34 +293,38 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
             <div className="w-[1px] h-6 bg-white/10 shrink-0"></div>
 
             {/* Icon Toggles */}
-            <div className="flex items-center gap-1.5 shrink-0 px-2">
+            <div className="flex items-center gap-1.5 shrink-0 px-1">
                 <button
                     onClick={() => onChange({ ...filters, multiOpen: !filters.multiOpen })}
                     title="Plusieurs Opens"
-                    className={`p-2 rounded-xl border transition-all active:scale-95 ${filters.multiOpen ? 'bg-primary/20 border-primary/40 text-primary shadow-lg shadow-primary/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
+                    className={`flex items-center gap-1.5 px-2.5 py-2 rounded-xl border transition-all active:scale-95 text-[10px] font-bold uppercase tracking-tight ${filters.multiOpen ? 'bg-primary/20 border-primary/40 text-primary shadow-lg shadow-primary/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
                 >
                     <Layers className="h-3.5 w-3.5" />
+                    <span className="hidden md:inline">Multi</span>
                 </button>
                 <button
                     onClick={() => onChange({ ...filters, hasPlayersList: !filters.hasPlayersList })}
                     title="Liste des inscrits"
-                    className={`p-2 rounded-xl border transition-all active:scale-95 ${filters.hasPlayersList ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400 shadow-lg shadow-emerald-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
+                    className={`flex items-center gap-1.5 px-2.5 py-2 rounded-xl border transition-all active:scale-95 text-[10px] font-bold uppercase tracking-tight ${filters.hasPlayersList ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400 shadow-lg shadow-emerald-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
                 >
                     <Users className="h-3.5 w-3.5" />
+                    <span className="hidden md:inline">Inscrits</span>
                 </button>
                 <button
                     onClick={() => onChange({ ...filters, onlyShortlist: !filters.onlyShortlist })}
                     title="Mes Favoris"
-                    className={`p-2 rounded-xl border transition-all active:scale-95 ${filters.onlyShortlist ? 'bg-amber-500/20 border-amber-500/40 text-amber-500 shadow-lg shadow-amber-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
+                    className={`flex items-center gap-1.5 px-2.5 py-2 rounded-xl border transition-all active:scale-95 text-[10px] font-bold uppercase tracking-tight ${filters.onlyShortlist ? 'bg-amber-500/20 border-amber-500/40 text-amber-500 shadow-lg shadow-amber-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
                 >
                     <Star className={`h-3.5 w-3.5 ${filters.onlyShortlist ? 'fill-amber-500' : ''}`} />
+                    <span className="hidden md:inline">Favoris</span>
                 </button>
                 <button
                     onClick={() => onChange({ ...filters, excludeInternal: !filters.excludeInternal })}
                     title="Sans Internes"
-                    className={`p-2 rounded-xl border transition-all active:scale-95 ${filters.excludeInternal ? 'bg-rose-500/20 border-rose-500/40 text-rose-400 shadow-lg shadow-rose-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
+                    className={`flex items-center gap-1.5 px-2.5 py-2 rounded-xl border transition-all active:scale-95 text-[10px] font-bold uppercase tracking-tight ${filters.excludeInternal ? 'bg-rose-500/20 border-rose-500/40 text-rose-400 shadow-lg shadow-rose-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
                 >
                     <ShieldX className="h-3.5 w-3.5" />
+                    <span className="hidden md:inline">Officiels</span>
                 </button>
             </div>
 
@@ -329,9 +333,11 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
             {/* Reset */}
             <button
                 onClick={onReset}
-                className="p-2.5 rounded-xl bg-background/20 border border-white/5 text-muted-foreground hover:bg-rose-500/10 hover:text-rose-400 hover:border-rose-500/20 transition-all shrink-0 active:rotate-[-45deg]"
+                title="Réinitialiser les filtres"
+                className="flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-background/20 border border-white/5 text-muted-foreground hover:bg-rose-500/10 hover:text-rose-400 hover:border-rose-500/20 transition-all shrink-0 active:rotate-[-45deg] text-[10px] font-bold uppercase tracking-tight"
             >
-                <RotateCcw className="h-4 w-4" />
+                <RotateCcw className="h-3.5 w-3.5" />
+                <span className="hidden md:inline">Reset</span>
             </button>
         </div>
     );
