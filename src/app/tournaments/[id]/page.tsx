@@ -9,9 +9,52 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/lib/supabase";
 import { TournamentMiniMap } from "@/components/features/TournamentMiniMap";
 import { TournamentActions } from "@/components/features/TournamentActions";
+import type { Metadata } from "next";
 
 interface PageProps {
     params: Promise<{ id: string }>;
+}
+
+function loadTournament(id: string): Tournament | null {
+    const dataPath = path.join(process.cwd(), 'src/data/tournaments.json');
+    try {
+        const fileContent = fs.readFileSync(dataPath, 'utf8');
+        const data = JSON.parse(fileContent);
+        return data.tournaments.find((t: Tournament) => t.id === id) || null;
+    } catch {
+        return null;
+    }
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { id } = await params;
+    const t = loadTournament(id);
+
+    if (!t) {
+        return { title: "Tournoi introuvable" };
+    }
+
+    const dateFormatted = new Intl.DateTimeFormat('fr-FR', {
+        day: 'numeric', month: 'long', year: 'numeric'
+    }).format(new Date(t.date));
+
+    const title = `${t.name} — ${t.location.city}`;
+    const description = `Tournoi ${t.format} le ${dateFormatted} à ${t.location.city}. ${t.eloBracket !== 'Toutes catégories' ? `Elo : ${t.eloBracket}.` : ''} Consultez les détails et inscrivez-vous.`;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title: `♟️ ${title}`,
+            description,
+            type: "article",
+        },
+        twitter: {
+            card: "summary",
+            title: `♟️ ${title}`,
+            description,
+        },
+    };
 }
 
 export default async function TournamentDetailsPage({ params }: PageProps) {

@@ -15,8 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Échecs Match | Trouvez votre prochain tournoi FFE sur la carte",
-  description: "L'outil de recherche ultime pour les joueurs d'échecs. Explorez les tournois FFE en France sur une carte interactive. Filtrez par format, Elo et PMR en temps réel.",
+  metadataBase: new URL("https://echecs-match.vercel.app"),
+  title: {
+    default: "Échecs Match | Trouvez votre prochain tournoi d'échecs",
+    template: "%s | Échecs Match",
+  },
+  description: "L'outil de recherche ultime pour les joueurs d'échecs. Explorez les tournois FFE et FIDE en France et en Suisse sur une carte interactive. Filtrez par format, Elo et distance.",
+  keywords: ["échecs", "tournoi", "FFE", "FIDE", "chess", "tournament", "France", "carte", "blitz", "rapide"],
+  authors: [{ name: "Simon Gaspar" }],
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://echecs-match.vercel.app",
+    siteName: "Échecs Match",
+    title: "Échecs Match | Trouvez votre prochain tournoi d'échecs",
+    description: "Explorez les tournois d'échecs homologués FFE et FIDE sur une carte interactive. Filtrez par format, Elo et distance en temps réel.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Échecs Match | Tournois d'échecs sur carte",
+    description: "Trouvez et comparez les tournois d'échecs près de chez vous.",
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
