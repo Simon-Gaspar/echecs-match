@@ -44,6 +44,7 @@ export default function Home() {
   const [shortlistedIds, setShortlistedIds] = useState<string[]>([]);
   const [targetCoords, setTargetCoords] = useState<{ lat: number, lng: number } | null>(null);
   const [carResults, setCarResults] = useState<Record<string, { carDistance: string, duration: string }>>({});
+  const [viewCounts, setViewCounts] = useState<Record<string, number>>({});
 
   // Load favorites from DB or LocalStorage
   useEffect(() => {
@@ -61,6 +62,20 @@ export default function Home() {
       }
     }
   }, [user]);
+
+  // Fetch view counts for "Hot" badge
+  useEffect(() => {
+    supabase.from('tournament_views')
+      .select('tournament_id')
+      .then(({ data }) => {
+        if (!data) return;
+        const counts: Record<string, number> = {};
+        data.forEach((row: { tournament_id: string }) => {
+          counts[row.tournament_id] = (counts[row.tournament_id] || 0) + 1;
+        });
+        setViewCounts(counts);
+      });
+  }, []);
 
   const toggleShortlist = async (id: string) => {
     const isAdding = !shortlistedIds.includes(id);
@@ -405,6 +420,7 @@ export default function Home() {
                           isShortlisted={shortlistedIds.includes(tournament.id)}
                           onToggleShortlist={toggleShortlist}
                           distance={targetCoords ? calculateDistance(targetCoords.lat, targetCoords.lng, tournament.location.lat, tournament.location.lng) : undefined}
+                          viewCount={viewCounts[tournament.id]}
                         />
                       </motion.div>
                     ))}

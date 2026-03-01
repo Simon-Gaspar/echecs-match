@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Tournament } from "@/lib/types/tournament";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, ExternalLink, Trophy, Accessibility, Bookmark, Users, Car, Clock, CheckCircle2, AlertCircle, Info } from "lucide-react";
+import { MapPin, ExternalLink, Trophy, Accessibility, Bookmark, Users, Car, Clock, CheckCircle2, AlertCircle, Info, Flame } from "lucide-react";
 import { useAuth } from "@/lib/context/AuthContext";
 import Link from "next/link";
 
@@ -13,9 +13,10 @@ interface TournamentCardProps {
     isShortlisted?: boolean;
     onToggleShortlist?: (id: string) => void;
     distance?: number;
+    viewCount?: number;
 }
 
-export function TournamentCard({ tournament, isHovered, onHover, isShortlisted, onToggleShortlist, distance }: TournamentCardProps) {
+export function TournamentCard({ tournament, isHovered, onHover, isShortlisted, onToggleShortlist, distance, viewCount }: TournamentCardProps) {
     const { user } = useAuth();
     const formattedDate = new Date(tournament.date).toLocaleDateString("fr-FR", { month: 'short', day: 'numeric' });
 
@@ -70,7 +71,15 @@ export function TournamentCard({ tournament, isHovered, onHover, isShortlisted, 
                     )}
                 </div>
                 <div className="flex justify-between items-start gap-2 pr-12">
-                    <h3 className="font-bold text-base leading-tight">{tournament.name}</h3>
+                    <div className="flex items-center gap-2">
+                        <h3 className="font-bold text-base leading-tight">{tournament.name}</h3>
+                        {viewCount !== undefined && viewCount >= 5 && (
+                            <span className="flex items-center gap-0.5 bg-orange-500/15 text-orange-500 border border-orange-500/20 px-1.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-tighter shrink-0 animate-pulse">
+                                <Flame className="w-2.5 h-2.5" />
+                                Hot
+                            </span>
+                        )}
+                    </div>
                 </div>
                 {tournament.isInternal && (
                     <div className="mt-1">

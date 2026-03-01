@@ -2,6 +2,7 @@
 
 import { History } from "lucide-react";
 import { UserAccount } from "./UserAccount";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 interface HeaderProps {
     lastUpdate: string | null;
@@ -24,7 +25,7 @@ export function Header({ lastUpdate }: HeaderProps) {
                 </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
                 {lastUpdate && (
                     <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-secondary/30 rounded-full border border-border/40">
                         <History className="w-3 h-3 text-muted-foreground" />
@@ -33,6 +34,7 @@ export function Header({ lastUpdate }: HeaderProps) {
                         </span>
                     </div>
                 )}
+                <ThemeToggle />
                 <UserAccount />
             </div>
         </header>
