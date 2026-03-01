@@ -27,7 +27,6 @@ export function UserAccount() {
 
     // Profile Modal State
     const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-    const [profileModalTab, setProfileModalTab] = useState<'profile' | 'alerts'>('profile');
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -191,12 +190,7 @@ export function UserAccount() {
                                 <MenuItem
                                     icon={<UserCircle />}
                                     label="Mon Profil"
-                                    onClick={() => { setIsOpen(false); setProfileModalTab('profile'); setIsProfileModalOpen(true); }}
-                                />
-                                <MenuItem
-                                    icon={<Bell />}
-                                    label="Mes Alertes"
-                                    onClick={() => { setIsOpen(false); setProfileModalTab('alerts'); setIsProfileModalOpen(true); }}
+                                    onClick={() => { setIsOpen(false); setIsProfileModalOpen(true); }}
                                 />
                                 <MenuItem icon={<Trophy />} label="Mes Résultats" />
                                 <MenuItem icon={<Settings />} label="Paramètres" />
@@ -218,7 +212,6 @@ export function UserAccount() {
             <ProfileModal
                 isOpen={isProfileModalOpen}
                 onClose={() => setIsProfileModalOpen(false)}
-                initialTab={profileModalTab}
             />
         </div>
     );

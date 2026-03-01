@@ -88,6 +88,7 @@ export default async function TournamentDetailsPage({ params }: PageProps) {
     }).format(dateObj);
 
     let interestedCount = 0;
+    let viewCount = 0;
     try {
         const { count, error } = await supabase
             .from('shortlists')
@@ -97,8 +98,19 @@ export default async function TournamentDetailsPage({ params }: PageProps) {
         if (!error && count !== null) {
             interestedCount = count;
         }
+
+        // Track this view (fire-and-forget)
+        supabase.from('tournament_views').insert({ tournament_id: id }).then(() => { });
+
+        // Get total view count
+        const { count: views } = await supabase
+            .from('tournament_views')
+            .select('*', { count: 'exact', head: true })
+            .eq('tournament_id', id);
+
+        if (views !== null) viewCount = views;
     } catch (e) {
-        console.error("Failed to fetch interested count", e);
+        console.error("Failed to fetch counts", e);
     }
 
     return (
@@ -198,17 +210,30 @@ export default async function TournamentDetailsPage({ params }: PageProps) {
                                     </div>
                                 </div>
 
-                                {interestedCount > 0 && (
-                                    <div className="bg-amber-500/10 border border-amber-500/20 p-4 rounded-2xl flex items-center gap-4">
-                                        <div className="p-2 bg-amber-500/20 rounded-xl">
-                                            <Users className="w-5 h-5 text-amber-500" />
-                                        </div>
-                                        <div>
-                                            <p className="text-xs font-black uppercase tracking-tight text-amber-200">
-                                                {interestedCount} joueur{interestedCount > 1 ? 's' : ''} de la communauté
-                                            </p>
-                                            <p className="text-[10px] font-bold text-amber-500/60 uppercase">Inscrit{interestedCount > 1 ? 's' : ''} à ce tournoi</p>
-                                        </div>
+                                {(interestedCount > 0 || viewCount > 0) && (
+                                    <div className="flex gap-3">
+                                        {viewCount > 0 && (
+                                            <div className="flex-1 bg-blue-500/10 border border-blue-500/20 p-3 rounded-2xl flex items-center gap-3">
+                                                <div className="p-1.5 bg-blue-500/20 rounded-lg">
+                                                    <Activity className="w-4 h-4 text-blue-400" />
+                                                </div>
+                                                <div>
+                                                    <p className="text-xs font-black text-blue-200">{viewCount}</p>
+                                                    <p className="text-[9px] font-bold text-blue-500/60 uppercase">Vues</p>
+                                                </div>
+                                            </div>
+                                        )}
+                                        {interestedCount > 0 && (
+                                            <div className="flex-1 bg-amber-500/10 border border-amber-500/20 p-3 rounded-2xl flex items-center gap-3">
+                                                <div className="p-1.5 bg-amber-500/20 rounded-lg">
+                                                    <Users className="w-4 h-4 text-amber-500" />
+                                                </div>
+                                                <div>
+                                                    <p className="text-xs font-black text-amber-200">{interestedCount}</p>
+                                                    <p className="text-[9px] font-bold text-amber-500/60 uppercase">Intéressé{interestedCount > 1 ? 's' : ''}</p>
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 )}
                             </div>

@@ -4,80 +4,102 @@ import { useState, useEffect } from "react";
 import { useAuth } from "@/lib/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 import { motion } from "framer-motion";
-import { Trash2, User, Bell, MapPin, X } from "lucide-react";
+import { User, MapPin, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface UserAlert {
-    id: string;
-    format: string;
-    radius: number;
-    city: string;
-    created_at: string;
-}
 
 interface ProfileModalProps {
     isOpen: boolean;
     onClose: () => void;
-    initialTab?: 'profile' | 'alerts';
 }
 
-export function ProfileModal({ isOpen, onClose, initialTab = 'profile' }: ProfileModalProps) {
+export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
     const { user, updateProfile } = useAuth();
-    const [activeTab, setActiveTab] = useState<'profile' | 'alerts'>(initialTab);
-    const [alerts, setAlerts] = useState<UserAlert[]>([]);
-    const [isLoadingAlerts, setIsLoadingAlerts] = useState(false);
 
     // Profile Edit State
     const [editName, setEditName] = useState("");
     const [editElo, setEditElo] = useState("");
+    const [editCity, setEditCity] = useState("");
+    const [cityCoords, setCityCoords] = useState<{ lat: number; lng: number } | null>(null);
+    const [citySuggestions, setCitySuggestions] = useState<Array<{ display_name: string; lat: string; lon: string }>>([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
-        if (isOpen) {
-            setActiveTab(initialTab);
-            if (user) {
-                setEditName(user.name || "");
-                setEditElo(user.elo?.toString() || "");
-                if (initialTab === 'alerts' || activeTab === 'alerts') {
-                    fetchAlerts();
-                }
+        if (isOpen && user) {
+            setEditName(user.name || "");
+            setEditElo(user.elo?.toString() || "");
+            // Load default city from profile
+            loadDefaultCity();
+        }
+    }, [isOpen, user]);
+
+    const loadDefaultCity = async () => {
+        if (!user) return;
+        const { data } = await supabase
+            .from('profiles')
+            .select('default_city, default_lat, default_lng')
+            .eq('id', user.id)
+            .single();
+        if (data?.default_city) {
+            setEditCity(data.default_city);
+            if (data.default_lat && data.default_lng) {
+                setCityCoords({ lat: Number(data.default_lat), lng: Number(data.default_lng) });
             }
         }
-    }, [isOpen, initialTab, user]);
-
-    useEffect(() => {
-        if (activeTab === 'alerts' && user) {
-            fetchAlerts();
-        }
-    }, [activeTab]);
-
-    const fetchAlerts = async () => {
-        if (!user) return;
-        setIsLoadingAlerts(true);
-        const { data, error } = await supabase
-            .from('alerts')
-            .select('*')
-            .eq('user_id', user.id)
-            .order('created_at', { ascending: false });
-
-        if (!error && data) {
-            setAlerts(data);
-        }
-        setIsLoadingAlerts(false);
     };
 
-    const handleDeleteAlert = async (alertId: string) => {
-        if (!user) return;
-        setAlerts(alerts.filter(a => a.id !== alertId)); // Optimistic UI
-        await supabase.from('alerts').delete().eq('id', alertId).eq('user_id', user.id);
+    // City autocomplete
+    useEffect(() => {
+        if (editCity.length < 3) {
+            setCitySuggestions([]);
+            return;
+        }
+        const timer = setTimeout(async () => {
+            try {
+                const res = await fetch(
+                    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(editCity)}&format=json&limit=5&countrycodes=fr,ch`
+                );
+                const data = await res.json();
+                setCitySuggestions(data || []);
+                setShowSuggestions(true);
+            } catch {
+                setCitySuggestions([]);
+            }
+        }, 400);
+        return () => clearTimeout(timer);
+    }, [editCity]);
+
+    const selectCity = (suggestion: { display_name: string; lat: string; lon: string }) => {
+        const cityName = suggestion.display_name.split(',')[0].trim();
+        setEditCity(cityName);
+        setCityCoords({ lat: parseFloat(suggestion.lat), lng: parseFloat(suggestion.lon) });
+        setShowSuggestions(false);
+        setCitySuggestions([]);
     };
 
     const handleSaveProfile = async () => {
         setIsSaving(true);
-        await updateProfile({
+        const updates: Record<string, unknown> = {
             name: editName,
-            elo: editElo ? parseInt(editElo) : undefined
-        });
+            elo: editElo ? parseInt(editElo) : null,
+        };
+
+        // Save default city separately (not in UserProfile type)
+        if (editCity && cityCoords) {
+            await supabase.from('profiles').update({
+                default_city: editCity,
+                default_lat: cityCoords.lat,
+                default_lng: cityCoords.lng,
+            }).eq('id', user!.id);
+        } else if (!editCity) {
+            await supabase.from('profiles').update({
+                default_city: null,
+                default_lat: null,
+                default_lng: null,
+            }).eq('id', user!.id);
+        }
+
+        await updateProfile(updates as any);
         setIsSaving(false);
     };
 
@@ -97,7 +119,7 @@ export function ProfileModal({ isOpen, onClose, initialTab = 'profile' }: Profil
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className="relative w-full max-w-2xl bg-card border shadow-2xl rounded-3xl overflow-hidden flex flex-col max-h-[90vh]"
+                className="relative w-full max-w-lg bg-card border shadow-2xl rounded-3xl overflow-hidden flex flex-col max-h-[90vh]"
             >
                 <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
 
@@ -117,113 +139,78 @@ export function ProfileModal({ isOpen, onClose, initialTab = 'profile' }: Profil
                     </button>
                 </div>
 
-                {/* Tabs */}
-                <div className="flex p-4 gap-2 border-b bg-muted/30 shrink-0 overflow-x-auto">
-                    <button
-                        onClick={() => setActiveTab('profile')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap ${activeTab === 'profile' ? 'bg-background shadow-sm text-foreground' : 'text-muted-foreground hover:bg-background/50'
-                            }`}
-                    >
-                        <User className="w-4 h-4" /> Mon Profil
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('alerts')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap ${activeTab === 'alerts' ? 'bg-background shadow-sm text-foreground' : 'text-muted-foreground hover:bg-background/50'
-                            }`}
-                    >
-                        <Bell className="w-4 h-4" /> Mes Alertes
-                        {alerts.length > 0 && (
-                            <span className="bg-primary text-primary-foreground text-[10px] px-1.5 py-0.5 rounded-full ml-1">
-                                {alerts.length}
-                            </span>
-                        )}
-                    </button>
-                </div>
-
                 {/* Content */}
                 <div className="flex-1 overflow-y-auto p-6 bg-muted/10">
-                    {activeTab === 'profile' && (
-                        <div className="space-y-6 max-w-md">
-                            <div className="space-y-4">
-                                <div>
-                                    <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Nom d'affichage</label>
+                    <div className="space-y-6 max-w-md mx-auto">
+                        <div className="space-y-4">
+                            <div>
+                                <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Nom d'affichage</label>
+                                <input
+                                    type="text"
+                                    value={editName}
+                                    onChange={(e) => setEditName(e.target.value)}
+                                    className="mt-1 w-full bg-background border rounded-xl px-4 py-3 text-sm font-medium outline-none focus:border-primary transition-all"
+                                />
+                            </div>
+                            <div>
+                                <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Classement Elo</label>
+                                <input
+                                    type="number"
+                                    value={editElo}
+                                    onChange={(e) => setEditElo(e.target.value)}
+                                    placeholder="Ex: 1540"
+                                    className="mt-1 w-full bg-background border rounded-xl px-4 py-3 text-sm font-medium outline-none focus:border-primary transition-all"
+                                />
+                            </div>
+                            <div className="relative">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">
+                                    <MapPin className="w-3 h-3 inline mr-1" />
+                                    Ma ville (centrage automatique)
+                                </label>
+                                <div className="relative mt-1">
+                                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                                     <input
                                         type="text"
-                                        value={editName}
-                                        onChange={(e) => setEditName(e.target.value)}
-                                        className="mt-1 w-full bg-background border rounded-xl px-4 py-3 text-sm font-medium outline-none focus:border-primary transition-all"
+                                        value={editCity}
+                                        onChange={(e) => {
+                                            setEditCity(e.target.value);
+                                            setCityCoords(null);
+                                        }}
+                                        onFocus={() => citySuggestions.length > 0 && setShowSuggestions(true)}
+                                        placeholder="Ex: Nantes, Lyon, Genève..."
+                                        className="w-full bg-background border rounded-xl pl-10 pr-4 py-3 text-sm font-medium outline-none focus:border-primary transition-all"
                                     />
                                 </div>
-                                <div className="grid grid-cols-1 gap-4">
-                                    <div>
-                                        <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">Classement Elo</label>
-                                        <input
-                                            type="number"
-                                            value={editElo}
-                                            onChange={(e) => setEditElo(e.target.value)}
-                                            placeholder="Ex: 1540"
-                                            className="mt-1 w-full bg-background border rounded-xl px-4 py-3 text-sm font-medium outline-none focus:border-primary transition-all"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <Button
-                                onClick={handleSaveProfile}
-                                disabled={isSaving}
-                                className="w-full h-12 rounded-xl font-black uppercase tracking-widest text-xs"
-                            >
-                                {isSaving ? 'Enregistrement...' : 'Enregistrer les modifications'}
-                            </Button>
-                        </div>
-                    )}
-
-                    {activeTab === 'alerts' && (
-                        <div className="space-y-4">
-                            {isLoadingAlerts ? (
-                                <div className="text-center py-8 text-sm text-muted-foreground animate-pulse">
-                                    Chargement de vos radars d'échecs...
-                                </div>
-                            ) : alerts.length === 0 ? (
-                                <div className="text-center py-12 border-2 border-dashed border-muted-foreground/20 rounded-2xl bg-muted/30">
-                                    <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center mx-auto mb-3 shadow-sm">
-                                        <Bell className="w-6 h-6 text-muted-foreground" />
-                                    </div>
-                                    <p className="font-bold text-foreground">Aucune alerte active</p>
-                                    <p className="text-sm text-muted-foreground mt-1 max-w-[250px] mx-auto">
-                                        Utilisez le bouton "M'alerter" sur la carte pour être prévenu des nouveaux tournois près de chez vous.
-                                    </p>
-                                </div>
-                            ) : (
-                                <div className="grid gap-3">
-                                    {alerts.map(alert => (
-                                        <div key={alert.id} className="flex items-center justify-between bg-background border p-4 rounded-2xl hover:border-primary/50 transition-colors group">
-                                            <div className="flex items-start gap-4">
-                                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                                                    <MapPin className="w-5 h-5 text-primary" />
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-sm">
-                                                        {alert.city} <span className="text-muted-foreground font-normal">({alert.radius}km)</span>
-                                                    </h4>
-                                                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">
-                                                        Format : <span className="text-foreground">{alert.format}</span>
-                                                    </p>
-                                                </div>
-                                            </div>
+                                {showSuggestions && citySuggestions.length > 0 && (
+                                    <div className="absolute z-50 mt-1 w-full bg-card border rounded-xl shadow-xl overflow-hidden">
+                                        {citySuggestions.map((s, i) => (
                                             <button
-                                                onClick={() => handleDeleteAlert(alert.id)}
-                                                className="p-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
-                                                title="Supprimer cette alerte"
+                                                key={i}
+                                                onClick={() => selectCity(s)}
+                                                className="flex items-center gap-2 w-full text-left px-4 py-2.5 text-sm hover:bg-muted transition-colors border-b last:border-b-0"
                                             >
-                                                <Trash2 className="w-4 h-4" />
+                                                <MapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                                                <span className="truncate">{s.display_name}</span>
                                             </button>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
+                                        ))}
+                                    </div>
+                                )}
+                                {cityCoords && (
+                                    <p className="text-[10px] text-emerald-500 mt-1 ml-1 font-bold">
+                                        ✓ Ville validée — la carte se centrera ici à chaque visite
+                                    </p>
+                                )}
+                            </div>
                         </div>
-                    )}
+
+                        <Button
+                            onClick={handleSaveProfile}
+                            disabled={isSaving}
+                            className="w-full h-12 rounded-xl font-black uppercase tracking-widest text-xs"
+                        >
+                            {isSaving ? 'Enregistrement...' : 'Enregistrer les modifications'}
+                        </Button>
+                    </div>
                 </div>
             </motion.div>
         </div>

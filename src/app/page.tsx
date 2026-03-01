@@ -160,24 +160,45 @@ export default function Home() {
     });
   }, [tournaments, filters, shortlistedIds, targetCoords]);
 
-  // Initial HTML5 Geolocation to center the user automatically
+  // Auto-center: use profile default city for logged-in users, fallback to HTML5 geolocation
   useEffect(() => {
     const hasGeolocated = sessionStorage.getItem('echecs-geolocated');
+    if (hasGeolocated || filters.city || filters.cityCoords) return;
 
-    if (!hasGeolocated && navigator.geolocation && !filters.city && !filters.cityCoords) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setTargetCoords({ lat: position.coords.latitude, lng: position.coords.longitude });
-          sessionStorage.setItem('echecs-geolocated', 'true');
-        },
-        (error) => {
-          console.warn("Geolocation failed or denied", error);
-          sessionStorage.setItem('echecs-geolocated', 'false'); // Don't ask again this session
-        },
-        { timeout: 10000 }
-      );
+    // Try profile default city first
+    if (user) {
+      supabase.from('profiles')
+        .select('default_city, default_lat, default_lng')
+        .eq('id', user.id)
+        .single()
+        .then(({ data }) => {
+          if (data?.default_lat && data?.default_lng) {
+            setTargetCoords({ lat: Number(data.default_lat), lng: Number(data.default_lng) });
+            sessionStorage.setItem('echecs-geolocated', 'true');
+          } else {
+            // No default city, fallback to geolocation
+            fallbackToGeolocation();
+          }
+        });
+    } else {
+      fallbackToGeolocation();
     }
-  }, []);
+
+    function fallbackToGeolocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            setTargetCoords({ lat: position.coords.latitude, lng: position.coords.longitude });
+            sessionStorage.setItem('echecs-geolocated', 'true');
+          },
+          () => {
+            sessionStorage.setItem('echecs-geolocated', 'false');
+          },
+          { timeout: 10000 }
+        );
+      }
+    }
+  }, [user]);
 
   useEffect(() => {
     // If we already have the data in memory (user navigated back), use it instantly
