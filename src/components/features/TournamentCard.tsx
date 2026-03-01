@@ -95,6 +95,12 @@ export function TournamentCard({ tournament, isHovered, onHover, isShortlisted, 
                     </div>
                 ) : (
                     <div className="flex flex-col gap-1.5 mt-2">
+                        {tournament.registeredCount !== undefined && tournament.registeredCount > 0 && (
+                            <div className="flex items-center gap-1.5 text-primary text-[10px] font-bold px-1 mb-0.5">
+                                <Users className="h-3 w-3" />
+                                {tournament.registeredCount} joueur{tournament.registeredCount !== 1 ? 's' : ''} au total
+                            </div>
+                        )}
                         {tournament.sections.map((section, idx) => (
                             <a key={idx} href={section.homologationLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between bg-muted/50 hover:bg-muted rounded-md px-2 py-1.5 border border-border/50 transition-colors">
                                 <div className="flex items-center gap-1.5">

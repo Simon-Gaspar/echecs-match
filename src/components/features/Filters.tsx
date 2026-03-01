@@ -324,7 +324,7 @@ export function Filters({ filters, onChange, onReset }: FiltersProps) {
                     className={`flex items-center gap-1.5 px-2.5 py-2 rounded-xl border transition-all active:scale-95 text-[10px] font-bold uppercase tracking-tight ${filters.excludeInternal ? 'bg-rose-500/20 border-rose-500/40 text-rose-400 shadow-lg shadow-rose-500/10' : 'bg-background/20 border-white/5 text-muted-foreground hover:bg-white/5'}`}
                 >
                     <ShieldX className="h-3.5 w-3.5" />
-                    <span className="hidden md:inline">Officiels</span>
+                    <span className="hidden md:inline">Interne</span>
                 </button>
             </div>
 

@@ -17,11 +17,14 @@ const createCustomIcon = (tournament: Tournament, isHovered: boolean) => {
     const baseSize = isHovered ? "w-6 h-6" : "w-4 h-4";
     const coreSize = isHovered ? "w-3 h-3" : "w-2 h-2";
     const zIndex = isHovered ? 1000 : 0;
+    const count = tournament.registeredCount;
+    const showCount = count && count > 0;
 
     return L.divIcon({
         className: "custom-div-icon",
         html: `
             <div class="relative flex items-center justify-center ${baseSize} transition-all duration-300" style="z-index: ${zIndex}">
+                ${showCount ? `<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-white/90 dark:bg-zinc-800/90 text-[8px] font-black text-zinc-800 dark:text-zinc-200 px-1 rounded shadow-sm whitespace-nowrap leading-tight pointer-events-none" style="z-index: ${zIndex + 1}">${count}</div>` : ''}
                 <div class="absolute w-full h-full rounded-full ${colorClass} opacity-30 ${isHovered ? 'animate-pulse' : ''}"></div>
                 <div class="relative ${coreSize} rounded-full ${colorClass} border border-white/50 shadow-sm transition-all duration-300"></div>
             </div>
