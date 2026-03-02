@@ -2,21 +2,23 @@ import { fetchLiveTournaments } from '../src/lib/api/ffeScraper';
 import { fetchSwissTournaments } from '../src/lib/api/swissScraper';
 import { fetchItalianTournaments } from '../src/lib/api/italyScraper';
 import { fetchSpanishTournaments } from '../src/lib/api/spainScraper';
+import { fetchBelgianTournaments } from '../src/lib/api/belgiumScraper';
 import fs from 'fs';
 import path from 'path';
 
 async function main() {
-    console.log("🚀 Starting Global Scrape (FFE + Switzerland + Italy + Spain)...");
+    console.log("🚀 Starting Global Scrape (FFE + Switzerland + Italy + Spain + Belgium)...");
 
     try {
-        const [ffeTournaments, swissTournaments, italianTournaments, spanishTournaments] = await Promise.all([
+        const [ffeTournaments, swissTournaments, italianTournaments, spanishTournaments, belgianTournaments] = await Promise.all([
             fetchLiveTournaments(),
             fetchSwissTournaments(),
             fetchItalianTournaments(),
-            fetchSpanishTournaments()
+            fetchSpanishTournaments(),
+            fetchBelgianTournaments()
         ]);
 
-        const tournaments = [...ffeTournaments, ...swissTournaments, ...italianTournaments, ...spanishTournaments];
+        const tournaments = [...ffeTournaments, ...swissTournaments, ...italianTournaments, ...spanishTournaments, ...belgianTournaments];
 
         const dataPath = path.join(process.cwd(), 'src/data/tournaments.json');
         const dir = path.dirname(dataPath);
@@ -33,7 +35,7 @@ async function main() {
         fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 
         console.log(`\n✅ Scrape complete!`);
-        console.log(`📊 Total tournaments saved: ${tournaments.length} (FFE: ${ffeTournaments.length}, Swiss: ${swissTournaments.length}, Italy: ${italianTournaments.length}, Spain: ${spanishTournaments.length})`);
+        console.log(`📊 Total: ${tournaments.length} (FFE: ${ffeTournaments.length}, Swiss: ${swissTournaments.length}, Italy: ${italianTournaments.length}, Spain: ${spanishTournaments.length}, Belgium: ${belgianTournaments.length})`);
         console.log(`📂 File saved to: ${dataPath}`);
     } catch (error) {
         console.error("❌ Scraping failed:", error);
@@ -42,4 +44,5 @@ async function main() {
 }
 
 main();
+
 
