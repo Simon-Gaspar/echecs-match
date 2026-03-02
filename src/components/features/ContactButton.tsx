@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Handshake, MessageSquarePlus, Mail, Github, Send, ChevronRight, Sparkles } from "lucide-react";
+import { X, Handshake, MessageSquarePlus, Mail, Send, ChevronRight, Sparkles } from "lucide-react";
 
 interface ContactPanelProps {
     isOpen: boolean;
@@ -21,7 +21,7 @@ function ContactPanel({ isOpen, onClose }: ContactPanelProps) {
             ? `[EchecsMatch] Proposition de partenariat — ${formData.name}`
             : `[EchecsMatch] Suggestion d'amélioration — ${formData.name}`;
         const body = `De: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
-        window.open(`mailto:simongaspar.dev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+        window.open(`mailto:simon.gaspar@pm.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
         setSubmitted(true);
         setTimeout(() => {
             setSubmitted(false);
@@ -77,8 +77,8 @@ function ContactPanel({ isOpen, onClose }: ContactPanelProps) {
                             <button
                                 onClick={() => setActiveTab('partner')}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wide transition-all ${activeTab === 'partner'
-                                        ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
-                                        : 'bg-secondary/30 text-muted-foreground hover:bg-secondary/50'
+                                    ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
+                                    : 'bg-secondary/30 text-muted-foreground hover:bg-secondary/50'
                                     }`}
                             >
                                 <Handshake className="w-3.5 h-3.5" />
@@ -87,8 +87,8 @@ function ContactPanel({ isOpen, onClose }: ContactPanelProps) {
                             <button
                                 onClick={() => setActiveTab('suggest')}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wide transition-all ${activeTab === 'suggest'
-                                        ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
-                                        : 'bg-secondary/30 text-muted-foreground hover:bg-secondary/50'
+                                    ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
+                                    : 'bg-secondary/30 text-muted-foreground hover:bg-secondary/50'
                                     }`}
                             >
                                 <MessageSquarePlus className="w-3.5 h-3.5" />
@@ -179,20 +179,11 @@ function ContactPanel({ isOpen, onClose }: ContactPanelProps) {
                             <div className="mt-4 pt-4 border-t border-border/30 flex items-center justify-between">
                                 <div className="flex gap-2">
                                     <a
-                                        href="mailto:simongaspar.dev@gmail.com"
+                                        href="mailto:simon.gaspar@pm.me"
                                         className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary/20 hover:bg-secondary/40 text-[10px] font-bold text-muted-foreground uppercase tracking-wide transition-colors"
                                     >
                                         <Mail className="w-3 h-3" />
                                         Email direct
-                                    </a>
-                                    <a
-                                        href="https://github.com/Simon-Gaspar/echecs-match"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary/20 hover:bg-secondary/40 text-[10px] font-bold text-muted-foreground uppercase tracking-wide transition-colors"
-                                    >
-                                        <Github className="w-3 h-3" />
-                                        GitHub
                                     </a>
                                 </div>
                                 <span className="text-[9px] font-bold text-muted-foreground/40 uppercase tracking-wider">
