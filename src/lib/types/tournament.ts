@@ -24,5 +24,6 @@ export interface Tournament {
         eloBracket: string;
         format: 'Blitz' | 'Rapide' | 'Lent';
         homologationLink: string;
+        registeredCount?: number;
     }[];
 }

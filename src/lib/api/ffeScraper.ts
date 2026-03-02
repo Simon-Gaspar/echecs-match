@@ -344,7 +344,8 @@ export async function fetchLiveTournaments(): Promise<Tournament[]> {
                         name: s.name,
                         eloBracket: s.eloBracket,
                         format: s.format,
-                        homologationLink: s.homologationLink
+                        homologationLink: s.homologationLink,
+                        registeredCount: s.registeredCount
                     }))
                 });
             }
