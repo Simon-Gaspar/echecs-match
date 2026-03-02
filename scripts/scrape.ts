@@ -1,18 +1,20 @@
 import { fetchLiveTournaments } from '../src/lib/api/ffeScraper';
 import { fetchSwissTournaments } from '../src/lib/api/swissScraper';
+import { fetchItalianTournaments } from '../src/lib/api/italyScraper';
 import fs from 'fs';
 import path from 'path';
 
 async function main() {
-    console.log("🚀 Starting Global Scrape (FFE + Switzerland)...");
+    console.log("🚀 Starting Global Scrape (FFE + Switzerland + Italy)...");
 
     try {
-        const [ffeTournaments, swissTournaments] = await Promise.all([
+        const [ffeTournaments, swissTournaments, italianTournaments] = await Promise.all([
             fetchLiveTournaments(),
-            fetchSwissTournaments()
+            fetchSwissTournaments(),
+            fetchItalianTournaments()
         ]);
 
-        const tournaments = [...ffeTournaments, ...swissTournaments];
+        const tournaments = [...ffeTournaments, ...swissTournaments, ...italianTournaments];
 
         const dataPath = path.join(process.cwd(), 'src/data/tournaments.json');
         const dir = path.dirname(dataPath);
@@ -29,7 +31,7 @@ async function main() {
         fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 
         console.log(`\n✅ Scrape complete!`);
-        console.log(`📊 Total tournaments saved: ${tournaments.length}`);
+        console.log(`📊 Total tournaments saved: ${tournaments.length} (FFE: ${ffeTournaments.length}, Swiss: ${swissTournaments.length}, Italy: ${italianTournaments.length})`);
         console.log(`📂 File saved to: ${dataPath}`);
     } catch (error) {
         console.error("❌ Scraping failed:", error);
