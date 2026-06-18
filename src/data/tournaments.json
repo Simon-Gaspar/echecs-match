@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-17T09:30:41.786Z",
+  "lastUpdate": "2026-06-18T08:22:07.413Z",
   "tournaments": [
     {
       "id": "71922",
@@ -273,8 +273,8 @@
         "address": "CREON"
       },
       "hasPlayersList": true,
-      "registeredCount": 6,
-      "avgElo": 1929,
+      "registeredCount": 11,
+      "avgElo": 1860,
       "topPlayerElo": 2090,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72564",
       "date": "2026-06-21",
@@ -496,8 +496,8 @@
         "address": "HOURTIN"
       },
       "hasPlayersList": true,
-      "registeredCount": 67,
-      "avgElo": 1767,
+      "registeredCount": 69,
+      "avgElo": 1756,
       "topPlayerElo": 2206,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70982",
       "date": "2026-06-27",
@@ -703,8 +703,8 @@
         "address": "VILLARD DE LANS"
       },
       "hasPlayersList": true,
-      "registeredCount": 121,
-      "avgElo": 1877,
+      "registeredCount": 123,
+      "avgElo": 1874,
       "topPlayerElo": 2502,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=69545",
       "date": "2026-06-28",
@@ -808,9 +808,9 @@
         "address": "ASNIERES SUR SEINE"
       },
       "hasPlayersList": true,
-      "registeredCount": 47,
-      "avgElo": 1723,
-      "topPlayerElo": 2221,
+      "registeredCount": 59,
+      "avgElo": 1762,
+      "topPlayerElo": 2276,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71742",
       "date": "2026-07-03",
       "isInternal": false
@@ -827,8 +827,8 @@
         "address": "SALON DE PROVENCE"
       },
       "hasPlayersList": true,
-      "registeredCount": 33,
-      "avgElo": 1497,
+      "registeredCount": 36,
+      "avgElo": 1498,
       "topPlayerElo": 1697,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71823",
       "date": "2026-07-04",
@@ -846,8 +846,8 @@
         "address": "SALON DE PROVENCE"
       },
       "hasPlayersList": true,
-      "registeredCount": 18,
-      "avgElo": 1851,
+      "registeredCount": 19,
+      "avgElo": 1864,
       "topPlayerElo": 2381,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71822",
       "date": "2026-07-04",
@@ -903,7 +903,7 @@
         "address": "LA PLAGNE TARENTAISE"
       },
       "hasPlayersList": true,
-      "registeredCount": 96,
+      "registeredCount": 97,
       "avgElo": 1751,
       "topPlayerElo": 1989,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70512",
@@ -922,7 +922,7 @@
         "address": "LA PLAGNE TARENTAISE"
       },
       "hasPlayersList": true,
-      "registeredCount": 58,
+      "registeredCount": 57,
       "avgElo": 1407,
       "topPlayerElo": 1574,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70511",
@@ -1017,8 +1017,8 @@
         "address": "FABREGUES"
       },
       "hasPlayersList": true,
-      "registeredCount": 7,
-      "avgElo": 1541,
+      "registeredCount": 10,
+      "avgElo": 1489,
       "topPlayerElo": 1735,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=68744",
       "date": "2026-07-04",
@@ -1036,8 +1036,8 @@
         "address": "AGNEAUX"
       },
       "hasPlayersList": true,
-      "registeredCount": 218,
-      "avgElo": 1604,
+      "registeredCount": 220,
+      "avgElo": 1603,
       "topPlayerElo": 1965,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70274",
       "date": "2026-07-04",
@@ -1054,7 +1054,10 @@
         "city": "AGNEAUX",
         "address": "AGNEAUX"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 54,
+      "avgElo": 2000,
+      "topPlayerElo": 2396,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70273",
       "date": "2026-07-04",
       "isInternal": false
@@ -1113,6 +1116,54 @@
       "avgElo": 1765,
       "topPlayerElo": 1929,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71849",
+      "date": "2026-07-05",
+      "isInternal": false
+    },
+    {
+      "id": "72583",
+      "name": "266è Open FIDE Interchess de 3 Rondes -1800",
+      "format": "Lent",
+      "eloBracket": "1600-2000",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72583",
+      "date": "2026-07-05",
+      "isInternal": false
+    },
+    {
+      "id": "72584",
+      "name": "436è Rapide FIDE Interchess",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72584",
+      "date": "2026-07-05",
+      "isInternal": false
+    },
+    {
+      "id": "72585",
+      "name": "112è Blitz FIDE Interchess",
+      "format": "Blitz",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72585",
       "date": "2026-07-05",
       "isInternal": false
     },
@@ -1519,7 +1570,7 @@
         "address": "PARIS"
       },
       "hasPlayersList": true,
-      "registeredCount": 365,
+      "registeredCount": 367,
       "avgElo": 1763,
       "topPlayerElo": 2221,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71860",
@@ -1531,14 +1582,14 @@
           "eloBracket": "Toutes catégories",
           "format": "Lent",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71860",
-          "registeredCount": 79
+          "registeredCount": 80
         },
         {
           "name": "Championnat de Paris 2026 Open B",
           "eloBracket": "Toutes catégories",
           "format": "Lent",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71861",
-          "registeredCount": 132
+          "registeredCount": 133
         },
         {
           "name": "Championnat de Paris 2026 Open C",
@@ -1599,9 +1650,9 @@
         "address": "MONTAUBAN"
       },
       "hasPlayersList": true,
-      "registeredCount": 44,
-      "avgElo": 1666,
-      "topPlayerElo": 1965,
+      "registeredCount": 45,
+      "avgElo": 1661,
+      "topPlayerElo": 1981,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70802",
       "date": "2026-07-12",
       "isInternal": false
@@ -1691,8 +1742,8 @@
         "address": "AVOINE"
       },
       "hasPlayersList": true,
-      "registeredCount": 326,
-      "avgElo": 1780,
+      "registeredCount": 336,
+      "avgElo": 1779,
       "topPlayerElo": 2461,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71087",
       "date": "2026-07-18",
@@ -1825,8 +1876,8 @@
         "address": "FONTAINEBLEAU"
       },
       "hasPlayersList": true,
-      "registeredCount": 36,
-      "avgElo": 1676,
+      "registeredCount": 38,
+      "avgElo": 1656,
       "topPlayerElo": 1935,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71376",
       "date": "2026-07-19",
@@ -1990,7 +2041,10 @@
         "city": "SAINT MAX",
         "address": "SAINT MAX"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 5,
+      "avgElo": 2132,
+      "topPlayerElo": 2406,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71672",
       "date": "2026-07-23",
       "isInternal": false
@@ -2006,7 +2060,10 @@
         "city": "SAINT MAX",
         "address": "SAINT MAX"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 8,
+      "avgElo": 1631,
+      "topPlayerElo": 1784,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71673",
       "date": "2026-07-23",
       "isInternal": false
@@ -2494,8 +2551,8 @@
         "address": "VICHY"
       },
       "hasPlayersList": true,
-      "registeredCount": 37,
-      "avgElo": 2240,
+      "registeredCount": 48,
+      "avgElo": 2235,
       "topPlayerElo": 2401,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72261",
       "date": "2026-08-08",
@@ -2577,9 +2634,9 @@
         "address": "VICHY"
       },
       "hasPlayersList": true,
-      "registeredCount": 463,
-      "avgElo": 1772,
-      "topPlayerElo": 2221,
+      "registeredCount": 552,
+      "avgElo": 1773,
+      "topPlayerElo": 2197,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72264",
       "date": "2026-08-08",
       "isInternal": false,
@@ -2589,35 +2646,35 @@
           "eloBracket": "Toutes catégories",
           "format": "Lent",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72264",
-          "registeredCount": 55
+          "registeredCount": 73
         },
         {
           "name": "Championnat de France 2026 - Open B",
           "eloBracket": "Toutes catégories",
           "format": "Lent",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72265",
-          "registeredCount": 49
+          "registeredCount": 57
         },
         {
           "name": "Championnat de France 2026 - Open C",
           "eloBracket": "Toutes catégories",
           "format": "Lent",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72266",
-          "registeredCount": 80
+          "registeredCount": 96
         },
         {
           "name": "Championnat de France 2026 - Open D",
           "eloBracket": "Toutes catégories",
           "format": "Lent",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72267",
-          "registeredCount": 126
+          "registeredCount": 146
         },
         {
           "name": "Championnat de France 2026 - Open E",
           "eloBracket": "Toutes catégories",
           "format": "Lent",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72268",
-          "registeredCount": 153
+          "registeredCount": 180
         }
       ]
     },
@@ -2633,8 +2690,8 @@
         "address": "VICHY"
       },
       "hasPlayersList": true,
-      "registeredCount": 52,
-      "avgElo": 1808,
+      "registeredCount": 57,
+      "avgElo": 1815,
       "topPlayerElo": 2369,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72262",
       "date": "2026-08-08",
@@ -2652,7 +2709,7 @@
         "address": "VICHY"
       },
       "hasPlayersList": true,
-      "registeredCount": 82,
+      "registeredCount": 85,
       "avgElo": 1714,
       "topPlayerElo": 2018,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72263",
@@ -2671,8 +2728,8 @@
         "address": "VICHY"
       },
       "hasPlayersList": true,
-      "registeredCount": 81,
-      "avgElo": 1662,
+      "registeredCount": 83,
+      "avgElo": 1667,
       "topPlayerElo": 2212,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72295",
       "date": "2026-08-13",
@@ -2849,8 +2906,8 @@
         "address": "HUEZ"
       },
       "hasPlayersList": true,
-      "registeredCount": 17,
-      "avgElo": 1910,
+      "registeredCount": 18,
+      "avgElo": 1909,
       "topPlayerElo": 2557,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70992",
       "date": "2026-08-24",
@@ -3415,8 +3472,8 @@
         "address": "MENTON"
       },
       "hasPlayersList": true,
-      "registeredCount": 5,
-      "avgElo": 1990,
+      "registeredCount": 6,
+      "avgElo": 1981,
       "topPlayerElo": 2046,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71134",
       "date": "2026-10-18",
@@ -3434,7 +3491,7 @@
         "address": "MENTON"
       },
       "hasPlayersList": true,
-      "registeredCount": 11,
+      "registeredCount": 12,
       "avgElo": 1745,
       "topPlayerElo": 1879,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71135",
@@ -3637,6 +3694,22 @@
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71425",
       "date": "2026-10-30",
+      "isInternal": false
+    },
+    {
+      "id": "72600",
+      "name": "2ème Open de Hindisheim (-1700 Elo)",
+      "format": "Lent",
+      "eloBracket": "1600-2000",
+      "location": {
+        "lat": 48.4690624,
+        "lng": 7.6383829,
+        "city": "HINDISHEIM",
+        "address": "HINDISHEIM"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72600",
+      "date": "2026-12-19",
       "isInternal": false
     },
     {
@@ -3884,95 +3957,6 @@
       "isInternal": false
     },
     {
-      "id": "72436",
-      "name": "112è Rapide FFE Interchess -2000 Elo (conseillé aux débutants adultes jeunes et enfants)",
-      "format": "Rapide",
-      "eloBracket": "1600-2000",
-      "location": {
-        "lat": 48.8566,
-        "lng": 2.3522,
-        "city": "PARIS",
-        "address": "PARIS"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72436",
-      "date": "2026-06-17",
-      "isInternal": false
-    },
-    {
-      "id": "72450",
-      "name": "422è Rapide FIDE Interchess -2000 (conseillé aux débutants adultes jeunes et enfants)",
-      "format": "Rapide",
-      "eloBracket": "1600-2000",
-      "location": {
-        "lat": 48.8566,
-        "lng": 2.3522,
-        "city": "PARIS",
-        "address": "PARIS"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72450",
-      "date": "2026-06-17",
-      "isInternal": false
-    },
-    {
-      "id": "72307",
-      "name": "Championnat de Hyères 2026 des CE1 et CE2",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.1202573,
-        "lng": 6.1301614,
-        "city": "HYERES",
-        "address": "HYERES"
-      },
-      "hasPlayersList": true,
-      "registeredCount": 50,
-      "avgElo": 1258,
-      "topPlayerElo": 1755,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72307",
-      "date": "2026-06-17",
-      "isInternal": false
-    },
-    {
-      "id": "72508",
-      "name": "Tournoi scolaire du parc 2026",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 42.97204,
-        "lng": 0.62129,
-        "city": "SAINTE MARIE",
-        "address": "SAINTE MARIE"
-      },
-      "hasPlayersList": true,
-      "registeredCount": 55,
-      "avgElo": 1140,
-      "topPlayerElo": 1610,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72508",
-      "date": "2026-06-17",
-      "isInternal": false
-    },
-    {
-      "id": "72294",
-      "name": "Tournois de FROMELLES M5 25-26",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 50.6066721,
-        "lng": 2.8549219,
-        "city": "FROMELLES",
-        "address": "FROMELLES"
-      },
-      "hasPlayersList": true,
-      "registeredCount": 11,
-      "avgElo": 1200,
-      "topPlayerElo": 1440,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72294",
-      "date": "2026-06-17",
-      "isInternal": false
-    },
-    {
       "id": "72451",
       "name": "423è Rapide FIDE Interchess",
       "format": "Rapide",
@@ -4032,9 +4016,9 @@
         "address": "PARIS"
       },
       "hasPlayersList": true,
-      "registeredCount": 13,
-      "avgElo": 1748,
-      "topPlayerElo": 2260,
+      "registeredCount": 19,
+      "avgElo": 1764,
+      "topPlayerElo": 2351,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71907",
       "date": "2026-06-19",
       "isInternal": false
@@ -4268,8 +4252,8 @@
         "address": "AGDE"
       },
       "hasPlayersList": true,
-      "registeredCount": 60,
-      "avgElo": 1770,
+      "registeredCount": 61,
+      "avgElo": 1767,
       "topPlayerElo": 2310,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71424",
       "date": "2026-06-20",
@@ -4421,8 +4405,8 @@
         "address": "SAINT LO"
       },
       "hasPlayersList": true,
-      "registeredCount": 22,
-      "avgElo": 1285,
+      "registeredCount": 25,
+      "avgElo": 1286,
       "topPlayerElo": 1840,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72505",
       "date": "2026-06-20",
@@ -4459,8 +4443,8 @@
         "address": "SAINT LO"
       },
       "hasPlayersList": true,
-      "registeredCount": 27,
-      "avgElo": 1142,
+      "registeredCount": 29,
+      "avgElo": 1150,
       "topPlayerElo": 1200,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72507",
       "date": "2026-06-20",
@@ -4494,8 +4478,8 @@
         "address": "VEIGY FONCENEX"
       },
       "hasPlayersList": true,
-      "registeredCount": 37,
-      "avgElo": 1392,
+      "registeredCount": 44,
+      "avgElo": 1399,
       "topPlayerElo": 1582,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71096",
       "date": "2026-06-21",
@@ -4580,8 +4564,8 @@
         "address": "MONT DE MARSAN"
       },
       "hasPlayersList": true,
-      "registeredCount": 36,
-      "avgElo": 1627,
+      "registeredCount": 40,
+      "avgElo": 1602,
       "topPlayerElo": 1921,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71296",
       "date": "2026-06-21",
@@ -4599,9 +4583,9 @@
         "address": "MONT DE MARSAN"
       },
       "hasPlayersList": true,
-      "registeredCount": 16,
-      "avgElo": 1360,
-      "topPlayerElo": 1500,
+      "registeredCount": 17,
+      "avgElo": 1316,
+      "topPlayerElo": 1476,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71316",
       "date": "2026-06-21",
       "isInternal": false
@@ -4618,8 +4602,8 @@
         "address": "SUCE SUR ERDRE"
       },
       "hasPlayersList": true,
-      "registeredCount": 15,
-      "avgElo": 1296,
+      "registeredCount": 17,
+      "avgElo": 1281,
       "topPlayerElo": 1485,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=69564",
       "date": "2026-06-21",
@@ -4637,9 +4621,9 @@
         "address": "SUCE SUR ERDRE"
       },
       "hasPlayersList": true,
-      "registeredCount": 41,
-      "avgElo": 1538,
-      "topPlayerElo": 2095,
+      "registeredCount": 53,
+      "avgElo": 1593,
+      "topPlayerElo": 2100,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=69558",
       "date": "2026-06-21",
       "isInternal": false
@@ -4675,8 +4659,8 @@
         "address": "NOGENT LE ROI"
       },
       "hasPlayersList": true,
-      "registeredCount": 19,
-      "avgElo": 1811,
+      "registeredCount": 20,
+      "avgElo": 1807,
       "topPlayerElo": 2498,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72168",
       "date": "2026-06-21",
@@ -4713,8 +4697,8 @@
         "address": "TREMBLAY EN FRANCE"
       },
       "hasPlayersList": true,
-      "registeredCount": 168,
-      "avgElo": 1588,
+      "registeredCount": 177,
+      "avgElo": 1573,
       "topPlayerElo": 2369,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71624",
       "date": "2026-06-21",
@@ -4732,8 +4716,8 @@
         "address": "TREMBLAY EN FRANCE"
       },
       "hasPlayersList": true,
-      "registeredCount": 35,
-      "avgElo": 1560,
+      "registeredCount": 37,
+      "avgElo": 1548,
       "topPlayerElo": 2061,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71625",
       "date": "2026-06-21",
@@ -4751,8 +4735,8 @@
         "address": "TREMBLAY EN FRANCE"
       },
       "hasPlayersList": true,
-      "registeredCount": 59,
-      "avgElo": 1123,
+      "registeredCount": 60,
+      "avgElo": 1121,
       "topPlayerElo": 1399,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71614",
       "date": "2026-06-21",
@@ -4802,8 +4786,8 @@
         "address": "FABREGUES"
       },
       "hasPlayersList": true,
-      "registeredCount": 30,
-      "avgElo": 1758,
+      "registeredCount": 31,
+      "avgElo": 1759,
       "topPlayerElo": 2223,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70265",
       "date": "2026-06-21",
@@ -4821,8 +4805,8 @@
         "address": "FABREGUES"
       },
       "hasPlayersList": true,
-      "registeredCount": 30,
-      "avgElo": 1704,
+      "registeredCount": 31,
+      "avgElo": 1706,
       "topPlayerElo": 2244,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70266",
       "date": "2026-06-21",
@@ -4856,8 +4840,8 @@
         "address": "ORLEANS"
       },
       "hasPlayersList": true,
-      "registeredCount": 52,
-      "avgElo": 1621,
+      "registeredCount": 56,
+      "avgElo": 1618,
       "topPlayerElo": 2317,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72416",
       "date": "2026-06-21",
@@ -4875,8 +4859,8 @@
         "address": "CONCARNEAU"
       },
       "hasPlayersList": true,
-      "registeredCount": 33,
-      "avgElo": 1616,
+      "registeredCount": 36,
+      "avgElo": 1617,
       "topPlayerElo": 1987,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71262",
       "date": "2026-06-21",
@@ -5073,8 +5057,8 @@
         "address": "MEAUX"
       },
       "hasPlayersList": true,
-      "registeredCount": 11,
-      "avgElo": 1484,
+      "registeredCount": 22,
+      "avgElo": 1440,
       "topPlayerElo": 1990,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=68544",
       "date": "2026-06-27",
@@ -5159,8 +5143,8 @@
         "address": "YERRES"
       },
       "hasPlayersList": true,
-      "registeredCount": 48,
-      "avgElo": 1377,
+      "registeredCount": 53,
+      "avgElo": 1389,
       "topPlayerElo": 1804,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72447",
       "date": "2026-06-28",
@@ -5171,21 +5155,21 @@
           "eloBracket": "Toutes catégories",
           "format": "Rapide",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72447",
-          "registeredCount": 25
+          "registeredCount": 27
         },
         {
           "name": "11ème Open de Yerres Open B",
           "eloBracket": "Toutes catégories",
           "format": "Rapide",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72448",
-          "registeredCount": 11
+          "registeredCount": 13
         },
         {
           "name": "11ème Open de Yerres Open C",
           "eloBracket": "Toutes catégories",
           "format": "Rapide",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72437",
-          "registeredCount": 12
+          "registeredCount": 13
         }
       ]
     },
@@ -5274,8 +5258,8 @@
         "address": "VAISON LA ROMAINE"
       },
       "hasPlayersList": true,
-      "registeredCount": 65,
-      "avgElo": 1509,
+      "registeredCount": 66,
+      "avgElo": 1514,
       "topPlayerElo": 2110,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72073",
       "date": "2026-06-28",
@@ -5347,8 +5331,8 @@
         "address": "AMIENS"
       },
       "hasPlayersList": true,
-      "registeredCount": 31,
-      "avgElo": 1642,
+      "registeredCount": 33,
+      "avgElo": 1627,
       "topPlayerElo": 2461,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72327",
       "date": "2026-06-28",
@@ -5433,8 +5417,8 @@
         "address": "REIMS"
       },
       "hasPlayersList": true,
-      "registeredCount": 24,
-      "avgElo": 1560,
+      "registeredCount": 27,
+      "avgElo": 1554,
       "topPlayerElo": 2191,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72349",
       "date": "2026-06-28",
@@ -5452,8 +5436,8 @@
         "address": "LIFFRE"
       },
       "hasPlayersList": true,
-      "registeredCount": 37,
-      "avgElo": 1499,
+      "registeredCount": 54,
+      "avgElo": 1511,
       "topPlayerElo": 1909,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71880",
       "date": "2026-06-28",
@@ -5464,14 +5448,14 @@
           "eloBracket": "Toutes catégories",
           "format": "Rapide",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71880",
-          "registeredCount": 14
+          "registeredCount": 21
         },
         {
           "name": "Rapide de Liffré 2026 - Tournoi B",
           "eloBracket": "Toutes catégories",
           "format": "Rapide",
           "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71881",
-          "registeredCount": 23
+          "registeredCount": 33
         }
       ]
     },
@@ -5486,7 +5470,10 @@
         "city": "QUIMPERLE",
         "address": "QUIMPERLE"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 7,
+      "avgElo": 1190,
+      "topPlayerElo": 1280,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71590",
       "date": "2026-06-28",
       "isInternal": false
@@ -5502,7 +5489,10 @@
         "city": "QUIMPERLE",
         "address": "QUIMPERLE"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 9,
+      "avgElo": 1683,
+      "topPlayerElo": 1997,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71589",
       "date": "2026-06-28",
       "isInternal": false
@@ -5519,8 +5509,8 @@
         "address": "VILLENEUVE SUR LOT"
       },
       "hasPlayersList": true,
-      "registeredCount": 24,
-      "avgElo": 1558,
+      "registeredCount": 25,
+      "avgElo": 1571,
       "topPlayerElo": 2298,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72226",
       "date": "2026-06-28",
@@ -5589,8 +5579,8 @@
         "address": "RUEIL MALMAISON"
       },
       "hasPlayersList": true,
-      "registeredCount": 90,
-      "avgElo": 1449,
+      "registeredCount": 96,
+      "avgElo": 1466,
       "topPlayerElo": 2119,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70325",
       "date": "2026-06-28",
@@ -5635,6 +5625,22 @@
       "isInternal": false
     },
     {
+      "id": "72604",
+      "name": "Tournoi Rapide du Cavalier Rouge 2026 - Tournoi débutants",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8003835,
+        "lng": 2.2630238,
+        "city": "CLAMART",
+        "address": "CLAMART"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72604",
+      "date": "2026-06-28",
+      "isInternal": false
+    },
+    {
       "id": "72175",
       "name": "Trophée Polop Rapide 2026",
       "format": "Rapide",
@@ -5651,6 +5657,22 @@
       "topPlayerElo": 2166,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72175",
       "date": "2026-06-28",
+      "isInternal": false
+    },
+    {
+      "id": "72579",
+      "name": "432è Rapide FIDE Interchess -2000 (conseillé aux débutants adultes jeunes et enfants)",
+      "format": "Rapide",
+      "eloBracket": "1600-2000",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72579",
+      "date": "2026-07-01",
       "isInternal": false
     },
     {
@@ -5698,6 +5720,22 @@
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72385",
+      "date": "2026-07-02",
+      "isInternal": false
+    },
+    {
+      "id": "72580",
+      "name": "433è Rapide FIDE Interchess -2000",
+      "format": "Rapide",
+      "eloBracket": "1600-2000",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72580",
       "date": "2026-07-02",
       "isInternal": false
     },
@@ -5766,6 +5804,86 @@
       "isInternal": false
     },
     {
+      "id": "72594",
+      "name": "Tournoi Rapide Estival 2026 de Hyères",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 43.1202573,
+        "lng": 6.1301614,
+        "city": "HYERES",
+        "address": "HYERES"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72594",
+      "date": "2026-07-03",
+      "isInternal": false
+    },
+    {
+      "id": "72577",
+      "name": "116è Rapide FFE Interchess -2000 Elo (conseillé aux débutants adultes jeunes et enfants)",
+      "format": "Rapide",
+      "eloBracket": "1600-2000",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72577",
+      "date": "2026-07-04",
+      "isInternal": false
+    },
+    {
+      "id": "72578",
+      "name": "117è Rapide FFE Interchess -2000 Elo (conseillé aux débutants adultes jeunes et enfants)",
+      "format": "Rapide",
+      "eloBracket": "1600-2000",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72578",
+      "date": "2026-07-04",
+      "isInternal": false
+    },
+    {
+      "id": "72581",
+      "name": "434è Rapide FIDE Interchess -1700 (conseillé aux débutants adultes jeunes et enfants)",
+      "format": "Rapide",
+      "eloBracket": "1600-2000",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72581",
+      "date": "2026-07-04",
+      "isInternal": false
+    },
+    {
+      "id": "72582",
+      "name": "435è Rapide FIDE Interchess -2000 (conseillé aux débutants adultes jeunes et enfants)",
+      "format": "Rapide",
+      "eloBracket": "1600-2000",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72582",
+      "date": "2026-07-04",
+      "isInternal": false
+    },
+    {
       "id": "72574",
       "name": "6e Rapide du samedi au café L'échiquier Nancy",
       "format": "Rapide",
@@ -5831,8 +5949,8 @@
         "address": "SARCELLES"
       },
       "hasPlayersList": true,
-      "registeredCount": 38,
-      "avgElo": 1896,
+      "registeredCount": 40,
+      "avgElo": 1900,
       "topPlayerElo": 2580,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72350",
       "date": "2026-07-05",
@@ -6062,6 +6180,22 @@
       "hasPlayersList": true,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72565",
       "date": "2026-07-18",
+      "isInternal": false
+    },
+    {
+      "id": "72597",
+      "name": "19ème Rapide Club 608 - Paris 15ème",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72597",
+      "date": "2026-07-19",
       "isInternal": false
     },
     {
@@ -6301,6 +6435,22 @@
       "isInternal": false
     },
     {
+      "id": "72595",
+      "name": "Tournoi Rapide Interne de Rentrée 2026-27 de Hyères",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 43.1202573,
+        "lng": 6.1301614,
+        "city": "HYERES",
+        "address": "HYERES"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72595",
+      "date": "2026-09-12",
+      "isInternal": true
+    },
+    {
       "id": "72531",
       "name": "1er Rapide Féminin de Rueil Malmaison",
       "format": "Rapide",
@@ -6522,6 +6672,22 @@
       "isInternal": false
     },
     {
+      "id": "72586",
+      "name": "21ème Rapide FIDE de Noisiel",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8457347,
+        "lng": 2.6200032,
+        "city": "NOISIEL",
+        "address": "NOISIEL"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72586",
+      "date": "2026-09-25",
+      "isInternal": false
+    },
+    {
       "id": "72463",
       "name": "A 32e tournoi de l'avenir Bischwiller",
       "format": "Rapide",
@@ -6551,6 +6717,38 @@
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72464",
       "date": "2026-09-26",
+      "isInternal": false
+    },
+    {
+      "id": "72603",
+      "name": "19ème Open de Rentrée de Bordeaux",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 44.8378,
+        "lng": -0.5792,
+        "city": "BORDEAUX",
+        "address": "BORDEAUX"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72603",
+      "date": "2026-09-27",
+      "isInternal": false
+    },
+    {
+      "id": "72598",
+      "name": "20ème Rapide Club 608 - Paris 15ème",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "city": "PARIS",
+        "address": "PARIS"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72598",
+      "date": "2026-09-27",
       "isInternal": false
     },
     {
@@ -6836,6 +7034,22 @@
       "isInternal": false
     },
     {
+      "id": "72587",
+      "name": "22ème Rapide FIDE de Noisiel",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8457347,
+        "lng": 2.6200032,
+        "city": "NOISIEL",
+        "address": "NOISIEL"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72587",
+      "date": "2026-11-06",
+      "isInternal": false
+    },
+    {
       "id": "72382",
       "name": "1er Open rapide -2200 Jean Claude Sérié",
       "format": "Rapide",
@@ -6868,6 +7082,22 @@
       "isInternal": false
     },
     {
+      "id": "72592",
+      "name": "23éme Rapide FIDE de Noisiel",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8457347,
+        "lng": 2.6200032,
+        "city": "NOISIEL",
+        "address": "NOISIEL"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72592",
+      "date": "2026-01-29",
+      "isInternal": false
+    },
+    {
       "id": "72178",
       "name": "10e Rapide International de Cappelle la Grande",
       "format": "Rapide",
@@ -6881,6 +7111,22 @@
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72178",
       "date": "2026-03-06",
+      "isInternal": false
+    },
+    {
+      "id": "72593",
+      "name": "24ème Rapide FIDE de Noisiel",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8457347,
+        "lng": 2.6200032,
+        "city": "NOISIEL",
+        "address": "NOISIEL"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72593",
+      "date": "2026-05-07",
       "isInternal": false
     },
     {
@@ -6981,8 +7227,8 @@
         "address": "BESANCON"
       },
       "hasPlayersList": true,
-      "registeredCount": 21,
-      "avgElo": 1651,
+      "registeredCount": 25,
+      "avgElo": 1615,
       "topPlayerElo": 2114,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72287",
       "date": "2026-06-20",
@@ -7067,8 +7313,8 @@
         "address": "MEAUX"
       },
       "hasPlayersList": true,
-      "registeredCount": 14,
-      "avgElo": 1531,
+      "registeredCount": 18,
+      "avgElo": 1507,
       "topPlayerElo": 2123,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=68537",
       "date": "2026-06-26",
@@ -7442,6 +7688,38 @@
       "isInternal": false
     },
     {
+      "id": "72596",
+      "name": "1er Tournoi Blitz Pizza 2026 de Hyères",
+      "format": "Blitz",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 43.1202573,
+        "lng": 6.1301614,
+        "city": "HYERES",
+        "address": "HYERES"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72596",
+      "date": "2026-09-25",
+      "isInternal": false
+    },
+    {
+      "id": "72588",
+      "name": "22ème Blitz FIDE de Noisiel",
+      "format": "Blitz",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8457347,
+        "lng": 2.6200032,
+        "city": "NOISIEL",
+        "address": "NOISIEL"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72588",
+      "date": "2026-10-16",
+      "isInternal": false
+    },
+    {
       "id": "72040",
       "name": "Open international de Liffré 2026 - Blitz",
       "format": "Blitz",
@@ -7471,6 +7749,22 @@
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72535",
       "date": "2026-10-24",
+      "isInternal": false
+    },
+    {
+      "id": "72589",
+      "name": "23ème Blitz FIDE Téléthon de Noisiel",
+      "format": "Blitz",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8457347,
+        "lng": 2.6200032,
+        "city": "NOISIEL",
+        "address": "NOISIEL"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72589",
+      "date": "2026-12-04",
       "isInternal": false
     },
     {
@@ -7509,6 +7803,38 @@
       "topPlayerElo": 1928,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72442",
       "date": "2026-02-25",
+      "isInternal": false
+    },
+    {
+      "id": "72590",
+      "name": "24ème Blitz FIDE de Noisiel",
+      "format": "Blitz",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8457347,
+        "lng": 2.6200032,
+        "city": "NOISIEL",
+        "address": "NOISIEL"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72590",
+      "date": "2026-03-05",
+      "isInternal": false
+    },
+    {
+      "id": "72591",
+      "name": "25ème Blitz FIDE de Noisiel",
+      "format": "Blitz",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 48.8457347,
+        "lng": 2.6200032,
+        "city": "NOISIEL",
+        "address": "NOISIEL"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72591",
+      "date": "2026-06-11",
       "isInternal": false
     },
     {
@@ -8305,66 +8631,6 @@
       "hasPlayersList": false,
       "homologationLink": "https://www.swisschess.ch/smm.html",
       "date": "2027-06-13"
-    },
-    {
-      "id": "italy-hLTIwMjYtMDYtMTc",
-      "name": "We Spiaggia Di Velluto 2026 - B",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.715,
-        "lng": 13.218,
-        "city": "Senigallia",
-        "address": "Senigallia"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=469983",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "italy-hLTIwMjYtMDYtMTc",
-      "name": "We Spiaggia Di Velluto 2026 - A",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.715,
-        "lng": 13.218,
-        "city": "Senigallia",
-        "address": "Senigallia"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=469982",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "italy-YS0yMDI2LTA2LTE3",
-      "name": "Senigallia, Italy",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.715,
-        "lng": 13.218,
-        "city": "Senigallia",
-        "address": "Senigallia"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=55276",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "italy-hLTIwMjYtMDYtMTc",
-      "name": "5° Festival Internazionale Di Scacchi Spiaggia Di Velluto",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.715,
-        "lng": 13.218,
-        "city": "Senigallia",
-        "address": "Senigallia"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.federscacchi.com/?id=5%C2%B0+Festival+Internazionale+di+Scacchi+SPIAGGIA+DI+VELLUTO&2026-06-17&2026-06-21",
-      "date": "2026-06-17"
     },
     {
       "id": "italy-vLTIwMjYtMDYtMTk",
@@ -12777,36 +13043,6 @@
       "date": "2026-06-29"
     },
     {
-      "id": "belgium-by0yMDI2LTA2LTE3",
-      "name": "Rokade Westerlo Masters 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.0833,
-        "lng": 4.9,
-        "city": "Westerlo",
-        "address": "Westerlo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=482331",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "belgium-8tMjAyNi0wNi0xNw",
-      "name": "Rokade Westerlo Challengers 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.0833,
-        "lng": 4.9,
-        "city": "Westerlo",
-        "address": "Westerlo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=482330",
-      "date": "2026-06-17"
-    },
-    {
       "id": "belgium-UtMjAyNi0wNi0xOQ",
       "name": "Flobas Challenge 2026 Ronde 5",
       "format": "Lent",
@@ -12878,7 +13114,7 @@
         "address": "Namur"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://www.worldchesscalendar.com/tournament/1072901",
+      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=459455",
       "date": "2026-06-19"
     },
     {
@@ -13039,11 +13275,11 @@
       "location": {
         "lat": 50.8361,
         "lng": 4.38617,
-        "city": "Etterbeek",
-        "address": "Etterbeek"
+        "city": "etterbeek",
+        "address": "etterbeek"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=469149",
+      "homologationLink": "https://www.worldchesscalendar.com/tournament/1188824",
       "date": "2026-06-28"
     },
     {
@@ -13163,7 +13399,7 @@
         "address": "Herentals"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://www.worldchesscalendar.com/tournament/1005300",
+      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=459295",
       "date": "2026-06-30"
     },
     {
@@ -13255,111 +13491,6 @@
       "hasPlayersList": false,
       "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=56611",
       "date": "2026-06-27"
-    },
-    {
-      "id": "germany-gtMjAyNi0wNi0xNw",
-      "name": "1. Bad Birnbacher Seniorenfruehling 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 48.4431,
-        "lng": 13.0894,
-        "city": "bad birnbach",
-        "address": "bad birnbach"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=386596",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "germany-uLTIwMjYtMDYtMTc",
-      "name": "VlEM Klasse 5 - 7 Mädchen",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1424393.aspx?lan=0",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "germany-4tMjAyNi0wNi0xNw",
-      "name": "Vereinsloseneinzelmeisterschaft Klasse 7",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1424392.aspx?lan=0",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "germany-4tMjAyNi0wNi0xNw",
-      "name": "Vereinsloseneinzelmeisterschaft Klasse 6",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1424391.aspx?lan=0",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "germany-4tMjAyNi0wNi0xNw",
-      "name": "Vereinsloseneinzelmeisterschaft Klasse 5",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1424390.aspx?lan=0",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "germany-4tMjAyNi0wNi0xNw",
-      "name": "Rapid-Grand-Prix der SF Berlin Juni 2026",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=484662",
-      "date": "2026-06-17"
-    },
-    {
-      "id": "germany-uLTIwMjYtMDYtMTc",
-      "name": "CCM 5 Wochen, 5 Runden X",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 48.1366,
-        "lng": 11.5771,
-        "city": "Muenchen",
-        "address": "Muenchen"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=484316",
-      "date": "2026-06-17"
     },
     {
       "id": "germany-uLTIwMjYtMDYtMTg",
@@ -13508,7 +13639,7 @@
         "address": "Lage"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=456363",
+      "homologationLink": "https://chess-results.com/tnr1393854.aspx?lan=0",
       "date": "2026-06-19"
     },
     {
@@ -13823,7 +13954,7 @@
         "address": "Schönebeck"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1433562.aspx?lan=0",
+      "homologationLink": "https://chess-results.com/tnr1390586.aspx?lan=0",
       "date": "2026-06-20"
     },
     {
@@ -14348,7 +14479,7 @@
         "address": "Halle"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1434047.aspx?lan=0",
+      "homologationLink": "https://www.worldchesscalendar.com/tournament/1178935",
       "date": "2026-06-26"
     },
     {
