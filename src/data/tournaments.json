@@ -1,183 +1,6 @@
 {
-  "lastUpdate": "2026-08-08T04:21:22.665Z",
+  "lastUpdate": "2026-08-09T04:27:53.153Z",
   "tournaments": [
-    {
-      "id": "72261",
-      "name": "Championnat de France 2026 - Accession Roger Ferry",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.124017,
-        "lng": 3.4203658,
-        "city": "VICHY",
-        "address": "VICHY"
-      },
-      "hasPlayersList": true,
-      "registeredCount": 104,
-      "avgElo": 2229,
-      "topPlayerElo": 2408,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72261",
-      "date": "2026-08-08",
-      "isInternal": false
-    },
-    {
-      "id": "72273",
-      "name": "Championnat de France 2026 - National departages blitz",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.124017,
-        "lng": 3.4203658,
-        "city": "VICHY",
-        "address": "VICHY"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72273",
-      "date": "2026-08-08",
-      "isInternal": false
-    },
-    {
-      "id": "72271",
-      "name": "Championnat de France 2026 - National départages rapide",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.124017,
-        "lng": 3.4203658,
-        "city": "VICHY",
-        "address": "VICHY"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72271",
-      "date": "2026-08-08",
-      "isInternal": false
-    },
-    {
-      "id": "72274",
-      "name": "Championnat de France 2026 - National Féminin departages blitz",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.124017,
-        "lng": 3.4203658,
-        "city": "VICHY",
-        "address": "VICHY"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72274",
-      "date": "2026-08-08",
-      "isInternal": false
-    },
-    {
-      "id": "72272",
-      "name": "Championnat de France 2026 - National Féminin départages rapide",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.124017,
-        "lng": 3.4203658,
-        "city": "VICHY",
-        "address": "VICHY"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72272",
-      "date": "2026-08-08",
-      "isInternal": false
-    },
-    {
-      "id": "grouped-72264",
-      "name": "Championnat de France 2026 -",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.124017,
-        "lng": 3.4203658,
-        "city": "VICHY",
-        "address": "VICHY"
-      },
-      "hasPlayersList": true,
-      "registeredCount": 1008,
-      "avgElo": 1770,
-      "topPlayerElo": 2194,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72264",
-      "date": "2026-08-08",
-      "isInternal": false,
-      "sections": [
-        {
-          "name": "Championnat de France 2026 - Open A",
-          "eloBracket": "Toutes catégories",
-          "format": "Lent",
-          "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72264",
-          "registeredCount": 161
-        },
-        {
-          "name": "Championnat de France 2026 - Open B",
-          "eloBracket": "Toutes catégories",
-          "format": "Lent",
-          "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72265",
-          "registeredCount": 130
-        },
-        {
-          "name": "Championnat de France 2026 - Open C",
-          "eloBracket": "Toutes catégories",
-          "format": "Lent",
-          "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72266",
-          "registeredCount": 185
-        },
-        {
-          "name": "Championnat de France 2026 - Open D",
-          "eloBracket": "Toutes catégories",
-          "format": "Lent",
-          "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72267",
-          "registeredCount": 233
-        },
-        {
-          "name": "Championnat de France 2026 - Open E",
-          "eloBracket": "Toutes catégories",
-          "format": "Lent",
-          "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72268",
-          "registeredCount": 299
-        }
-      ]
-    },
-    {
-      "id": "72262",
-      "name": "Championnat de France 2026 - Seniors plus",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.124017,
-        "lng": 3.4203658,
-        "city": "VICHY",
-        "address": "VICHY"
-      },
-      "hasPlayersList": true,
-      "registeredCount": 110,
-      "avgElo": 1826,
-      "topPlayerElo": 2369,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72262",
-      "date": "2026-08-08",
-      "isInternal": false
-    },
-    {
-      "id": "72263",
-      "name": "Championnat de France 2026 - Vétérans",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.124017,
-        "lng": 3.4203658,
-        "city": "VICHY",
-        "address": "VICHY"
-      },
-      "hasPlayersList": true,
-      "registeredCount": 128,
-      "avgElo": 1733,
-      "topPlayerElo": 2279,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72263",
-      "date": "2026-08-08",
-      "isInternal": false
-    },
     {
       "id": "72295",
       "name": "Championnat de France 2026 - Blitz",
@@ -209,9 +32,9 @@
         "address": "SAINT ANTONIN NOBLE VAL"
       },
       "hasPlayersList": true,
-      "registeredCount": 26,
-      "avgElo": 1932,
-      "topPlayerElo": 2243,
+      "registeredCount": 33,
+      "avgElo": 1927,
+      "topPlayerElo": 2284,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71472",
       "date": "2026-08-18",
       "isInternal": false
@@ -228,8 +51,8 @@
         "address": "SAINT ANTONIN NOBLE VAL"
       },
       "hasPlayersList": true,
-      "registeredCount": 47,
-      "avgElo": 1543,
+      "registeredCount": 56,
+      "avgElo": 1544,
       "topPlayerElo": 1779,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71473",
       "date": "2026-08-18",
@@ -387,8 +210,8 @@
         "address": "CAISSARGUES"
       },
       "hasPlayersList": true,
-      "registeredCount": 50,
-      "avgElo": 1614,
+      "registeredCount": 52,
+      "avgElo": 1619,
       "topPlayerElo": 1995,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72181",
       "date": "2026-08-22",
@@ -473,8 +296,8 @@
         "address": "ALLAUCH"
       },
       "hasPlayersList": true,
-      "registeredCount": 20,
-      "avgElo": 1965,
+      "registeredCount": 21,
+      "avgElo": 1961,
       "topPlayerElo": 2432,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71827",
       "date": "2026-08-23",
@@ -530,8 +353,8 @@
         "address": "VANDOEUVRE LES NANCY"
       },
       "hasPlayersList": true,
-      "registeredCount": 17,
-      "avgElo": 1742,
+      "registeredCount": 20,
+      "avgElo": 1726,
       "topPlayerElo": 2115,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72689",
       "date": "2026-08-26",
@@ -625,9 +448,9 @@
         "address": "ASNIERES SUR SEINE"
       },
       "hasPlayersList": true,
-      "registeredCount": 39,
-      "avgElo": 1735,
-      "topPlayerElo": 2201,
+      "registeredCount": 47,
+      "avgElo": 1737,
+      "topPlayerElo": 2210,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71743",
       "date": "2026-08-28",
       "isInternal": false
@@ -644,8 +467,8 @@
         "address": "SAUTRON"
       },
       "hasPlayersList": true,
-      "registeredCount": 11,
-      "avgElo": 1835,
+      "registeredCount": 12,
+      "avgElo": 1838,
       "topPlayerElo": 1970,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72196",
       "date": "2026-08-29",
@@ -663,8 +486,8 @@
         "address": "SAUTRON"
       },
       "hasPlayersList": true,
-      "registeredCount": 19,
-      "avgElo": 1508,
+      "registeredCount": 21,
+      "avgElo": 1518,
       "topPlayerElo": 1850,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72197",
       "date": "2026-08-29",
@@ -756,9 +579,9 @@
         "address": "CHARTRES"
       },
       "hasPlayersList": true,
-      "registeredCount": 16,
-      "avgElo": 1788,
-      "topPlayerElo": 1945,
+      "registeredCount": 17,
+      "avgElo": 1806,
+      "topPlayerElo": 2083,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72781",
       "date": "2026-08-29",
       "isInternal": false
@@ -775,8 +598,8 @@
         "address": "CHARTRES"
       },
       "hasPlayersList": true,
-      "registeredCount": 34,
-      "avgElo": 1470,
+      "registeredCount": 35,
+      "avgElo": 1473,
       "topPlayerElo": 1689,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72782",
       "date": "2026-08-29",
@@ -851,8 +674,8 @@
         "address": "HYERES"
       },
       "hasPlayersList": true,
-      "registeredCount": 57,
-      "avgElo": 1771,
+      "registeredCount": 58,
+      "avgElo": 1768,
       "topPlayerElo": 2144,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70771",
       "date": "2026-08-29",
@@ -904,6 +727,22 @@
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72905",
       "date": "2026-08-30",
+      "isInternal": false
+    },
+    {
+      "id": "72934",
+      "name": "Tournoi du mercredi Grenoble – Automne 2026 r1-3 (-2400)",
+      "format": "Lent",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 45.1885,
+        "lng": 5.7245,
+        "city": "GRENOBLE",
+        "address": "GRENOBLE"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72934",
+      "date": "2026-09-09",
       "isInternal": false
     },
     {
@@ -1033,8 +872,8 @@
         "address": "LA PALME"
       },
       "hasPlayersList": true,
-      "registeredCount": 7,
-      "avgElo": 1880,
+      "registeredCount": 8,
+      "avgElo": 1895,
       "topPlayerElo": 2341,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71444",
       "date": "2026-09-12",
@@ -1276,6 +1115,22 @@
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72814",
       "date": "2026-09-26",
       "isInternal": true
+    },
+    {
+      "id": "72935",
+      "name": "Tournoi du mercredi Grenoble – Automne 2026 r4-6 (-2400)",
+      "format": "Lent",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 45.1885,
+        "lng": 5.7245,
+        "city": "GRENOBLE",
+        "address": "GRENOBLE"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72935",
+      "date": "2026-09-30",
+      "isInternal": false
     },
     {
       "id": "72359",
@@ -1616,7 +1471,7 @@
       },
       "hasPlayersList": true,
       "registeredCount": 15,
-      "avgElo": 2007,
+      "avgElo": 2010,
       "topPlayerElo": 2315,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71134",
       "date": "2026-10-18",
@@ -1653,8 +1508,8 @@
         "address": "MENTON"
       },
       "hasPlayersList": true,
-      "registeredCount": 21,
-      "avgElo": 1507,
+      "registeredCount": 22,
+      "avgElo": 1512,
       "topPlayerElo": 1673,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71136",
       "date": "2026-10-18",
@@ -1781,7 +1636,9 @@
         "address": "FOUESNANT"
       },
       "hasPlayersList": true,
-      "registeredCount": 3,
+      "registeredCount": 4,
+      "avgElo": 1523,
+      "topPlayerElo": 1555,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72664",
       "date": "2026-10-24",
       "isInternal": false
@@ -1982,6 +1839,22 @@
       "isInternal": false
     },
     {
+      "id": "72936",
+      "name": "Tournoi du mercredi Grenoble – Automne 2026 r7-9 (-2400)",
+      "format": "Lent",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 45.1885,
+        "lng": 5.7245,
+        "city": "GRENOBLE",
+        "address": "GRENOBLE"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72936",
+      "date": "2026-11-04",
+      "isInternal": false
+    },
+    {
       "id": "72718",
       "name": "Parties de Champagne Novembre 2026",
       "format": "Lent",
@@ -1995,6 +1868,22 @@
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72718",
       "date": "2026-11-08",
+      "isInternal": false
+    },
+    {
+      "id": "72937",
+      "name": "Tournoi du mercredi Grenoble – Hiver 2027 r1-3 (-2400)",
+      "format": "Lent",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 45.1885,
+        "lng": 5.7245,
+        "city": "GRENOBLE",
+        "address": "GRENOBLE"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72937",
+      "date": "2026-12-02",
       "isInternal": false
     },
     {
@@ -2189,6 +2078,22 @@
       "isInternal": false
     },
     {
+      "id": "72938",
+      "name": "Tournoi du mercredi Grenoble – Hiver 2026 r4-7 (-2400)",
+      "format": "Lent",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 45.1885,
+        "lng": 5.7245,
+        "city": "GRENOBLE",
+        "address": "GRENOBLE"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72938",
+      "date": "2026-01-06",
+      "isInternal": false
+    },
+    {
       "id": "72720",
       "name": "Parties de Champagne Janvier 2027",
       "format": "Lent",
@@ -2202,6 +2107,22 @@
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72720",
       "date": "2026-01-17",
+      "isInternal": false
+    },
+    {
+      "id": "72939",
+      "name": "Tournoi du mercredi Grenoble – Hiver 2026 r8-9 (-2400)",
+      "format": "Lent",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 45.1885,
+        "lng": 5.7245,
+        "city": "GRENOBLE",
+        "address": "GRENOBLE"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72939",
+      "date": "2026-02-03",
       "isInternal": false
     },
     {
@@ -2537,25 +2458,6 @@
       "isInternal": false
     },
     {
-      "id": "72125",
-      "name": "Rapide de l'été de Haguenau 2026",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 48.8172236,
-        "lng": 7.7885978,
-        "city": "HAGUENAU",
-        "address": "HAGUENAU"
-      },
-      "hasPlayersList": true,
-      "registeredCount": 63,
-      "avgElo": 1600,
-      "topPlayerElo": 2364,
-      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72125",
-      "date": "2026-08-08",
-      "isInternal": false
-    },
-    {
       "id": "72736",
       "name": "4éme Tournoi Rapide FIDE BDEV Saint Martin 2026 (-2400)",
       "format": "Rapide",
@@ -2583,9 +2485,9 @@
         "address": "FOIX"
       },
       "hasPlayersList": true,
-      "registeredCount": 12,
-      "avgElo": 1445,
-      "topPlayerElo": 1740,
+      "registeredCount": 17,
+      "avgElo": 1507,
+      "topPlayerElo": 1929,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72750",
       "date": "2026-08-09",
       "isInternal": false
@@ -2748,6 +2650,22 @@
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72761",
       "date": "2026-08-22",
+      "isInternal": false
+    },
+    {
+      "id": "72940",
+      "name": "AG Rapide 2026",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 42.8958424,
+        "lng": 1.1939823,
+        "city": "SOUEIX ROGALLE",
+        "address": "SOUEIX ROGALLE"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72940",
+      "date": "2026-08-23",
       "isInternal": false
     },
     {
@@ -2950,8 +2868,8 @@
         "address": "VANDOEUVRE LES NANCY"
       },
       "hasPlayersList": true,
-      "registeredCount": 16,
-      "avgElo": 1712,
+      "registeredCount": 18,
+      "avgElo": 1721,
       "topPlayerElo": 2031,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72733",
       "date": "2026-08-29",
@@ -3262,7 +3180,9 @@
         "address": "FOURNES EN WEPPES"
       },
       "hasPlayersList": true,
-      "registeredCount": 3,
+      "registeredCount": 9,
+      "avgElo": 1554,
+      "topPlayerElo": 1754,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72413",
       "date": "2026-09-13",
       "isInternal": false
@@ -3327,8 +3247,8 @@
         "address": "CHALONS EN CHAMPAGNE"
       },
       "hasPlayersList": true,
-      "registeredCount": 309,
-      "avgElo": 1739,
+      "registeredCount": 313,
+      "avgElo": 1738,
       "topPlayerElo": 2578,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72140",
       "date": "2026-09-19",
@@ -3583,8 +3503,8 @@
         "address": "PERIGUEUX"
       },
       "hasPlayersList": true,
-      "registeredCount": 22,
-      "avgElo": 1563,
+      "registeredCount": 26,
+      "avgElo": 1578,
       "topPlayerElo": 2168,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=70951",
       "date": "2026-09-20",
@@ -3891,6 +3811,22 @@
       },
       "hasPlayersList": false,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72818",
+      "date": "2026-09-27",
+      "isInternal": false
+    },
+    {
+      "id": "72942",
+      "name": "4e rapide de rentrée du Lille Universite Club Echiquier du Nord",
+      "format": "Rapide",
+      "eloBracket": "Toutes catégories",
+      "location": {
+        "lat": 50.6365654,
+        "lng": 3.0635282,
+        "city": "LILLE",
+        "address": "LILLE"
+      },
+      "hasPlayersList": false,
+      "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72942",
       "date": "2026-09-27",
       "isInternal": false
     },
@@ -4501,8 +4437,8 @@
         "address": "LIBOURNE"
       },
       "hasPlayersList": true,
-      "registeredCount": 25,
-      "avgElo": 1593,
+      "registeredCount": 30,
+      "avgElo": 1600,
       "topPlayerElo": 2024,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=71038",
       "date": "2026-11-01",
@@ -5179,7 +5115,9 @@
         "address": "PARIS"
       },
       "hasPlayersList": true,
-      "registeredCount": 2,
+      "registeredCount": 5,
+      "avgElo": 1923,
+      "topPlayerElo": 2246,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72816",
       "date": "2026-08-12",
       "isInternal": false
@@ -5195,7 +5133,10 @@
         "city": "LE MAS D'AZIL",
         "address": "LE MAS D'AZIL"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 20,
+      "avgElo": 1436,
+      "topPlayerElo": 1684,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72760",
       "date": "2026-08-12",
       "isInternal": false
@@ -5211,7 +5152,8 @@
         "city": "PARIS",
         "address": "PARIS"
       },
-      "hasPlayersList": false,
+      "hasPlayersList": true,
+      "registeredCount": 3,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72817",
       "date": "2026-08-14",
       "isInternal": false
@@ -5371,8 +5313,8 @@
         "address": "CHALONS EN CHAMPAGNE"
       },
       "hasPlayersList": true,
-      "registeredCount": 260,
-      "avgElo": 1716,
+      "registeredCount": 264,
+      "avgElo": 1718,
       "topPlayerElo": 2567,
       "homologationLink": "http://www.echecs.asso.fr/FicheTournoi.aspx?Ref=72139",
       "date": "2026-09-20",
@@ -5740,321 +5682,6 @@
       "isInternal": false
     },
     {
-      "id": "italy-by0yMDI2LTA4LTA4",
-      "name": "22° Trofeo \"boccione\"",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 41.4496,
-        "lng": 12.6197,
-        "city": "Anzio",
-        "address": "Anzio"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/m6XuS4fK",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-EtMjAyNi0wOC0wOA",
-      "name": "Giocaosta 2026 - Torneo Lampo",
-      "format": "Blitz",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 45.7348,
-        "lng": 7.31168,
-        "city": "Aosta",
-        "address": "Aosta"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/M69ba-yH",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-ktMjAyNi0wOC0wOA",
-      "name": "1 Rapid Chess Città Di Comitini",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 37.4079,
-        "lng": 13.643,
-        "city": "Comitini",
-        "address": "Comitini"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/x_80iHJE",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-by0yMDI2LTA4LTA4",
-      "name": "Tornei Lampo Di Scacchi A Dolo (ve) - Riviera Del Brenta",
-      "format": "Blitz",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 45.4246,
-        "lng": 12.0753,
-        "city": "Dolo",
-        "address": "Dolo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/Si7ouYUg",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-lLTIwMjYtMDgtMDg",
-      "name": "Gran Torneo Di Scacchi \"alpe Cimbra\"",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 45.9478,
-        "lng": 11.2858,
-        "city": "Lavarone",
-        "address": "Lavarone"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/leMcpVgq",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-vLTIwMjYtMDgtMDg",
-      "name": "1° Torneo Giovanile Under 25 Lettomanoppello - Festival Del Fumetto",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 42.2366,
-        "lng": 14.0369,
-        "city": "Lettomanoppello",
-        "address": "Lettomanoppello"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/JQwwqXZD",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-wtMjAyNi0wOC0wOA",
-      "name": "1° Rapid Fide Meri’ Sotto Le Stelle",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 38.1669,
-        "lng": 15.2516,
-        "city": "Merì",
-        "address": "Merì"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.federscacchi.com/?id=1%C2%B0+RAPID+FIDE+MERI%E2%80%99+SOTTO+LE+STELLE&2026-08-08&2026-08-08",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-sLTIwMjYtMDgtMDg",
-      "name": "1° Rapid Fide Merì Sotto Le Stelle",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 38.1669,
-        "lng": 15.2516,
-        "city": "Merì",
-        "address": "Merì"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/EeAj7t4-",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-nLTIwMjYtMDgtMDg",
-      "name": "Op Rapid Meri' Sotto Le Stelle",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 41.9028,
-        "lng": 12.4964,
-        "city": "Meri'",
-        "address": "Meri'"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=470472",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-lLTIwMjYtMDgtMDg",
-      "name": "Op 2 Ludus Murri",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.3175,
-        "lng": 13.5896,
-        "city": "Morrovalle",
-        "address": "Morrovalle"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=470506",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-hLTIwMjYtMDgtMDg",
-      "name": "1° Torneo Di Scacchi \"caffetteria Emy 2026\" Rapid 12+3",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 41.2383,
-        "lng": 13.9326,
-        "city": "Sessa Aurunca",
-        "address": "Sessa Aurunca"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/EFC3NZNC",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-8tMjAyNi0wOC0wOA",
-      "name": "Fe 24 Spilimbergo - Master",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.1113,
-        "lng": 12.8991,
-        "city": "Spilimbergo",
-        "address": "Spilimbergo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=470806",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-UtMjAyNi0wOC0wOA",
-      "name": "Ii° \"ludus Murri\"",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.3175,
-        "lng": 13.5896,
-        "city": "Morrovalle",
-        "address": "Morrovalle"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/QWOWj60A",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-ZS0yMDI2LTA4LTA4",
-      "name": "Ii Ludus Murri",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.3175,
-        "lng": 13.5896,
-        "city": "Morrovalle",
-        "address": "Morrovalle"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.federscacchi.com/?id=II+Ludus+Murri&2026-08-08&2026-08-09",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-EtMjAyNi0wOC0wOA",
-      "name": "24. Int. Chess Tournament Spilimbergo",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 41.9028,
-        "lng": 12.4964,
-        "city": "Italia",
-        "address": "Italia"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/Kalender.aspx?lan=4&%7CChessResults.Com%7C2026-08-08%7C2026-08-15%7C24.%20Int.%20Chess%20Tournament%20Spilimbergo%7C",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-hLTIwMjYtMDgtMDg",
-      "name": "23 Torneo Int. Spilimbergo Master (rating Over2000",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 41.9028,
-        "lng": 12.4964,
-        "city": "Italia",
-        "address": "Italia"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.worldchesscalendar.com/tournament/1206906",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-vLTIwMjYtMDgtMDg",
-      "name": "Spilimbergo, Italy",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.1113,
-        "lng": 12.8991,
-        "city": "Spilimbergo",
-        "address": "Spilimbergo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=55736",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-8tMjAyNi0wOC0wOA",
-      "name": "24th Spilimbergo International Chess Tournament",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.1113,
-        "lng": 12.8991,
-        "city": "Spilimbergo",
-        "address": "Spilimbergo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://calendar.chessaround.com/tournament/view/600",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-by0yMDI2LTA4LTA4",
-      "name": "24° Torneo Internazionale Di Scacchi Di Spilimbergo",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.1113,
-        "lng": 12.8991,
-        "city": "Spilimbergo",
-        "address": "Spilimbergo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.federscacchi.com/?id=24%C2%B0+Torneo+Internazionale+di+Scacchi+di+Spilimbergo&2026-08-08&2026-08-15",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-vLTIwMjYtMDgtMDg",
-      "name": "24° Torneo Internazionale Di Scacchi - Spilimbergo",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.1113,
-        "lng": 12.8991,
-        "city": "Spilimbergo",
-        "address": "Spilimbergo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/tpMHPorp",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "italy-8tMjAyNi0wOC0wOA",
-      "name": "24 Torneo Int. Spilimbergo Master (rating Over2000",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 46.1113,
-        "lng": 12.8991,
-        "city": "Spilimbergo",
-        "address": "Spilimbergo"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1364644.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
       "id": "italy-by0yMDI2LTA4LTA5",
       "name": "Tsar-26 - 4°tappa (ligonchio-ventasso) 1°tour Scacchistico Dell'appennino Reggiano",
       "format": "Lent",
@@ -6201,7 +5828,7 @@
         "address": "Albiate"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/edMMlR29",
+      "homologationLink": "https://www.federscacchi.com/?id=IL+64+DI+SAN+FERMO&2026-08-10&2026-08-10",
       "date": "2026-08-10"
     },
     {
@@ -7266,7 +6893,7 @@
         "address": "Trieste"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=446636",
+      "homologationLink": "https://www.worldchesscalendar.com/tournament/748700",
       "date": "2026-08-22"
     },
     {
@@ -7326,7 +6953,7 @@
         "address": "Corigliano-rossano"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://vesus.org/tournament/ah_u3ezh",
+      "homologationLink": "https://www.federscacchi.com/?id=1%C2%B0+Torneo+Standard+Omologato+ASD+Jonica+Scacchi+A-28&2026-08-22&2026-08-23",
       "date": "2026-08-22"
     },
     {
@@ -8575,291 +8202,6 @@
       "date": "2026-08-30"
     },
     {
-      "id": "spain-hLTIwMjYtMDgtMDg",
-      "name": "I Obert Blitz Cor De Marina",
-      "format": "Blitz",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 41.4501,
-        "lng": 2.24742,
-        "city": "Badalona",
-        "address": "Badalona"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1444592.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-MtMjAyNi0wOC0wOA",
-      "name": "LI Open Internacional De Ajedrez Albarino",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 42.5137,
-        "lng": -8.81452,
-        "city": "Cambados",
-        "address": "Cambados"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=486305",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-zLTIwMjYtMDgtMDg",
-      "name": "Cambados, Spain",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 42.5137,
-        "lng": -8.81452,
-        "city": "Cambados",
-        "address": "Cambados"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=56846",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-pLTIwMjYtMDgtMDg",
-      "name": "Actius Palafrugell - Memorial Albert Badosa 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 40.4168,
-        "lng": -3.7038,
-        "city": "Centre Municipal d’Educació, C/ Bruguerol, 12 (Palafrugell)",
-        "address": "Centre Municipal d’Educació, C/ Bruguerol, 12 (Palafrugell)"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1428969.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-4tMjAyNi0wOC0wOA",
-      "name": "Coin, Spain",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 36.6616,
-        "lng": -4.75751,
-        "city": "Coín",
-        "address": "Coín"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=57064",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-YS0yMDI2LTA4LTA4",
-      "name": "I Donostiako Aste Nagusiko Txapelketa",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.3183,
-        "lng": -1.98123,
-        "city": "Donostia",
-        "address": "Donostia"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=472708",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-bi0yMDI2LTA4LTA4",
-      "name": "XXIII Open Activo Villa De Gijon 2026",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.5453,
-        "lng": -5.66193,
-        "city": "Gijon",
-        "address": "Gijon"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=477415",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-uLTIwMjYtMDgtMDg",
-      "name": "IV Open Relampago RGCC 2026",
-      "format": "Blitz",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.5453,
-        "lng": -5.66193,
-        "city": "Gijon",
-        "address": "Gijon"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=478822",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-uLTIwMjYtMDgtMDg",
-      "name": "Gijon, Spain",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.5453,
-        "lng": -5.66193,
-        "city": "Gijon",
-        "address": "Gijon"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=56358",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-EtMjAyNi0wOC0wOA",
-      "name": "Torneo Ajedrez Villa De Caniles 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 37.1765,
-        "lng": -3.59793,
-        "city": "Granada",
-        "address": "Granada"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1392958.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-zLTIwMjYtMDgtMDg",
-      "name": "V Circuito Blitz En Plazas 2026 - Casa De La Juven",
-      "format": "Blitz",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 28.3807,
-        "lng": -16.5825,
-        "city": "Los Realejos",
-        "address": "Los Realejos"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1458751.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-wtMjAyNi0wOC0wOA",
-      "name": "I Open Pueblos De America",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 36.7447,
-        "lng": -3.51672,
-        "city": "Motril",
-        "address": "Motril"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=486421",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-sLTIwMjYtMDgtMDg",
-      "name": "Torneig Escacs Actius Palafrugell - Memorial Albert Badosa 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 41.9153,
-        "lng": 3.1643,
-        "city": "Palafrugell",
-        "address": "Palafrugell"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=481075",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-MtMjAyNi0wOC0wOA",
-      "name": "IX MEMORIAL JAUME RUIZ TERRATS",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 40,
-        "lng": -4,
-        "city": "pavelló poliesportiu josep vidal lluís",
-        "address": "pavelló poliesportiu josep vidal lluís"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1440227.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-wtMjAyNi0wOC0wOA",
-      "name": "III ABIERTO DE AJEDREZ “PRADOLLANO-MONACHIL”“El To",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 40.4168,
-        "lng": -3.7038,
-        "city": "Plaza De Andalucía. Estación De Esquí De Pradollano. Carpa Municipal",
-        "address": "Plaza De Andalucía. Estación De Esquí De Pradollano. Carpa Municipal"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1460917.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-4tMjAyNi0wOC0wOA",
-      "name": "Quintanar De La Orden, Spain",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 39.5941,
-        "lng": -3.04009,
-        "city": "Quintanar De La Orden",
-        "address": "Quintanar De La Orden"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=57053",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-4tMjAyNi0wOC0wOA",
-      "name": "San Sebastian, Spain",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 43.3183,
-        "lng": -1.98123,
-        "city": "San Sebastián",
-        "address": "San Sebastián"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=55639",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-hLTIwMjYtMDgtMDg",
-      "name": "Villamayor De Calatrava, Spain",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 40.4168,
-        "lng": -3.7038,
-        "city": "Villamayor De Calatrava",
-        "address": "Villamayor De Calatrava"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=57065",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "spain-YS0yMDI2LTA4LTA4",
-      "name": "ROUND  ROBIN  22  MARCOS  FRECHÍN",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 41.6563,
-        "lng": -0.876538,
-        "city": "Zaragoza",
-        "address": "Zaragoza"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1462458.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
       "id": "spain-lLTIwMjYtMDgtMDk",
       "name": "VI Open Internacional De Ajedrez Villa De Aspe",
       "format": "Lent",
@@ -9726,7 +9068,7 @@
         "address": "Plaça Del Casal De Canyelles"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1460890.aspx?lan=0",
+      "homologationLink": "https://chess-results.com/tnr1456007.aspx?lan=0",
       "date": "2026-08-15"
     },
     {
@@ -11211,7 +10553,7 @@
         "address": "Xabia"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1445137.aspx?lan=0",
+      "homologationLink": "https://chess-results.com/tnr1327068.aspx?lan=0",
       "date": "2026-08-30"
     },
     {
@@ -11303,126 +10645,6 @@
       "hasPlayersList": false,
       "homologationLink": "https://calendar.fide.com/calendar.php?id=16871",
       "date": "2026-08-31"
-    },
-    {
-      "id": "belgium-lLTIwMjYtMDgtMDg",
-      "name": "Brugse Meesters 2026 U1800",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.2108,
-        "lng": 3.22487,
-        "city": "Brugge",
-        "address": "Brugge"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=491537",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "belgium-UtMjAyNi0wOC0wOA",
-      "name": "Brugse Meesters 2026 Seniors",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.2108,
-        "lng": 3.22487,
-        "city": "Brugge",
-        "address": "Brugge"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=491538",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "belgium-UtMjAyNi0wOC0wOA",
-      "name": "Brugse Meesters 2026 Open",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.2108,
-        "lng": 3.22487,
-        "city": "Brugge",
-        "address": "Brugge"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=491532",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "belgium-cy0yMDI2LTA4LTA4",
-      "name": "Bruges, Belgium",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.2093,
-        "lng": 3.2247,
-        "city": "Bruges",
-        "address": "Bruges"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=55221",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "belgium-UtMjAyNi0wOC0wOA",
-      "name": "Brugsemeesters 2026 U1800",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.2108,
-        "lng": 3.22487,
-        "city": "Brugge",
-        "address": "Brugge"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1465650.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "belgium-UtMjAyNi0wOC0wOA",
-      "name": "Brugsemeesters 2026 SENIORES",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.2108,
-        "lng": 3.22487,
-        "city": "Brugge",
-        "address": "Brugge"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1466128.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "belgium-ZS0yMDI2LTA4LTA4",
-      "name": "Brugsemeesters 2026 OPEN",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.2108,
-        "lng": 3.22487,
-        "city": "Brugge",
-        "address": "Brugge"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1445745.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "belgium-lLTIwMjYtMDgtMDg",
-      "name": "Brugse Meesters 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 51.2108,
-        "lng": 3.22487,
-        "city": "Brugge",
-        "address": "Brugge"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://calendar.fide.com/calendar.php?id=14716",
-      "date": "2026-08-08"
     },
     {
       "id": "belgium-UtMjAyNi0wOC0wOQ",
@@ -11755,111 +10977,6 @@
       "date": "2026-08-31"
     },
     {
-      "id": "germany-uLTIwMjYtMDgtMDg",
-      "name": "22. Lichtenberger Sommer 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=479009",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "germany-uLTIwMjYtMDgtMDg",
-      "name": "CCM Rapid-Masters III",
-      "format": "Rapide",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 48.1366,
-        "lng": 11.5771,
-        "city": "Muenchen",
-        "address": "Muenchen"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://ratings.fide.com/tournament_information.phtml?event=486882",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "germany-4tMjAyNi0wOC0wOA",
-      "name": "Schach Im Zaubergarten 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 48.3313,
-        "lng": 10.2078,
-        "city": "Weissenhorn-oberhausen",
-        "address": "Weissenhorn-oberhausen"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1435315.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "germany-nLTIwMjYtMDgtMDg",
-      "name": "68th World Congress Of Chess Composition (WCCC)",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.1308,
-        "lng": 11.6289,
-        "city": "Magdeburg",
-        "address": "Magdeburg"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://www.schachbund.de/turnierdetails/68th-world-congress-of-chess-composition-wccc.html",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "germany-4tMjAyNi0wOC0wOA",
-      "name": "Lichtenberger Sommer 2026",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1332749.aspx?lan=0",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "germany-bi0yMDI2LTA4LTA4",
-      "name": "Berlin, Germany",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://pro.chessmix.com/xml/calendar_info.php?tid=55666",
-      "date": "2026-08-08"
-    },
-    {
-      "id": "germany-bi0yMDI2LTA4LTA4",
-      "name": "22. Lichtenberger Sommer",
-      "format": "Lent",
-      "eloBracket": "Toutes catégories",
-      "location": {
-        "lat": 52.5243,
-        "lng": 13.4063,
-        "city": "Berlin",
-        "address": "Berlin"
-      },
-      "hasPlayersList": false,
-      "homologationLink": "https://calendar.fide.com/calendar.php?id=16050",
-      "date": "2026-08-08"
-    },
-    {
       "id": "germany-QtMjAyNi0wOC0wOQ",
       "name": "Schach im Park Köln",
       "format": "Lent",
@@ -12141,7 +11258,7 @@
         "address": "Deutschland"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://chess-results.com/tnr1460745.aspx?lan=0",
+      "homologationLink": "https://chess-results.com/tnr1459350.aspx?lan=0",
       "date": "2026-08-15"
     },
     {
@@ -13806,7 +12923,7 @@
         "address": "Greifswald"
       },
       "hasPlayersList": false,
-      "homologationLink": "https://www.schachbund.de/turnierdetails/vch-open-2026.html",
+      "homologationLink": "https://chess-results.com/tnr1427287.aspx?lan=0",
       "date": "2026-08-28"
     },
     {
